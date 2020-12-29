@@ -185,4 +185,24 @@ $ git branch
 ``` bash
 $ git checkout <name>
 ```
-* 자신이 사용할 브랜치로 이동을 할수있다.
+* 원하는 브랜치로 이동하는데 사용하는 명령어.
+``` bash
+$ git branch --delete
+```
+* pullrequest 후 merge가 끝나면 필요없어진 branch를 삭제 하는데 이때 다른 branch로 checkout 한 후 삭제하여야 한다.
+### + 원격 브랜치 다루기
+* 원격 저장소를 clone 하더라도 모든 branch를 가져오지는 않는다.
+이를 해결하기위해 다음과 같은 명령어를 사용하면 된다.
+``` bash
+$ git checkout -t [가져올 branch]
+```
+* remote에는 존재하지만 local에는 존재하지 않는 branch를 가져올때는 checkout -t를 사용하여 가져온다.
+
+###### 원격 저장소에서 branch 삭제
+local 에서 git branch -d 를 이용해 브랜치를 삭제한 후 remote에는 적용만 해주면 되므로 
+``` bash
+$ git push origin :[브랜치 이름]
+or
+$ git push origin --delete [브랜치 이름]
+```
+적용해주면 remote에서의 브랜치는 삭제가 된다.
