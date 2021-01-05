@@ -12,3 +12,15 @@
 ## 결과
 
 ### 1주차
+
+DongLee99: [https://github.com/Learning-Now/2021-Java-Study/pull/2](https://github.com/Learning-Now/2021-Java-Study/pull/2)
+
+Jeongyun: [https://github.com/Learning-Now/2021-Java-Study/pull/3](https://github.com/Learning-Now/2021-Java-Study/pull/3)
+
+BLINK-ONCE: [https://github.com/Learning-Now/2021-Java-Study/pull/4](https://github.com/Learning-Now/2021-Java-Study/pull/4)
+
+dustndus8: [https://github.com/Learning-Now/2021-Java-Study/pull/5](https://github.com/Learning-Now/2021-Java-Study/pull/5)
+
+dbswl067: [https://github.com/Learning-Now/2021-Java-Study/pull/6](https://github.com/Learning-Now/2021-Java-Study/pull/6)
+
+### 2주차
