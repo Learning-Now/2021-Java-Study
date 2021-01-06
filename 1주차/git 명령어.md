@@ -8,12 +8,12 @@
 |실제 파일들로 이루어짐|준비 영역<br>(add)|최종 확정본<br>(commit)|
 
 ## git 명령어
-### git init
+### - git init
 : 새로운 git 저장소(repository)를 생성
 - 현재 디렉토리를 기준으로 git 저장소 생성
   -> 디렉토리 내부에 .git 디렉토리가 생성됨
 
-### git config
+### - git config
 : 설정 내용을 확인 또는 변경
 - user.name과 user.email을 전역(--global)으로 설정
 ```
@@ -30,10 +30,10 @@ $ git config --unset --global user.email
 $ git config --list
 ```
 
-### git status
+### - git status
 : 파일의 상태(작업 폴더와 인덱스의 상태)를 확인
 
-### git add
+### - git add
 : 작업 폴더상의 변경을 인덱스에 추가
 - 작업 폴더의 변경 내용의 일부만 인덱스에 넘김
 ```
@@ -55,14 +55,14 @@ $ git add -A
 $ git add -p
 ```
 
-### git rm
+### - git rm
 : 파일을 삭제
 - 작업 폴더에는 파일을 남겨두고 인덱스에서만 파일 제거
 ```
 $ git rm --cached
 ```
 
-### git commit
+### - git commit
 : 변경된 내용을 저장소에 추가
 - 에디터를 열지 않고 터미널에서 바로 메시지를 입력
 ```
@@ -78,11 +78,11 @@ $ git commit -am "설명"
 $ git commit --amend
 ```
 
-### git log
+### - git log
 : 커밋 기록 조회
 -> 가장 위에 나오는 내역이 가장 최근 내역
 
-### git reset
+### - git reset
 : 특정 지점의 과거 커밋으로 이동하고 이동된 이후의 커밋 삭제
 - 돌아가려는 커밋으로 돌아가서 그 이후의 모든 내용을 삭제
 ```
@@ -97,14 +97,14 @@ $ git reset --soft "돌아가려는 커밋"
 $ git reset --mixed "돌아가려는 커밋"
 ```
 
-### git revert
+### - git revert
 : 특정 지점의 과거 커밋으로 이동하고 변경 내역을 유지
 - 커밋을 되돌림**(이력이 남음)**
 ```
 $ git revert "되돌릴 커밋"
 ```
 
-### git branch
+### - git branch
 : 현재 내가 위치한(로컬에서의) 브랜치 확인
 - 브랜치 생성
 ```
@@ -119,7 +119,7 @@ $ git brach -d "브랜치명"
 $ git branch -a
 ```
 
-### git checkout
+### - git checkout
 : 브랜치로 이동
 - 해당 브랜치로 이동
 ```
@@ -130,20 +130,19 @@ $ git checkout "브랜치명"
 $ git checkout -b "브랜치명"
 ```
 
-### git merge
+### - git merge
 : 브랜치의 변화 가져옴
 ```
 $ git merge "가져올 브랜치명`
 ```
 
-
-### git rebase
+### - git rebase
 : 현재 브랜치의 base를 합칠 브랜치가 가리키는 커밋을 가리키게 하고 저장해두었던 변경사항을 차례대로 적용
 ```
 $ git rebase "합칠 브랜치명"
 ```
 
-### git remote
+### - git remote
 : 원격 저장소 관리
 - 원격 저장소 주소 등록
 ```
@@ -154,7 +153,7 @@ $ git remote add "원격저장소명" "주소"
 $ git remote remove "원격저장소명"
 ```
 
-### git push
+### - git push
 : 원격저장소에 커밋을 저장
 - 폴더의 현 브랜치에 커밋된 내용을 "원경저장소명"의 "브랜치명"에 올림
 ```
@@ -165,20 +164,20 @@ $ git push "원격저장소명" "브랜치명"
 $ git push -d "원격저장소명" "브랜치명"
 ```
 
-### git pull
+### - git pull
 : 원격저장소의 커밋들을 로컬저장소로 가져와서 merge
 - "원격저장소명"의 내용이 "브랜치명"으로 복사됨
 ```
 $ git pull "원격저장소명" "브랜치명"
 ```
 
-### git clone
+### - git clone
 : 원격저장소의 프로젝트를 내려받음
 - 저장소의 내용을 다운로드받고 자동으로 init됨
 ```
 $ git clone "저장소주소"
 ```
 
-### git fetch
+### - git fetch
 : 원격저장소의 커밋들을 로컬저장소로 가져옴
 -> 원래 내용과 바뀐 내용과의 차이를 알 수 있음
