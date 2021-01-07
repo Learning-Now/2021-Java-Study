@@ -1,4 +1,5 @@
-## git의 repository 구조
+# git 명령어 정리
+## 1. git의 repository 구조
 - 작업 폴더(Working Directory)
 - 인덱스(Staging Area)
 - 저장소(Head-Repository)
@@ -7,7 +8,7 @@
 |------|------|------|
 |실제 파일들로 이루어짐|준비 영역<br>(add)|최종 확정본<br>(commit)|
 
-## git 명령어
+## 2. git 명령어
 ### - git init
 : 새로운 git 저장소(repository)를 생성
 - 현재 디렉토리를 기준으로 git 저장소 생성
