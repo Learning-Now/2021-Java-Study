@@ -37,8 +37,6 @@
 : 라인 삭제
 ### - Command + N
 : 생성자/getter/setter 자동완성
-### - Fn + Shift + F6
-: 파일명 변경
 ### - Control + Option + O
 : import 정리
 
@@ -63,8 +61,14 @@
 : 최근 열었던 파일 목록
 ### - Command + Shift + E
 : 최근 수정한 파일 목록
+### - Command + Control +G
+: 일치하는 단어 전체 선택
+### - Command + Shift + R
+: 일치하는 단어 전체 교체
 
 ## 5. Refactor
+### - Fn + Shift + F6
+: 파일 이름 변경
 ### - Command + Option + M
 : 메소드 분리
 ### - Command + Option + c
