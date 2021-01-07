@@ -24,4 +24,3 @@ dustndus8: [https://github.com/Learning-Now/2021-Java-Study/pull/5](https://gith
 dbswl067: [https://github.com/Learning-Now/2021-Java-Study/pull/6](https://github.com/Learning-Now/2021-Java-Study/pull/6)
 
 ### 2주차
->>>>>>> main
