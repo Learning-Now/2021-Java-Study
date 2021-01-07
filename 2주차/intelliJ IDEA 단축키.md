@@ -1,3 +1,4 @@
+# intelliJ IDEA 단축키 정리 - Mac
 ## 1. Run and Debug
 ### - Control + Option + R
 : 코드 실행
