@@ -57,7 +57,13 @@ String
 ```
 ### 3-10. fori + Tab
 ```java
-for (int i = 0; i < ; i++) {
+for (int i = 0; i < limit; i++) {
             
+}
+```
+### 3-11. iter + Tab
+```
+for (String arg : args) {
+
 }
 ```
