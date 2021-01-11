@@ -70,6 +70,16 @@ public static void main(String args[]){
 System.out.println();
 ```
 
+### soutv + Tab
+```java
+System.out.println(values);
+```
+
+### soutm + Tab
+```java
+System.out.println("current class and method names");
+```
+
 ### St + Tab
 ```java 
 String
@@ -78,6 +88,12 @@ String
 ### fori + Tab
 ```java
 for (int i = 0; i < ; i++) {
+}
+```
+
+### iter + Tab
+```java
+for (String arg : args) {
 }
 ```
 
