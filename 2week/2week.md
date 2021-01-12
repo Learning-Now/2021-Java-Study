@@ -22,10 +22,10 @@
 
 _Mac 기준에서 작성됨_
 ** 검색 **
-* CMD + F ( 현재 파일에서 찾고자 하는 Text 검색하기 )
-* CMD + R ( 현재 파일에서 찾고자하는 Text를 원하는 Text로 교체하기 )
-* CMD + SHIFT + F ( 전체 파일에서 원하는 Text 검색하기 )
-* CMD + SHIFT + R ( 전체 파일에서 찾고자하는 Text를 원하는 Text로 교체 하기 )
+* CMD + F ( 현재 파일에서 검색하기 )
+* CMD + R ( 현재 파일에서 교체하기 )
+* CMD + SHIFT + F ( 전체 파일에서 검색하기 )
+* CMD + SHIFT + R ( 전체 파일에서 교체하기 )
 * CMD + SHIFT + A ( 액션 검색하기 )
 * CMD + E ( 최근에 열었던 파일 목록 보기 )
 
@@ -40,8 +40,7 @@ _Mac 기준에서 작성됨_
 * CMD + OPT + P ( 파라미터 추출 하기 )
 * CMD + OPT + M ( 메서드 추출 하기 )
 * CTRL + OPT + O ( import 정리 하기 _사용하지 않는 import 제거 _)
-* CMD + OPT + l ( 코드 자동 정렬 하기 )
-* SHIFT + F6 ( 이름 일관 변경하기 )
+
 ** 메서드 실행 **
 * CTRL + SHIFT + R ( 현재 포커스 된 메서드 실행 )
 * CTRL + R ( 위와 같음 )
@@ -129,34 +128,6 @@ System.out.println(메소드 이름);
 ``` java
 
 System.out.println(메소드 파라미터 네임 or values);
-```
-
-> fori (오우 이걸 이제 알다니 ㄷㄷ 세상 편리해요)
-
-``` java
-
-for (int i = 0; i < ; i++) {
-            
-        }
-```
-
-> foreach
-
-``` java
-
-   for (:
-             ) {
-            
-        }
-```
-
-> ilter
-
-``` java
-
-   for (String arg : args) {
-            
-        }
 ```
 ---
 ## 2. 자바 기초
