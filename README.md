@@ -24,3 +24,15 @@ dustndus8: [https://github.com/Learning-Now/2021-Java-Study/pull/5](https://gith
 dbswl067: [https://github.com/Learning-Now/2021-Java-Study/pull/6](https://github.com/Learning-Now/2021-Java-Study/pull/6)
 
 ### 2주차
+
+DongLee99:[https://velog.io/@donglee99/2주차-과제-JAVA-코드-둘러보기](https://velog.io/@donglee99/2%EC%A3%BC%EC%B0%A8-%EA%B3%BC%EC%A0%9C-JAVA-%EC%BD%94%EB%93%9C-%EB%91%98%EB%9F%AC%EB%B3%B4%EA%B8%B0)
+
+Jeongyun:[https://github.com/jeongyuneo/2021-Java-Study/tree/jeongyun](https://github.com/jeongyuneo/2021-Java-Study/tree/jeongyun)
+
+BLINK-ONCE:[https://github.com/BLINK-ONCE/2021-java-study-HW/tree/main/2주차](https://github.com/BLINK-ONCE/2021-java-study-HW/tree/main/2%EC%A3%BC%EC%B0%A8)
+
+dustndus8: [https://github.com/BLINK-ONCE/2021-java-study-HW/tree/main/2주차](https://github.com/BLINK-ONCE/2021-java-study-HW/tree/main/2%EC%A3%BC%EC%B0%A8)
+
+dbswl067:: [https://github.com/dbswl067/2021-java-a/tree/main/2주차 과제](https://github.com/dbswl067/2021-java-a/tree/main/2%EC%A3%BC%EC%B0%A8%20%EA%B3%BC%EC%A0%9C)
+
+### 3주차
