@@ -247,13 +247,13 @@ return (condition ? x : y);
 | 타입 | 할당되는 메모리 크기 | 기본값 | 데이터의 표현 범위 |
 |---|:---:|---:|---:|
 | boolean | 1byte | false | true, false |
-| byte | 1 | 0 | -128 ~ 127 |
-| short | 2 | 0 | -32,768 ~ 32,767 |
-| int | 4 | 0 | -2,147,483,648 ~ 2,147,483,647 |
-| long | 8 | 0L | -9,223,372,036,854,775,808 ~ 9,223,372,036,854,775,807 |
-| float | 4 | 0.0F | (3.4 X 10-38) ~ (3.4 X 1038) 의 근사값 |
-| double | 8 | 0.0 | (1.7 X 10-308) ~ (1.7 X 10308) 의 근사값 |
-| char | 2(유니코드) | '\u0000' | 0 ~ 65,535 |
+| byte | 1byte | 0 | -128 ~ 127 |
+| short | 2byte | 0 | -32,768 ~ 32,767 |
+| int | 4byte | 0 | -2,147,483,648 ~ 2,147,483,647 |
+| long | 8byte | 0L | -9,223,372,036,854,775,808 ~ 9,223,372,036,854,775,807 |
+| float | 4byte | 0.0F | (3.4 X 10-38) ~ (3.4 X 1038) 의 근사값 |
+| double | 8byte | 0.0 | (1.7 X 10-308) ~ (1.7 X 10308) 의 근사값 |
+| char | 2byte(유니코드) | '\u0000' | 0 ~ 65,535 |
 
 ## reference type 참조형 타입
 - 기본형 타입을 제외한 타입들이 모두 reference type이다.
@@ -264,10 +264,12 @@ return (condition ? x : y);
 | 타입 | 예시 | 기본값 | 할당되는 메모리 크기 |
 |---|:---:|---:|---:|
 | 배열Array | int[] arr = new int[5]; | Null | 4byte |
-| 열거Enumeration |  | Null | 4 |
-| 클래스Class | String str = "test"; Student sujin = new Student(); | Null | 4 |
-| 인터페이스Interface |  | Null | 4 |
+| 열거Enumeration |  | Null | 4byte |
+| 클래스Class | String str = "test"; Student sujin = new Student(); | Null | 4byte |
+| 인터페이스Interface |  | Null | 4byte |
 
+
+## 리터럴
 
 
 
