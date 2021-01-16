@@ -236,6 +236,42 @@ return (condition ? x : y);
 ```
 
 
+# 자바 기초
+
+## primitive type 기본형 타입
+- 8가지의 primitive type을 미리 정의하여 제공한다.
+- 기본값이 있기 때문에 Null이 존재하지 않는다. 기본형 타입에 null을 넣고 싶다면 래퍼 클래스를 활용한다.
+- 실제값을 저장하는 공간으로 stack 메모리에 저장된다.
+- 컴파일 시점에 담을 수 있는 크기를 벗어나면 컴파일 에러가 발생한다.
+
+| 타입 | 할당되는 메모리 크기 | 기본값 | 데이터의 표현 범위 |
+|---|:---:|---:|---:|
+| boolean | 1byte | false | true, false |
+| byte | 1 | 0 | -128 ~ 127 |
+| short | 2 | 0 | -32,768 ~ 32,767 |
+| int | 4 | 0 | -2,147,483,648 ~ 2,147,483,647 |
+| long | 8 | 0L | -9,223,372,036,854,775,808 ~ 9,223,372,036,854,775,807 |
+| float | 4 | 0.0F | (3.4 X 10-38) ~ (3.4 X 1038) 의 근사값 |
+| double | 8 | 0.0 | (1.7 X 10-308) ~ (1.7 X 10308) 의 근사값 |
+| char | 2(유니코드) | '\u0000' | 0 ~ 65,535 |
+
+## reference type 참조형 타입
+- 기본형 타입을 제외한 타입들이 모두 reference type이다.
+- 빈 객체를 의미하는 Null이 존재한다.
+- 값이 저장되어 있는 곳의 주소값을 저장하는 공간으로 heap메모리에 저장된다.
+- 문법상으로는 에러가 없지만 실행시켰을 때 에러가 나는 런타임 에러가 발생한다. e.g. 객체나 배열을 Null 값으로 받으면 NullPointException이 발생하므로 변수값을 넣어야 한다.
+
+| 타입 | 예시 | 기본값 | 할당되는 메모리 크기 |
+|---|:---:|---:|---:|
+| 배열Array | int[] arr = new int[5]; | Null | 4byte |
+| 열거Enumeration |  | Null | 4 |
+| 클래스Class | String str = "test"; Student sujin = new Student(); | Null | 4 |
+| 인터페이스Interface |  | Null | 4 |
+
+
+
+
+
 
 # 2. 자바 기초
 ### 목표
@@ -252,4 +288,4 @@ return (condition ? x : y);
 
 
 # Reference
-[자바 코딩 규칙](https://velog.io/@aidenshin/Java-%EC%9E%90%EB%B0%94-%EC%BD%94%EB%94%A9-%EA%B7%9C%EC%B9%99-Java-Code-Conventions)
+[자바 코딩 규칙](https://velog.io/@aidenshin/Java-%EC%9E%90%EB%B0%94-%EC%BD%94%EB%94%A9-%EA%B7%9C%EC%B9%99-Java-Code-Conventions) <br>
