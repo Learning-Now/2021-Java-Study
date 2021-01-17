@@ -136,7 +136,78 @@ myMethod((int) (cp + 5), ((int) (i + 3)) + 1);
 - 인터페이스 이름도 클래스 이름과 같은 대문자 사용 규칙을 적용해야 한다.
 
 ### methods 명명 규칙
-- 메소드의 이름은 동사이어야 하며, 복합 단어일 경우 첫 단어는 소문자로 시작하고 그 이후에 나오는 단어의 문자는 대문자로 사용해야 한다.
+- 메소드의 이름은 동사이어야 하며, 복합 단어일 경우 첫 단어는 소문자로 시작하고 그 이후에 나오는 단어의 문자는 대문자로 사용해야 한다. 명사는 동명사의 사용을 지양한다.
+```java
+// 메소드명에는 파스칼 표기법을 사용한다.
+public void SendMessage(String message) {}
+
+// 속성에 접근하는 메소드명의 접두사는 'get','set'을 사용한다.
+public void setDisplayName
+public void getDisplayName
+
+// 데이터를 조회하는 메소드명의 접두사는 find를 사용한다.
+public void findData(String data){}
+
+// 데이터를 입력하는 메소드명의 접두사는 input을 사용한다.
+public void inputData(HashMap data){}
+
+// 데이터를 변경하는 메소드명의 접두사는 modify를 사용한다.
+public void modifyData(HashMap data){}
+
+// 데이터를 삭제하는 메소드명의 접두사는 delete를 사용한다.
+public void deleteData(String data){}
+
+// 데이터를 초기화 하는 메소드명의 접두사는 initialize을 사용한다.
+public void initData(String data){}
+
+// 반환값의 타입이 boolean인 메소드는 접두사로 is를 사용한다.
+public void isData(String Data){}
+
+// 데이터를 불러오는 메소드명의 접두사는 load를 사용한다.
+public void loadData(){}
+
+// 데이터가 있는지 확인하는 메소드명의 접두사는 has를 사용한다.
+public void hasData(){}
+
+// 보다 지능적인 set이 요구될때 사용하는 메소드명의 접두사는 register를 사용한다.
+public void registerAccount(){}
+
+// 새로운 객체를 만든뒤 해당 객체를 리턴해주는 메소드명의 접두사는 create를 사용한다.
+public void createAccount(){}
+
+// 해당 객체를 다른 형태의 객체로 변환해주는 메소드명의 접두사는 to를 사용한다.
+public void toString(){}
+
+// 해당 객체가 복수인지 단일인지 구분하는 메서드명의 접미사는 s를 사용한다.
+public void getMembers(){}
+
+// B를 기준으로 A를 하겠다는 메소드명의 전치사는 By를 사용한다.
+public void getUserByName(String name){}
+
+// 반환값의 타입이 boolean인 메소드는 접두사로 is를 사용한다.
+public void isData(String Data){}
+
+// 데이터를 불러오는 메소드명의 접두사는 load를 사용한다.
+public void loadData(){}
+
+// 데이터가 있는지 확인하는 메소드명의 접두사는 has를 사용한다.
+public void hasData(){}
+
+// 보다 지능적인 set이 요구될때 사용하는 메소드명의 접두사는 register를 사용한다.
+public void registerAccount(){}
+
+// 새로운 객체를 만든뒤 해당 객체를 리턴해주는 메소드명의 접두사는 create를 사용한다.
+public void createAccount(){}
+
+// 해당 객체를 다른 형태의 객체로 변환해주는 메소드명의 접두사는 to를 사용한다.
+public void toString(){}
+
+// 해당 객체가 복수인지 단일인지 구분하는 메서드명의 접미사는 s를 사용한다.
+public void getMembers(){}
+
+// B를 기준으로 A를 하겠다는 메소드명의 전치사는 By를 사용한다.
+public void getUserByName(String name){}
+```
 
 ### variables 명명 규칙
 - 변수 이름의 첫 번째 문자는 소문자로 시작하고, 각각의 내부 단어의 첫 번째 문자는 대문자로 시작해야 한다.
@@ -144,7 +215,7 @@ myMethod((int) (cp + 5), ((int) (i + 3)) + 1);
 - 이름이 짧지만 의미 있어야 한다.
 - 이름의 선택은 그 변수의 사용 의도를 알아낼 수 있도록 의미적이어야 한다.
 - 한 문자로만 이루어진 변수 이름은 암시적으로만 사용하고 버릴 변수일 경우를 제외하고는 피해야 한다.
-- 보통의 임시 변수들의 이름은 interger일 경우엔느 i, j, k, m, n을 사용하고, character일 경우에는 c, d, e를 사용한다.
+- 보통의 임시 변수들의 이름은 interger일 경우에는 i, j, k, m, n을 사용하고, character일 경우에는 c, d, e를 사용한다.
 
 ### constants 명명 규칙
 - 클래스 상수로 선언된 변수들과 ANSI 상수들의 이름은 모두 대문자로 쓰고 각각의 단어는 언더바_로 분리해야 한다.
@@ -158,11 +229,28 @@ myMethod((int) (cp + 5), ((int) (i + 3)) + 1);
 - 인스턴스 변수가 public으로 선언되는 것이 적절한 경우는 클래스 자체가 어떤 동작(behavior)을 가지지 않는 데이터 구조(data structure)일 경우이다. 만약 class대신 struct를 사용해야 하는 경우라면 (java가 struct를 지원한다 가정) class의 인스턴스 변수들을 public으로 선언하는 것이 적합하다.
 
 ### 클래스 변수와 클래스 메소드는 클래스 이름을 사용하여 호출
-- 클래스(static) 변수 또는 클래스 메소드를 호출하기 위해서 객체를 사용하는 것을 피해야 한다. 대신 클래스 이름을 사용하자.
+- 클래스(static) 변수 또는 클래스 메소드를 호출하기 위해서 객체를 사용하는 것을 피해야 한다. 대신 클래스 이름을 사용하자. 이는 캡슐화와 자효보호를 위한 것이다. 즉, private선언하여 해당 **클래스의 내부에서만** 사용할 수 있도록 하는 것이다.
+
 ```java
 classMethod();// good
 AClass.classMethod();// good
 anObject.classMethod();// bad
+```
+
+```java
+public class MeanCalc {
+    private int sum;// 합을 저장하기 위한 private 멤버
+    private int num;// 값의 갯수를 저장하기 위한 private 멤버
+    // 외부로 부터 들어온 값을 가공하는 public 멤버 메서드
+    public void setValue(int w, int x, int y, int z, int n){
+        sum = w + x + y + z;
+        num = n;
+    }
+    // 내부의 값을 가공해서 내보내는 public 멤버 메서드
+    public int getMean(){
+        return sum / num;
+    }
+} // end of MeanCalc class
 ```
 
 ### 숫자는 바로 사용하지 않고 선언해서 변수 이름으로 접근
