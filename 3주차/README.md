@@ -738,9 +738,36 @@ class Test {
 > 하지만, (아래에서 살펴보겠지만) static 메서드에는 제네릭을 사용할 수 있다.
 
 
+## 람다식
+
+- 람다 문법을 사용하지 않은 경우
+
+```java
+public class Lambdas {
+  public static void main(String... args) {
+    Runnable r = new Runnable() {
+      public void run() {
+        System.out.println("Howdy, world!");
+      }
+    };
+    r.run();
+  }
+}
+```
+
+- 람다 문법을 사용한 경우
+
+```java
+public static void main(String... args) {
+  Runnable r2 = () -> System.out.println("Howdy, world!");
+  r2.run();
+}
+```
+
 
 # Reference
 - [자바 코딩 규칙](https://velog.io/@aidenshin/Java-%EC%9E%90%EB%B0%94-%EC%BD%94%EB%94%A9-%EA%B7%9C%EC%B9%99-Java-Code-Conventions) 
 - [프로모션, 캐스팅](https://stage-loving-developers.tistory.com/8) 
 - [타입추론, var](https://velog.io/@bk_log/Java-%ED%83%80%EC%9E%85-%EC%B6%94%EB%A1%A0)
 - [제네릭](https://yaboong.github.io/java/2019/01/19/java-generics-1/)
+- [람다식](https://www.daleseo.com/java8-lambdas-part1-2/)
