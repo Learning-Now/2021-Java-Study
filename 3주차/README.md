@@ -569,13 +569,41 @@ int[][] a = new int[4][5];
 int[] a[] = new int[4][5];
 ```
 
-
-
-
 ## 타입 추론, var
+java 10에서 타입 추론을 지원하는 키워드 'var'가 추가됨. 이전 버전에도 generic, lambda를 사용할 때 타입추론이 관련된다.
+> 타입 추론이란 코드 작성 당시 타입이 정해지지 않았지만, 컴파일러가 그 타입을 유추하는 것이다.
+
+### var
+자바 10부터 추가된 타입 추론을 지원하는 var 키워드. 이 키워드는 local variable이면서 선언과 동시가 initializer가 필수적으로 요구된다.
+```java
+// java 9 이하
+String message = "data";
+// java 10 이상
+var message = "the initializer present on the right-hand side";
+```
+### 주의사항
+- 자바 7에서 다이아몬드 연산자라는 방식이 추가되었는데 자바10에서 나온 var와 함께 사용하게 되면 컴파일 에러가 발생한다.
+```java
+// 컴파일러가 타입을 유추할 수 있는 정보가 없다.
+var messages = new ArrayList<>();
+```
+
+- 가독성에 있어 다른 개발자가 읽을 때 가독성이 좋을지 고민해봐야 한다.
+```java
+public void some() {
+    var message = getMessage();
+}
+
+public Message getMessage() {
+  	// ...
+    return new Message("객체입니다.", MessageType.SOME);
+}
+```
+위에서는 바로 아래 메소드가 있지만, 다른 클래스 파일에 있는 경우 두 군데 이상의 파일을 조회해야 한다.
 
 
 
 # Reference
-[자바 코딩 규칙](https://velog.io/@aidenshin/Java-%EC%9E%90%EB%B0%94-%EC%BD%94%EB%94%A9-%EA%B7%9C%EC%B9%99-Java-Code-Conventions) <br>
-[프로모션, 캐스팅](https://stage-loving-developers.tistory.com/8)
+- [자바 코딩 규칙](https://velog.io/@aidenshin/Java-%EC%9E%90%EB%B0%94-%EC%BD%94%EB%94%A9-%EA%B7%9C%EC%B9%99-Java-Code-Conventions) 
+- [프로모션, 캐스팅](https://stage-loving-developers.tistory.com/8) 
+- [타입추론, var](https://velog.io/@bk_log/Java-%ED%83%80%EC%9E%85-%EC%B6%94%EB%A1%A0)
