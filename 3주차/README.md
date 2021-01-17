@@ -690,8 +690,57 @@ public Message getMessage() {
 위에서는 바로 아래 메소드가 있지만, 다른 클래스 파일에 있는 경우 두 군데 이상의 파일을 조회해야 한다.
 
 
+## 제네릭
+
+제네릭은 클래스 내부에서 사용할 데이터 타입을 외부에서 지정하는 기법을 의미한다. 타입에 대한 정보를 동적으로 넘겨줄 수 있고, 런타임 에러를 컴파일할 때 발견할 수 있도록 하는 느낌이다.
+
+```java
+public class GenericArrayList<T> {
+
+    private Object[] elementData = new Object[5];
+    private int size;
+
+    public void add(T value) {
+        elementData[size++] = value;
+    }
+
+    public T get(int idx) {
+        return (T) elementData[idx];
+    }
+}
+```
+
+<T>로 표현한 것이 제네릭이다. GenericArrayList는 객체를 생성할 때 타입을 지정하면 생성되는 오브젝트 안에서는 T의 위치에 지정한 타입이 대체되어서 들어가는 것처럼 컴파일러가 인식한다. 정확히 말하면, raw타입으로 사용하는데 컴파일러에 의해 필요한 곳에 형변환 코드가 추가된다. (raw타입으로 사용한다. == List<String>을 List로만 쓰는 것.)
+
+```java
+class Test {
+    public static void main(String[] args) {
+        GenericArrayList<Integer> intList = new GenericArrayList<>();
+        intList.add(1);
+        intList.add(2);
+
+        int intValue1 = intList.get(0); // 형변환이 필요없다
+        int intValue2 = intList.get(1); // 형변환이 필요없다
+
+        // String strValue = intList.get(0); // 컴파일에러
+    }
+}
+```
+
+### 한정적 타입 매개변수(bounded type parameter)
+제네릭으로 사용될 타입 파라미터의 범위를 제한할 수 있는 방법이 있다. 이는 아래 Reference의 '제네릭'파트를 참조하자.
+
+### 제네릭을 사용할 수 없는 경우
+> GenericArrayList 를 정의할 때, 다른 부분에는 모두 T 를 사용했는데, 배열을 생성하는 부분에서는 T 를 사용하지 않고 Object 를 사용했고 get() 호출시 T 타입으로 형변환 하는 코드를 삽입했다. <br>
+> GenericArrayList 가 가지는 elementData 도 new T[5] 와 같이 생성하면 get() 메서드에서 (T) 로 형변환 하는 작업을 안해도 될텐데 왜 한걸까? <br?
+> 그 이유는 new 연산자 때문이다. new 연산자는 heap 영역에 충분한 공간이 있는지 확인한 후 메모리를 확보하는 역할을 한다. 충분한 공간이 있는지 확인하려면 타입을 알아야한다. 그런데 컴파일 시점에 타입 T 가 무엇인지 알 수 없기 때문에 new T[5] 와 같이 제네릭으로 배열을 생성할 수는 없다. <br>
+> static 변수에도 제네릭을 사용할 수 없다. static 변수는 인스턴스에 종속되지 않는 클래스변수로써 모든 인스턴스가 공통된 저장공간을 공유하게 되는 변수이다. static 변수에 제네릭을 사용하려면, GenericArrayList<Integer> 에서는 Integer 타입으로, GenericArrayList<String> 에서는 String 타입으로 사용될 수 있어야 하는데 하나의 공유변수가, 생성되는 인스턴스에 따라 타입이 바뀐다는 개념 자체가 말이 안되는 것이다. 그래서 static 변수에는 제네릭을 사용할 수 없다. <br>
+> 하지만, (아래에서 살펴보겠지만) static 메서드에는 제네릭을 사용할 수 있다.
+
+
 
 # Reference
 - [자바 코딩 규칙](https://velog.io/@aidenshin/Java-%EC%9E%90%EB%B0%94-%EC%BD%94%EB%94%A9-%EA%B7%9C%EC%B9%99-Java-Code-Conventions) 
 - [프로모션, 캐스팅](https://stage-loving-developers.tistory.com/8) 
 - [타입추론, var](https://velog.io/@bk_log/Java-%ED%83%80%EC%9E%85-%EC%B6%94%EB%A1%A0)
+- [제네릭](https://yaboong.github.io/java/2019/01/19/java-generics-1/)
