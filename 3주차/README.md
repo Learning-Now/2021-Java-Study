@@ -522,8 +522,55 @@ byte buteValue = (bute) intValue;
 
 
 
-
 ## 배열
+
+동일한 자료형의 데이터를 연속된 공간에 저장하기 위한 자료구조이다. 연관된 데이터를 저장하기 위한 변수의 선언을 줄여주며, 반복문 등을 이용하여 계산과 같은 과정을 쉽게 처리할 수 있다.
+
+### 1차원 배열
+
+- 배열을 선언하고 동시에 요소를 초기화하는 방식(C style)
+```java
+public class ArrayEx01 {
+	public static void main(String[] args) {
+		String[] beer = {"Kloud", "Cass", "Asahi", "Guinness", "Heineken"};
+		    // 인덱스 번호 :   0  ,    1   ,   2   ,     3      ,     4
+		System.out.println(beer[0]); // Kloud
+		System.out.println(beer[1]); // Cass
+		System.out.println(beer[2]); // Asahi
+		System.out.println(beer[3]); // Guinness
+		System.out.println(beer[4]); // Heineken
+	}
+}
+```
+- new를 통해 heap에 생성하는 방식
+```java
+public class ArrayEx03 {
+	public static void main(String[] args) {
+		int[] num = new int[3]; // 크기가 3인 배열 생성
+		num[0] = 10; // 0번 index에 값 할당
+		num[1] = 15; // 1번 index에 값 할당
+		num[2] = 13; // 2번 index에 값 할당
+		for (int i = 0; i < num.length; i++) {
+			System.out.println(num[i]);
+		}
+	}
+}
+```
+
+### 2차원 배열
+2차원 배열의 선언 방법은 아래와 같다.
+```java
+data-type var-name[][] = new data-type[size][size];
+data-type[][] var-name = new data-type[size][size];
+data-type[] var-name[] = new data-type[size][size];
+
+int a[][] = new int[4][5];
+int[][] a = new int[4][5];
+int[] a[] = new int[4][5];
+```
+
+
+
 
 ## 타입 추론, var
 
