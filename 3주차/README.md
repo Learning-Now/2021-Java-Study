@@ -376,7 +376,7 @@ public class ResultObject {
     number = 123;
     String name = "BLINK_ONCE";
 }
-
+```
 
 ## 변수의 스코프(영역)과 라이프타임
 
