@@ -378,7 +378,111 @@ public class ResultObject {
 }
 
 
-## 
+## 변수의 스코프(영역)과 라이프타임
+
+- 변수의 스코프(영역)이란?
+
+변수에 접근하거나 접근할 수 있는 유효 범위/영역이다. 개발자는 자신이 선언한 또는 선언된 변수에 접근할 수 있는 영역에 대해서 이해해야한다. 일반적인 규칙은 변수가 선언된 블록 내에서만 액세스 할 수 있다는 것이다. 블록은 왼쪽 중괄호 {로 시작하고 오른쪽 중괄호 }로 끝난다.
+
+- 변수의 라이프타임이란?
+
+변수가 메모리에서 살아있는 기간
+<br>
+<br>
+
+자바에서 변수의 스코프와 라이프타임은 아래와 같다.
+
+### instance variables
+
+**정의** : 클래스 내부와 모든 메소드 및 블록 외부에서 선언된 변수
+**scope** : 정적 메소드를 제외한 클래스 전체
+**라이프타임** : 객체가 메모리에 남아있을 때까지
+
+- 예시
+```java
+class test{
+
+//여기부터
+
+    int x, y;// instance var
+    static int result;
+    
+    void add(int a, int b){
+        x = a;
+        y = b;
+        int sum = x + y;
+        System.out.println("Sum = " + sum);
+    }
+
+//여기까지
+
+    public static void main(String[] args){
+        Sample obj = new Sample();
+        obj.add(10, 20);
+    }
+}
+```
+
+### class variables
+**정의** : 클래스 내부, 모든 블록 외부에서 선언되고 static으로 표시된 변수
+**scope** : 클래스 전체
+**라이프타임** : 프로그램이 끝날 때까지, 또는 클래스가 메모리에 로드되는 동안
+
+- 예시(result(class variable)의 scope)
+```java
+class test{
+
+//여기부터
+
+    int x, y;// instance var
+    static int result;
+    
+    void add(int a, int b){
+        x = a;
+        y = b;
+        int sum = x + y;
+        System.out.println("Sum = " + sum);
+    }
+    public static void main(String[] args){
+        Sample obj = new Sample();
+        obj.add(10, 20);
+    }
+
+//여기까지
+
+}
+```
+
+### local variables
+
+**정의** : 인스턴스 및 클래스 변수가 아닌 모든 변수
+**scope** : 선언된 블록 내에 있음
+**라이프타임** : 컨트롤이 선언된 블롤을 떠날 때까지
+
+- 예시(a, b(local variables)의 scope)
+```java
+class test{
+    int x, y;// instance var
+    static int result;
+
+//여기부터
+    
+    void add(int a, int b){
+        x = a;
+        y = b;
+        int sum = x + y;
+        System.out.println("Sum = " + sum);
+    }
+
+//여기까지
+
+    public static void main(String[] args){
+        Sample obj = new Sample();
+        obj.add(10, 20);
+    }
+}
+```
+
 
 
 
@@ -387,21 +491,6 @@ public class ResultObject {
 
 ## 타입 추론, var
 
-
-
-
-# 2. 자바 기초
-### 목표
-자바의 primitive 타입, 변수 그리고 배열을 사용하는 방법을 익힌다.
-### 정리할 것
-- primitive 타입 종류와 값의 범위 그리고 기본 값
-- primitive 타입과 레퍼런스 타입
-- 리터럴
-- 변수 선언 및 초기화하는 방법
-- 변수의 스코프와 라이프타임
-- 타입 변환, 캐스팅 그리고 타입 프로모션
-- 1차 및 2차 배열 선언하기
-- 타입 추론, var
 
 
 # Reference
