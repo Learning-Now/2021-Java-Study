@@ -484,6 +484,42 @@ class test{
 ```
 
 
+## 타입변환 (타입 캐스팅, 타입 프로모션)
+자바에서 연산은 동일한 데이터 타입에서 가능하다. 하지만, 서로 다른 데이터 타입끼리 연산이 필요할 때가 있다. 이러경우 변수의 데이터 타입을 바꿔주는 작업이 필요하다. 이것이 데이터 타입 변환, 형변환이다. 형변환에는 크게 자동 형변환(promotion, 묵시적 타입 변환)과 강제 형변환(casting명시적 타입 변환)이 있다. 
+
+### 자동 형변환(promotion)
+프로그램 실행 도중에 자동적으로 형변환이 일어나는 것이다. 프로모션은 작은 메모리 크기의 데이터 타입을 큰 메모리 크기의 데이터 타입으로 변환하는 행위를 말한다.
+- 프로모션 예시
+```java
+byte a = 10;
+itn b = a;// byte 데이터 타입의 변수인 a를 int데이터 타입의 변수인 b에 저장
+```
+
+- 프로모션되는 순서
+
+byte(1) < short(2) < int(4) < long(8) < float(4) < double(8)
+<br>
+long 데이터 타입에서 float데이터 타입으로 프로모션이 가능하다. 표현할 수 있는 값의 범위가 float 더 크기때문이다. 
+
+### 강제 형변환(casting)
+특정 조건을 갖추지 못했지만 형변환을 해야할 경우에 사용한다.
+```java
+int intValue = 1;
+byte byteValue = intValue;
+```
+위와 같은 경우 데이터 값이 1이므로 byte의 데이터 타입 범위 안에 충분히 들어가는 값이다. 하지만 4byte 크기의 정보를 1byte에 넣는 것은 불가능하다. 캐스팅은 아래와 같이 할 수 있다.
+```java
+int intValue = 1;
+byte byteValue = (byte) intValue;
+```
+
+- 주의사항
+```java
+int intValue = 2053464574;
+byte buteValue = (bute) intValue;
+```
+위와 같이 캐스팅하는 값이 데이터 타입 범위를 벗어나게 되면 int 데이터 타입 앞의 3byte 만큼의 데이터를 무시한 채 가져오게 되어 byteValue에는 -2라는 값이 저장된다.
+
 
 
 
@@ -495,3 +531,4 @@ class test{
 
 # Reference
 [자바 코딩 규칙](https://velog.io/@aidenshin/Java-%EC%9E%90%EB%B0%94-%EC%BD%94%EB%94%A9-%EA%B7%9C%EC%B9%99-Java-Code-Conventions) <br>
+[프로모션, 캐스팅](https://stage-loving-developers.tistory.com/8)
