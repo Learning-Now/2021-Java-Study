@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f57adcb4-341d-4610-91ba-3880bcef0abe" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/3주차과제/자바기초.md" beforeDir="false" afterPath="$PROJECT_DIR$/3주차과제/자바기초.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3주차과제/자바코드실습.md" beforeDir="false" afterPath="$PROJECT_DIR$/3주차과제/자바코드실습.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +47,7 @@
       <option name="presentableId" value="Default" />
       <updated>1610777331766</updated>
       <workItem from="1610777338074" duration="11000" />
-      <workItem from="1610934515316" duration="2895000" />
+      <workItem from="1610934515316" duration="3877000" />
     </task>
     <servers />
   </component>
