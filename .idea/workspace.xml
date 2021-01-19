@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f57adcb4-341d-4610-91ba-3880bcef0abe" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3주차과제/자바기초.md" beforeDir="false" afterPath="$PROJECT_DIR$/3주차과제/자바기초.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3주차과제/자바코드실습.md" beforeDir="false" afterPath="$PROJECT_DIR$/3주차과제/자바코드실습.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,19 +24,6 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -48,7 +33,8 @@
       <option name="presentableId" value="Default" />
       <updated>1610777331766</updated>
       <workItem from="1610777338074" duration="11000" />
-      <workItem from="1610934515316" duration="6676000" />
+      <workItem from="1610934515316" duration="9735000" />
+      <workItem from="1611021575506" duration="98000" />
     </task>
     <servers />
   </component>
