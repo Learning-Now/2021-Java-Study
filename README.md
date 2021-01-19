@@ -35,3 +35,15 @@ dustndus8: [https://github.com/BLINK-ONCE/2021-java-study-HW/tree/main/2주차](
 dbswl067:: [https://github.com/dbswl067/2021-java-a/tree/main/2주차 과제](https://github.com/dbswl067/2021-java-a/tree/main/2%EC%A3%BC%EC%B0%A8%20%EA%B3%BC%EC%A0%9C)
 
 ### 3주차
+DongLee99: [https://github.com/Learning-Now/2021-Java-Study/pull/21](https://github.com/Learning-Now/2021-Java-Study/pull/21)
+
+Jeongyun: [https://github.com/Learning-Now/2021-Java-Study/pull/17](https://github.com/Learning-Now/2021-Java-Study/pull/17)
+
+BLINK-ONCE: [https://github.com/Learning-Now/2021-Java-Study/pull/22](https://github.com/Learning-Now/2021-Java-Study/pull/22)
+
+dustndus8: [https://github.com/Learning-Now/2021-Java-Study/pull/20](https://github.com/Learning-Now/2021-Java-Study/pull/20)
+
+dbswl067: [https://github.com/Learning-Now/2021-Java-Study/pull/23](https://github.com/Learning-Now/2021-Java-Study/pull/23)
+
+### 4주차
+
