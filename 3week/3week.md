@@ -78,7 +78,7 @@
 	
     * 클래스 이름은 명사나 명사절로 짓는다.
     ``` java
-    public class sum{
+    public class Sum{
     }
     ```
 * 인터페이스 이름에 명사/형용사 사용
@@ -108,7 +108,10 @@
     public final String POSTAL_CODE_EXPERESSION = "POST";
 * 변수에 소문자 카멜표기법 적용
 	
-    * 이는 위에서 메서드 이름 부분에 예를 들어놨으니 생략 하겠다.
+    * ``` java
+    private int authorized;
+    private String accessToken;
+    ```
 * 임시 변수를 제외 하고는 한글자 금지
 	
     * 메서드 블럭 범위 이상의 생명주기를 가지는 변수에는 1글자로 된 이름 사용 X but 반복된 인덱스나 람다 표현식의 파라미터등의 짧은 범위의 임시 변수에는 사용 가능
@@ -635,6 +638,7 @@ public class ValableScopeExam{
 ![](https://images.velog.io/images/donglee99/post/9b19bc37-ca68-4785-9489-6be1933e74a6/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202021-01-15%20%EC%98%A4%ED%9B%84%202.37.13.png)
 
 * 위 코드를 보면 dong은 static으로 hyun 은 인스턴스 변수로 선언을 하였다 그후 클래스 객체를 2개 선언 한후 d1 클래스에서만 증가를 해줬는데 d2클래스를 출력했을때 static 으로 선언한 값이 증가 한것을 볼수 있다. 이는 static으로 선언된 변수는 모든 인스턴스가 하나의 저장 공간을 공유 하기 때문이다. (나는 보통 cnt 값을 셀때 쓴다)
+* Static 영역에 할당된 메모리는 모든 객체가 공유하여 하나의 멤버를 어디서든지 참조할 수 있는 장점을 가진다. 하지만 이점이 단점이 될때도 있다. 만약 카운터 같은 모든 영역에서 공유하돼 하나만 선언되어야하는 변수가 아니고 각각의 영역에서 다른 메모리 값을 가지며 사용되는 변수에 static 을 선언하면 그 코드는 오답이 될것이다. 따라서 static을 사용할때는 남발하면 안되고 상황에 맞게 고려해가면서 써야한다.
 
 ** 변수의 라이프 타임 **
 * 변수의 메모리가 살아있는 기간이다.
@@ -732,6 +736,48 @@ int[][] arr = {{1, 2, 3}, {4, 5, 6}};
 * 타입 추론은 정적 타이핑을 지원 하는 언어에서 타입이 정해져 있지 않은 변수에 대해 컴파일러가 자동으로 변수의 타입을 추론해 낼수 있도록 하는 기능이다.
 * 타입 추론이 가능 하다 -> 코드량이 줄어든다, 코드의 가독성이 높아진다.
 _예젼에 노드 js 를 공부할때 var 을 정말 많이 봤었었는데 이제 자바10이상부터는 자바에서도 var 사용이 가능하다 한다._
+* 자바 8이 등장 하고부터 람다에서 타입 추론을 할 수 있게 되었다.
+``` java
+	BinaryOperator <Integer> add = (x, y)-> x + y;
+```
+* 제네릭 (Generic)
+	
+    * 제네릭 타입을 사용해 컴파일 과정에서 타입을 체크해 잘못된 타입 사용을 제거한다.
+    ex)
+    
+  ``` java
+    public class TestGeneric<T> {
+    public T sample;
+
+    	public void showYourType()
+    	{
+        		if(sample instanceof Integer)
+            		System.out.println("Integer 타입이군요!!");
+       			else if(sample instanceof String)
+            		System.out.println("String 타입이군요!!");
+    	}
+        }
+  ```
+  위의 TestGeneric클래스의 멤버 변수 sample 은 T라는 타입을 가지는데 이 T는 존재하는 타입이 아니다. T는 나중에 인스턴스 생성시 결정된다.
+  
+  ``` java
+  public class Main{
+    public static void main(String[] args)
+    {
+        TestGeneric<String> stringType = new TestGeneric<String>();
+        TestGeneric<Integer> integerType = new TestGeneric<Integer>();
+
+		stringType.sample = "Hello";
+		integerType.sample = 1;
+
+        stringType.showYourType();
+        integerType.showYourType();
+    }
+}
+```
+```
+위의 코드에서 <> 안에 들어가는 타입에 의해 T의 타입이 결정되는걸 알수있다. 이처럼 인스턴스를 생성시에 타입이 명시되어 형변환이 필요없다. (이는 밑에 나올 var 과는 조금 다른것 같다. var 은 리터럴 값을 파악해 타입을 컴파일시 추론 하는 반면에 위의 제네릭은 사람이 직접 지정을 하는게 내가 생각하는 타입추론과는 조금 다른것 같다)
+
 * 이전 자바에서는 자바의 변수를 선언 할때 변수 타입을 명시해줬었다.
 ``` java
 String str = "Java-Study";
@@ -758,6 +804,7 @@ int var = 1; //가능
     ``` java
     var message = new ArrayList<>(); //불가능
     ```
+    * 그 이유는 <> 연산자 방식을 사용하면 컴파일러가 타입을 유추할수있는 정보가 없기 때문에 var로 타입을 유추 할 수 없게 된다. 
 ---
 > 이번 과제를 하면서 느낀건데 그 동안 자바 컨벤션을 무시하고 코드를 작성하는 경우가 많았던것 같다. 앞으로는 최대한 자바 컨벤션을 지켜가면서 코드를 작성해야겠다.
 
