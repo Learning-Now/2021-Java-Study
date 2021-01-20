@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f57adcb4-341d-4610-91ba-3880bcef0abe" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/4주차과제/CalculatorApplicaion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4주차과제/자바기초.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4주차과제/자바코드실습.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/4주차과제/CalculatorApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/4주차과제/Calculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4주차과제/자바기초.md" beforeDir="false" afterPath="$PROJECT_DIR$/4주차과제/자바기초.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +14,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1n8gqwcxlJrDdLC57uLi7KcGbhd" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -26,19 +25,6 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-  </component>
-  <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -51,7 +37,8 @@
       <workItem from="1610777338074" duration="11000" />
       <workItem from="1610934515316" duration="9735000" />
       <workItem from="1611021575506" duration="98000" />
-      <workItem from="1611021717717" duration="5833000" />
+      <workItem from="1611021717717" duration="6625000" />
+      <workItem from="1611117260291" duration="2146000" />
     </task>
     <servers />
   </component>
@@ -68,5 +55,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
