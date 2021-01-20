@@ -22,6 +22,20 @@
             * [역할](#역할)
             * [메시지](#메시지)
             * [캡슐화](#캡슐화)
+     * [VO(불변 객체)](#VO(불변-객체))
+        	
+* 자바 기초
+	
+    * [산술 연산자](#산술-연산자)
+    * [비트 연산자](#비트-연산자)
+    * [관계 연산자](#관계-연산자)
+    * [논리 연산자](#논리-연산자)
+    * [instanceof](#instanceof)
+    * [assignment(=) operator](#assignment(=)-operator)
+    * [화살표(->) 연산자](#화살표(->)-연산자)
+    * [3항 연산자](#3항-연산자)
+    * [연산자 우선 순위](#연산자-우선-순위)
+    * [(optional) java13, switch 연산자](#(optional)-java13.-switch-연산자)
 
  
 ### 객체 지향의 사실과 오해
@@ -226,6 +240,7 @@ public class BaseObject {
 ```
 
 * 위의 코드는 final과 setter 의 삭제로 불변 객체로 만들어 주었다. 따라서 위 객체의 value 를 변경하기 위해서는 재할당 하는 방법 밖에 없다.
+
 ** 참조 타입이 있는 경우 **
 * 참조 타입이 있는 경우는 final을 사용하고 setter를 작성하지 않는 것으로 불변 객체를 만들수 없다.
 
@@ -280,5 +295,563 @@ public class ArrayObject {
 ---
 #### Reference
 * [java Immutable Object(불변객체)](https://velog.io/@conatuseus/Java-Immutable-Object불변객체)
+
+
+<br>
+<br>
+
+## 자바 기초
 ---
+
+### Goal
+> 자바가 제공하는 다양한 연산자를 학습하자.
+
+* 연산자 : 어떠한 기능을 수행하는 기호
+* 피연산자 : 연산자의 작업 대상( 변수, 상수, 리터럴, 수식)
+
+_ 주의_ : 우선순위가 같은 연산자들은 연산의 진행 방향에 따라 연산순서가 정해짐
+![](https://images.velog.io/images/donglee99/post/68fa0df1-c74b-414f-bcf7-69f4eb341b23/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202021-01-20%20%EC%98%A4%ED%9B%84%208.29.59.png)
+
+---
+
+### 산술 연산자
+
+* 산술 연산자는 가장 많이 사용하는 연산자로 수식 계산에 사용되는 연산자 이다.
+  <table>
+    <tr>
+    <th>구분</th>
+    <th>연산자</th>
+    <th>의미</th>
+    </tr>
+    <tr>
+      <td>
+      </td>
+      <td>
+        +
+      </td>
+      <td>
+        더하기
+      </td>
+    </tr>
+    <tr>
+      <td>
+      </td>
+      <td>
+        -
+      </td>
+      <td>
+        빼기
+      </td>
+    </tr>
+     <tr>
+      <td>
+              산술 연산자
+      </td>
+      <td>
+        *
+      </td>
+      <td>
+        곱하기
+      </td>
+    </tr>
+     <tr>
+      <td>
+      </td>
+      <td>
+        /
+      </td>
+      <td>
+        나누기
+      </td>
+    </tr>
+     <tr>
+      <td>
+      </td>
+      <td>
+        %
+      </td>
+      <td>
+        나머지 값 구하기
+      </td>
+    </tr>
+  </table>
+  
+🏳️ int 보다 크기가 작은 타입은 int로 변환
+* byte, char, short -> int
+
+🏳️ 피연산자 중 표현범위가 큰 타입으로 형변환
+  * byte + short -> int + int = int
+  * char + int -> int + int = int
+
+
+1. 사칙연산자 (+, -, /, *)
+	
+     ```java
+    int a = 1000000;
+    int b = 1000000;
+    long c = a * b;
+    System.out.println(c);
+   	// -727379968
+    ```
+    * 이는 int 의 연산이 진행된후 long으로 자동형변환이 되면서 쓰레기 값이 대입되어서 그렇다. 바른 결과를 얻을려면 long형에서 연산을 진행 했어야 한다.
+    ```java
+    
+    char c = 'a' + 1;
+    System.out.println(c);
+   	// b
+    ```
+    * 위 코드는 a가 아스키 코드 값으로 변환되어 +1 연산을 수행후 다시 char 로 변환이(컴파일러에 의한 자동변환) 진행되어 값이 b 가 나오게 된다. 하지만 만약 
+    ```java
+    char c = 'a'
+    char c1 = c + 1;
+    System.out.println(c);
+  	// 오류
+    ```
+    * 이처럼 대입후 연산을 하게 되면 컴파일러가 미리 계산을 할수 없게 되어 오류가 발생하게 된다.
+2. 나머지 연산자 (%)
+	
+    * 나머지 연산자는 왼쪽의 피연산자들을 오른쪽 피연산자로 나눈후 나머지 값을 리턴하는 연산자 이다. (주로 홀수, 짝수, 배수검사에 사용)
+    ```java
+    int a = 5;
+    int b = 3;
+    int c = a % b;
+    System.out.println(c);
+   	// 2
+    ```
+    
+3. 쉬프트 연산자 ( <<. >>, >>>)
+
+   * 쉬프트 연산자는 정수형 변수에만 사용 가능하다. 피연산자의 각 자리를 오른쪽 또는 왼쪽으로 이동한다 해서 쉬프트 연산자로 이름이 붙여졌다.
+   * ```<<``` 연산자 : 피연산자의 부호에 상관없이 자리를 왼쪽으로 이동시키면서 빈칸을 0 으로 채움
+   * ```>>``` 연산자 : 오른쪽으로 이동 시키기 때문에 음수인 경우 부호를 유지 시켜주기 위해서 음수인 경우 빈자리 1로 채움
+   * ``` >>> ``` 연산자 : 부호에 상관없이 항상 0 으로 빈자리를 채움
+ _ 모두 두개의 피연산자를 가짐 ( 이항연산자 )_
+
+
+
+---
+
+### 비트 연산자
+* 비트 연산자 (&, |, ^)
+	
+    * 비트 연산자는 말 그대로 이진 비트 연산을 수행한다.
+    * 실수형 float, double 을 제외한 모든 기본형에 사용이 가능하다.
+* OR(|)연산자
+	
+    * 피연산자 중 어느 한쪽이 1 이면 결과는 1이다.
+* AND(&)연산자
+	
+    * 피연산자 둘 모두 1이여야 결과가 1이다.
+* XOR(^)연산자
+	
+    * 피연산자가 서로 다를 경우에 결과 1이다.
+    <table>
+    <tr>
+      <th>
+        x
+      </th>
+      <th>
+        y
+      </th>
+      <th>
+        x|y
+      </th>
+      <th>
+        x&y
+      </th>
+      <th>
+        x^y
+      </th>
+    </tr>
+    <tr>
+      <td>
+        1
+      </td>
+      <td>
+        1
+      </td>
+      <td>
+        1
+      </td>
+      <td>
+        1
+      </td>
+      <td>
+        0
+      </td>
+    </tr>
+     <tr>
+      <td>
+        1
+      </td>
+      <td>
+        0
+      </td>
+      <td>
+        1
+      </td>
+      <td>
+        0
+      </td>
+       <td>
+         1
+       </td>
+    </tr>
+     <tr>
+      <td>
+        0
+      </td>
+      <td>
+        1
+      </td>
+      <td>
+        1
+      </td>
+      <td>
+        0
+      </td>
+       <td>
+         1
+       </td>
+    </tr>
+     <tr>
+      <td>
+        0
+      </td>
+      <td>
+        0
+      </td>
+      <td>
+        0
+      </td>
+      <td>
+        0
+      </td>
+       <td>
+         0
+       </td>
+    </tr>
+   </table>
+   
+* 이 표를 보면 좀더 이해가 편하다.
+![](https://images.velog.io/images/donglee99/post/7fb466eb-67a2-4311-8768-05d7dd1d0e73/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202021-01-20%20%EC%98%A4%ED%9B%84%209.10.50.png)
+
+---
+
+### 관계 연산자
+* 관계 연산자 ( >, <, >=, <=, ==, != )
+	
+    * 비교 연산자라고도 부르며 부등호라 생각하면 쉽다.
+    * 관계 연산자의 결과는 boolean 값으로 반환되며 나는 산술연산자보다 관계 연산자를 더 자주 사용하는것 같다. (주로 조건문과 함께 많이 사용한다)
+    *
+    ![](https://images.velog.io/images/donglee99/post/dcd6a3c2-5452-4cd3-ad9c-c68c7710567a/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202021-01-20%20%EC%98%A4%ED%9B%84%209.17.36.png)
+    * ex) 
+    ```java
+    int a = 3;
+    int b = 4;
+    if ( a < b ) {
+     System.out.println(true);
+     } else {
+     System.out.println(false);
+     }
+     // true
+    ``	
+
+---
+
+### 논리 연산자
+
+* 논리 연산자 (&&, ||) 
+	
+    * 논리연산자는 피연산자로 boolean 형 또는 boolean 형 값을 결과로 하는 조건식만을 허용한다.
+* OR(||)연산자 
+	
+    * 피연산자중 한쪽이 true 면 true 이다
+* AND(&&)연산자
+	
+   * 피연산자 두 쪽 모두 true 여야 true   
+&nbsp;_1학년때부터 정말 많이 봐온 연산자지만 아직도 가끔 헷갈린다_
+ <table>
+    <tr>
+      <th>
+        x
+      </th>
+      <th>
+        y
+      </th>
+      <th>
+        x||y
+      </th>
+      <th>
+        x&&y
+      </th>
+    </tr>
+    <tr>
+      <td>
+        true
+      </td>
+      <td>
+        true
+      </td>
+      <td>
+        true
+      </td>
+      <td>
+        true
+      </td>
+    </tr>
+     <tr>
+      <td>
+        true
+      </td>
+      <td>
+        false
+      </td>
+      <td>
+        true
+      </td>
+      <td>
+        false
+      </td>
+    </tr>
+     <tr>
+      <td>
+        false
+      </td>
+      <td>
+        true
+      </td>
+      <td>
+        false
+      </td>
+      <td>
+        true
+      </td>
+    </tr>
+     <tr>
+      <td>
+        false
+      </td>
+      <td>
+        false
+      </td>
+      <td>
+        false
+      </td>
+      <td>
+        false
+      </td>
+    </tr>
+   </table>
+* ex) 
+```java
+    char x = 'j';
+    if ( (x >= 'a' && x<= 'z') {
+    	System.out.println("유효");
+    } else {
+    	System.out.println("유효X");
+    }
+    // 유효
+    
+```
+
+---
+
+### instanceof
+
+* instanceof( 참조 연산자 )
+	
+    * 참조변수가 참조하고 있는 인스턴스의 타입을 알아보기 위해(간단하게 객체의 타입을 알아보기 위한) 주로 사용하며 조건문과 함께 사용된다. (주로 부모 객체인지 자식 객체인지 확인할때 쓴다)
+    * instanceof 의 왼쪽 피연산자로는 참조변수, 오른쪽 피연산자에는 타입(클래스명)이 피연산자로 위치한다. 이때 결과 값은 boolean값으로 반환된다. (true = 참조변수(왼쪽)가 검사한 타입(오른쪽)으로 형변환이 가능하다는 뜻)
+    * Ex)
+    ```java
+    class A{}
+    class B extends A{}
+    class instanceofEx01 {
+    
+      public static void main(String[] args) {
+          A a = new A();
+          B b = new B();
+
+          System.out.println("a instanceof A : " + (a instanceof A));
+          System.out.println("b instanceof A : " + (b instanceof A));
+          System.out.println("a instanceof B : " + (a instanceof B));
+          System.out.println("b instanceof B : " + (b instanceof B));
+      }
+   }
+   // a : 부모
+   // b : 자식
+   // true
+   // true
+   // false
+   // true
+   
+   ```
+    
+
+---
+
+
+### assignment(=) operator
+* 대입 연산자 (assignment operator)
+	
+    * 대입 연산자는 변수에 값을 할당할때 사용되는 이항 연산자 이다. 피연산자들의 결합 방향은 오른쪽에서 원쪽이다.
+    <table>
+  	<tr>
+      <th>
+        대입 연산자
+      </th>
+      <th>
+        설명
+      </th>
+    </tr>
+  	<tr>
+      <td>
+        =
+      </td>
+      <td>
+        왼쪽의 피연산자에 오른쪽 피연산자 대입
+      </td>
+    </tr>
+    <tr>
+        <td>
+          +=
+        </td>
+        <td>
+          왼쪽의 피연산자에 오른쪽의 피연산자를 더한후, 그 결과 값을 왼쪽의 피연산자를 대입
+        </td>
+      </tr>
+    <tr>
+        <td>
+          -=
+      </td>
+        <td>
+          왼쪽의 피연산자에 오른쪽의 피연산자를 뺀후, 그 결과 값을 왼쪽의 피연산자를 대입
+        </td>
+    </tr>
+    <tr>
+        <td>
+          *=
+        </td>
+        <td>
+          왼쪽의 피연산자에 오른쪽의 피연산자를 곱한후, 그 결과 값을 왼쪽의 피연산자를 대입
+        </td>
+    </tr>
+  <tr>
+        <td>
+          /=
+        </td>
+        <td>
+          왼쪽의 피연산자에 오른쪽의 피연산자를 나눈후, 그 결과 값을 왼쪽의 피연산자를 대입
+        </td>
+    </tr>
+  <tr>
+        <td>
+          %=
+        </td>
+        <td>
+          왼쪽의 피연산자에 오른쪽의 피연산자를 나눈후, 그 나머지 값을 왼쪽의 피연산자를 대입
+        </td>
+    </tr>
+  <tr>
+        <td>
+          &=
+        </td>
+        <td>
+          왼쪽의 피연산자에 오른쪽의 피연산자와 비트 & 연산후, 그 결과 값을 왼쪽의 피연산자를 대입
+        </td>
+    </tr>
+  <tr>
+        <td>
+          |=
+        </td>
+        <td>
+          왼쪽의 피연산자에 오른쪽의 피연산자와 |연산후, 그 결과 값을 왼쪽의 피연산자를 대입
+        </td>
+    </tr>
+  <tr>
+        <td>
+          ^=
+        </td>
+        <td>
+          왼쪽의 피연산자에 오른쪽의 피연산자와 ^연산후, 그 결과 값을 왼쪽의 피연산자를 대입
+        </td>
+    </tr>
+  <tr>
+        <td>
+          <<=
+        </td>
+        <td>
+          왼쪽의 피연산자에 오른쪽의 피연산자만큼 왼쪽 시프트 후, 그 결과 값을 왼쪽의 피연산자를 대입
+        </td>
+    </tr>
+  <tr>
+        <td>
+          >>=
+        </td>
+        <td>
+          왼쪽의 피연산자에 오른쪽의 피연산자만큼 부호 유지 오른쪽 시프트후, 그 결과 값을 왼쪽의 피연산자를 대입
+        </td>
+    </tr>
+  <tr>
+        <td>
+          >>>=
+        </td>
+        <td>
+          왼쪽의 피연산자에 오른쪽의 피연산자만큼 부호에 상관없이 오른쪽 시프트 후, 그 결과 값을 왼쪽의 피연산자를 대입
+        </td>
+    </tr>
+  	</table>
+
+---
+
+
+### 화살표(->) 연산자
+> 람다함수란? 프로그래밍 언어에서 사용되는 개념으로 익명함수를 지칭한다. 람다 대수는 이름이 필요가 없다.
+
+** 익명 클래스란? **
+* 익명 클래스는 클래스의 instantiation과 동시에 클래스를 정의하는 클래스를 의미하며 특정 클래스가 여러번 호출 되지 않거나, 클래스 내부에 필드나 여러개의 메소드를 정의할 필요가 있을때 익명 클래스로 정의해 사용한다.
+* 익명 클래스의 특징으로는 new 를 사용하고 instantiation시 파라미터가 없다.
+
+* 화살표 연산자는, 익명함수라고 불리는 람다식의 등장으로 사용되는 연산자다.(자바 8 버전부터 사용한다 한다)
+* 기본 형태 
+```(매개변수목록) -> { 함수몸체 }```
+* ex) 
+```java
+        // Thread - traditional
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("Hello World.");
+            }
+        }).start();
+	
+```
+	를 람다식으로 변형 하면
+```java
+// Thread - Lambda Expression
+new Thread(()->{
+	System.out.println("Hello World.");
+}).start();
+```
+	처럼 변형시킬수 있다. 이 처럼 람다식을 사용하게 되면 코드의 간결성이 높아지고 가독성이 높아지게 된다.
+
+---
+
+
+### 3항 연산자
+
+---
+
+
+
+### (optional) java 13. switch 연산자
+
+---
+
+### Reference
+* [세바의 코딩 교실](https://programmer-seva.tistory.com/9?category=615256)
+* [문돌이의 it](https://improver.tistory.com/140)
+
+
 
