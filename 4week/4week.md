@@ -139,3 +139,146 @@ _ 그래서 객체 지향은?_
 * [객체지향의 사실과 오해](https://jongmin92.github.io/2019/02/10/Programming/object_oriented_facts_and_misunderstandings/)
 * [객체지향의 사실과 오해 정리](https://jheloper.github.io/2020/02/object-oriented-facts-and-misunderstandings-01/)
 * [TIL/객체지향의 사실과 오해](https://github.com/cheese10yun/TIL/blob/master/OOP/객체지향의사실과오해.md#협력)
+---
+### VO(불변 객체)
+
+> Immutable Object란? 객체 지향 프로그래밍에서 불변 객체는 생성후 그 상태를 바꿀수 없는 객체를 의미한다. 당연히 반대인 가변 객체도 있다. 가변 객체로 생성후 불변객체로의 변환도 가능하다. 객체의 전체가 불변인 경우도 있고, C++에서 Const 데이터 멤버 처럼 일부 속성만 불변인 경우도 있다. 또 경우에 따라서는 내부 속성이 변화 해도 외부에서 그 객체의 상태가 변하기 않는다고 보이면 불변 객체로 보기도 한다. 불변 객체를 사용시 복제나 비교를 위한 조작을 단순화 할수 있으며, 성능 개선에 도움을 준다. 하지만 객체가 변경이 가능한 데이터를 많이 가지고 있다면 오히려 부적적할 경우가 있다.
+
+#### 자바에서의 Immutable Class 
+* 자바에서의 Immutable Class 는 String, Boolean, Integer, Float, Long 등등이 있다. 이 클래스들은 Heap 영역에서 변경이 불가능 한거지 재할당을 못하는 것은 아니다.
+``` java
+String str = "abc";
+str = "cba";
+```
+위 코드 처럼 재할당이 가능하다. = str 이 처음에 "abc" 를 참조했는데 이 값이 "cba" 로 바뀌는 것이아니라 "cba"라는 새로운 객체가 생기고 그 객체를 str 이 재참조 하는것이다. 이때 "abc" 는 아무도 참조를 하고있지 않게 된다.
+
+_그렇다면 계속 str에 재할당을 한다면 객체가 생성된채로 낭비가 된다는 것인데 이는 어떻게 처리하는게 옳은 방법일까?_
+
+* String vs String Builder
+	
+    * String Builder 는 String 과 다르게 mutable 하기 때문에 변경을 하더라고 새로운 객체를 만들지 않고 기존 할당된 값을 수정 한다. 즉 문자열 변경과 연산을 하는 경우 기존의 버퍼 크기를 늘리거나 줄이면서 유연한 동작이 가능하게 된다.
+
+
+* 불변 클래스의 예
+``` java
+class ImmutableClass {
+	private final int age;
+    private final String name;
+    
+    public ImmutableClass(int age, String name) {
+    	this.age = age;
+        this.name = name;
+    }
+}
+
+```
+위의 코드는 외부에서 수정이 불가능한 불변 객체가 된다.
+불변 객체가 된 가장 큰이유는 멤버 변수를 private final로 선언하고 setter를 구현하지 않았기 때문이다.
+
+
+``` java
+class MutableClass {
+	public  int age;
+    public  String name;
+    
+    public MutableClass(int age, String name) {
+    	this.age = age;
+        this.name = name;
+    }
+}
+
+```
+위 코드는 외부에서 수정이 가능하므로 불변 객체가 X
+
+#### Immutable Object 만들기
+
+* Immutable Object 를 만들때 기본적으로는 필드에 final을 사용하고 Setter를 구현 하지않는다.
+이는 불변객체의 필드가 모두 원시 타입일 경우에만 가능하고, 참조 타입일 경우엔 추가적인 작업이 필요하다.
+
+** 원시타입만 있는 경우 **
+``` java
+public class BaseObject {
+    private int value;
+    
+    public BaseObject(final int value) {
+    	this.value = value;
+    }
+    
+    public void setValue(int new Value) {
+    	this.value = newValue;
+    }
+}
+
+```
+* 위의 객체는 불변 객체가 아니다 setter 도 존재하고 필드도 final로 선언되어있지 않다.
+필드에 원시 타입만 있으므로 이는 final 키워드로 불변 객체로 만들수 있다.
+
+``` java
+public class BaseObject {
+    private final int value;
+    
+    public BaseObject(final int value) {
+    	this.value = value;
+    }
+
+}
+
+```
+
+* 위의 코드는 final과 setter 의 삭제로 불변 객체로 만들어 주었다. 따라서 위 객체의 value 를 변경하기 위해서는 재할당 하는 방법 밖에 없다.
+** 참조 타입이 있는 경우 **
+* 참조 타입이 있는 경우는 final을 사용하고 setter를 작성하지 않는 것으로 불변 객체를 만들수 없다.
+
+``` java
+public class Animal {
+    private final Age age;
+    
+    public Animal(final Age age) {
+    	this.age = age;
+    }
+    
+    public Age getAge() {
+    	return age;
+    }
+}
+class Age {
+    
+    private int value;
+
+    public Age(final int value) {
+        this.value = value;
+    }
+
+    public void setValue(final int value) {
+        this.value = value;
+    }
+    
+    public int getValue() {
+    	return value;
+    }
+}
+
+```
+* 위 Animal 클래스는 final 을 사용하고 Setter 를 구현하지 않았지만 불변 객체가 아니다 그이유는 클래스 필드인 Age 값이 변경이 가능하기 때문이다. 따라서 Animal 클래스가 불변 객체가 될려면 Age 클래스도 불변 객체가 되어야 한다. 즉 참조 변수도 불변 객체 여야 한다.
+** Array 경우 **
+```java
+public class ArrayObject {
+
+    private final int[] array;
+
+    public ArrayObject(final int[] array) {
+        this.array = Arrays.copyOf(array,array.length);
+    }
+
+
+    public int[] getArray() {
+        return (array == null) ? null : array.clone();
+    }
+}
+```
+* 배열의 경우 생성자에서 배열을 받아 copy해서 저장 했고 getter를 clone 으로 반환하게 하면 불변객체로 만들수있다. (배열을 그대로 참조 or 그대로 반환시 내부 값이 변경될수도있다.)
+---
+#### Reference
+* [java Immutable Object(불변객체)](https://velog.io/@conatuseus/Java-Immutable-Object불변객체)
+---
+
