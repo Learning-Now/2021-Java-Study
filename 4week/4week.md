@@ -841,11 +841,60 @@ new Thread(()->{
 
 ### 3항 연산자
 
+* 삼항 연산자 = 조건 연산자
+  ```java
+if () {
+    
+  } else if {
+            
+  }
+    
+  ```
+  * 위 코드 처럼 if 문을 사용하게 되면 코드가 길어지는 경우가 많다. 코드가 길어지게 되면 가독성이 떨어지게 되고 결국 이해하기 힘들어지는 단점이 생기게 된다. 이를 해결하기 위해 삼항연산자를 사용해 보자. ( _개인적으로 삼항연산자를 별로 접해보지 못해서 차라리 코드가 길면 길지 삼항연산자로 보면 더 이해가 안간다_ )
+  * 기본 형태 ```(boolean) ? c(true일경우) : d(false일경우)```
+  * ex) 
+  ```java
+ 	int a = 1;
+    int b= (a == 1) ? 1 : 0;
+    // a가 1일 경우 1반환 false 일 경우 0 을 b 에 대입;
+ ```
+ == 
+ ```java
+ int a = 1;
+ int b = 0;
+ if ( a == 1) {
+ 	b = 1;
+ } else {
+ 	b = 0;
+ }
+ ```
+
 ---
 
 
 
 ### (optional) java 13. switch 연산자
+* switch 연산자
+	
+    * 스위치 연산자라 하면 기존의 자바 문법의 switch 를 생각 할것이다. 
+    * 기존의 스위치문은 break 를 걸지 않으면 자신이 속한 case 를 진행후 스위치 문을 탈출 하지 않고 다음 case 를 거치게 된다.
+    ```java
+    switch (day) {
+    	case Monday:
+        	break;
+        case Friday:
+        case Sunday:
+    }
+    ```
+    이를 막기위해서 java13 에서 부터는 화살표 연산자가 추가 되면서
+    ```java
+    switch (day) {
+    	case Monday ->  numDay = 1: 
+        case Friday -> numDay =2:
+        case Sunday -> numDay =3:
+    }
+    ```
+    case 의 label 이 매칭이 되면 -> 이후 코드를 실행하고 switch문을 탈출하게 된다.
 
 ---
 
