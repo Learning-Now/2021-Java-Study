@@ -18,7 +18,7 @@
 - 협업에 방해되는 요인이 있다면, 구성원 또는 당사자와 공유하고 정정될 수 있도록 초기에 노력하는 것이 중요하다. 단, 특정 구성원이 다른 구성원 앞에서 당황스러움을 느끼게 해서는 안 된다.
 
 
-## 역할
+## 역할, 책임, 협력(Role, Responsibility, collaboration)
 
 ### 역할
 - 객체가 어떤 특정한 협력 안에서 수행하는 책임의 집합을 역할이라 한다.
@@ -84,4 +84,5 @@
 
 
 # Reference
-- [역할, 책임, 협력](https://velog.io/@ljinsk3/%EC%97%AD%ED%95%A0-%EC%B1%85%EC%9E%84-%ED%98%91%EB%A0%A5)
+- [역할, 책임, 협력 1](https://velog.io/@ljinsk3/%EC%97%AD%ED%95%A0-%EC%B1%85%EC%9E%84-%ED%98%91%EB%A0%A5)
+- [역할, 책임, 협력 2](https://namget.tistory.com/entry/%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8-%EC%97%AD%ED%95%A0-%EC%B1%85%EC%9E%84-%ED%98%91%EB%A0%A5)
