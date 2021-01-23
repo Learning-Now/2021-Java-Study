@@ -87,7 +87,69 @@
 개체의 내부 구현에 초점을 맞춘 설계 방법을 데이터 주도 설계라 부르기도 했다. 캡슐화를 위반하지 않도록 구현에 대한 결정을 뒤로 미루면서 객체의 행위를 고려하기 위해서는 항상 협력이라는 문맥 안에서 객체를 생각해야 한다.(얻고 제공하는 것)
 
 
+## DTO(Data Transfer Object)
+데이터가 포함된 객체를 한 시스템에서 다른 시스템으로 전달하는 작업을 처리하는 객체이다. (레이어 간의 통신용도로 오가는 객체를 DTO라 하고, 특정한 비즈니스 값을 담는 객체를 VO라 한다.)
 
+
+데이터를 오브젝트로 변환하는 객체이다.(주체가 누구인가를 아는 것이 중요하다) 
+
+DTO에서 Object는 우리가 만드는 DTO클래스이다. 아래는 PersonDTO 예시이다.
+```java
+class PersonDTO
+    private String name;
+    private int age;
+
+    public void setName(String name){
+        this.name = name;
+    }
+
+    public String getName(){
+        return this.name;
+    }
+
+    public void setAge(int age){
+        this.age = age;
+    }
+
+    public int getAge(){
+        return this.age;
+    }
+}
+```
+
+위 클래스에는 getter와 setter(name, age필드에 데이터를 읽고 쓰는 역할)가 존재한다. getter와 setter에서 get과 set이후에 나오는 단어(혹은 단어들)을 property라고 해보자. 즉, 위 클래스에서 name과 age를 property라 가정하는 것이다. 
+
+여기서 property는 멤버변수 name, age로 결정 되는 것이 아닌 getter, setter에서의 name과 age이다. 멤버변수의 변수명은 아무렇게나 지어도 영향이 없고 getter, setter로 property를 표현한다는 것이다. <br>
+
+자바는 다양한 프레임 워크에서 데이터 자동화 처리를 위해 리플렉션 기법을 사용한다. 데이터 자동화 처리에서 가장 중요한 것은 표준규격이다. 예로, 위 클래스 DTO에서 property가 name, age라면 name, age의 키 값으로 들어온 데이터는 리플렉션 기법으로 setter를 실행시켜 데이터를 넣을 수 있다. 
+
+우리가 setter를 요청하는 것이 아닌, 우리 눈에 보이지 않는 프레임워크단에서 setter가 실행된다. 데이터가 자동으로 클래스화가 되기 때문에 layer간에 데이터를 넘길 때 DTO를 사용하면 편하다.
+
+예로, form에서 name필드 값을 property에 맞춰서 값을 다른 페이지로 넘겼을 때, 값을 받아야할 페이지에서는 값을 하나씩 일일이 받는 것이 아니라 name 속성의 이름과 매칭 되는 property에 자동적으로 DTO가 인스턴스화 되어 PersonDTO를 자료형으로 값을 받을 수 있다는 것이다. 즉, key & value로 존재하는 데이터는 자동화처리된 DTO로 변환되어 우리는 손쉽게 데이터가 세팅된 오브젝트를 받을 수 있다. 
+
+## VO(Value Object)
+- 필요성: network traffic 감소
+- 장점: 비 서버 측 클라이언트도 네트워크 오버헤드 없이 영속성 데이터에 엑세스 할 수 있다. 데이터 전달을 위해 가장 효율적인 방법이다.
+- 단점: 클래스의 선언을 위해 많은 코드가 필요하다. 따라서 파일 수가 많아지고 관리도 힘들다.
+
+
+간단히 말하면 값을 위해 쓴다. 자바는 값 타입을 표현하기 위해 불변 클래스를 만들어 사용한다. (불변 클래스는 readOnly 특징을 가진다. 예로, String, Integer, Color 클래스가 있다.)  이런 클래스는 중간에 값을 바꿀 수 없고 새로 만들어야 한다. (Color클래스의 경우 Red라는 값을 표현하기 위해 Color.RED처럼 호출했을 때 값을 표현하기 위해 getter 기능만이 존재한다.)
+
+
+## VO와 DTO의 비교
+DTO는 메소드 호출 횟수를 줄이기 위한 데이터를 담고 있는 것이고, VO는 값이 같으면 동일 오브젝트라고 볼 수 있는 것이라고 보통 표현한다.
+
+```java
+DTO a = new DTO(1);
+DTO b = new DTO(1);
+// a != b
+```
+
+```java
+VO a = VO(1);
+VO b = VO(1);
+// a == b
+```
 
 
 
@@ -116,3 +178,5 @@
 # Reference
 - [역할, 책임, 협력 1](https://velog.io/@ljinsk3/%EC%97%AD%ED%95%A0-%EC%B1%85%EC%9E%84-%ED%98%91%EB%A0%A5)
 - [역할, 책임, 협력 2](https://namget.tistory.com/entry/%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8-%EC%97%AD%ED%95%A0-%EC%B1%85%EC%9E%84-%ED%98%91%EB%A0%A5)
+- [DTO와 VO란?](https://mommoo.tistory.com/61)
+- [DTO, VO 차이점](https://itmore.tistory.com/entry/%EC%9E%90%EB%B0%94-VO-DTO-%EC%B0%A8%EC%9D%B4%EC%A0%90%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-%EB%B0%A9%EC%8B%9D%EC%9D%B4-%EA%B0%99%EB%8B%A4%EA%B3%A0-%EB%98%91%EA%B0%99%EB%8B%A4%EA%B3%A0-%EC%83%9D%EA%B0%81%ED%95%98%EC%A7%80-%EB%A7%90%EC%9E%90)
