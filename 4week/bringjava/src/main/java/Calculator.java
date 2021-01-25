@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 
-public class Calculator {
+class Cal {
 
 
     public BigDecimal add(BigDecimal first, String second) {
@@ -42,7 +42,7 @@ public class Calculator {
             throw new IllegalArgumentException("잘못된 입력 입니다.");
         }
     }
-    public BigDecimal calculateSplitedString(String[] str) {
+    public void calculateStart(String[] str) {
         try {
             BigDecimal result = new BigDecimal(str[0]);
             if (str.length % 2 == 0) {
@@ -51,7 +51,7 @@ public class Calculator {
             for (int i = 0; i < str.length - 2; i += 2) {
                 result = cal(result, str[i + 2], str[i + 1].charAt(0));
             }
-            return result;
+            System.out.println(result);
         } catch (Exception e) {
             throw new IllegalArgumentException("잘못된 입력 입니다.");
         }
@@ -74,8 +74,10 @@ public class Calculator {
         }
         throw new IllegalArgumentException("잘못된 입력 입니다.");
     }
+}
+public class Calculator {
     public static void main(String[] args) throws IOException {
-        Calculator cal = new Calculator();
-        System.out.println(cal.calculateSplitedString(cal.input()));
+        Cal cal1 = new Cal();
+        cal1.calculateStart(cal1.input());
     }
 }
