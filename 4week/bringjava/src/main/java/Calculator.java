@@ -36,6 +36,13 @@ class Cal {
         try {
             BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
             String str = bf.readLine();
+            return split(str);
+        } catch (Exception e) {
+            throw new IllegalArgumentException("잘못된 입력 입니다.");
+        }
+    }
+    public String [] split(String str) throws IOException {
+        try {
             String arr[] = str.split(" ");
             return arr;
         } catch (Exception e) {
@@ -51,12 +58,15 @@ class Cal {
             for (int i = 0; i < str.length - 2; i += 2) {
                 result = cal(result, str[i + 2], str[i + 1].charAt(0));
             }
-            System.out.println(result);
+            print(result);
         } catch (Exception e) {
             throw new IllegalArgumentException("잘못된 입력 입니다.");
         }
 
 
+    }
+    public void print(BigDecimal result) {
+        System.out.println(result);
     }
 
     public BigDecimal cal(BigDecimal first, String second, char operator) {
