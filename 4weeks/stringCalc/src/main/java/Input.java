@@ -7,14 +7,15 @@ public class Input {
 
     public void inputFormula() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        arrayFormula = br.readLine().split(" ");
+        this.arrayFormula = br.readLine().split(" ");
         for (int i = 1; i < arrayFormula.length; i += 2) {
-            if (isElementInt(arrayFormula[i - 1]) == false || isElementInt(arrayFormula[i + 1])) {
+            if (isElementInt(arrayFormula[i - 1]) == false || isElementInt(arrayFormula[i + 1]) == false) {
                 break;
             }
         }
     }
 
+    // 숫자가 들어가는 부분에 숫자가 들어갔는지 확인
     private boolean isElementInt(String str) {
         try{
             Integer.parseInt(str);
