@@ -16,8 +16,8 @@ public class Input {
             }
         }
         if (isComputable) {
-            Performer performer = new Performer();
-            performer.setFormula(arrayFormula);
+            Performer performer = new Performer(arrayFormula);
+            performer.performCal();
         }
     }
 
