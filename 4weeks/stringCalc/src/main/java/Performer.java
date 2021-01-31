@@ -22,8 +22,8 @@ public class Performer {
                         Double.parseDouble(formula[operator + 1]));
             }
             if (formula[operator].equals("/")) {
-                result = CalculateNum.divNum(Double.parseDouble(formula[operator - 1]),
-                        Double.parseDouble(formula[operator + 1]));
+                result = CalculateNum.divNum(Integer.parseInt(formula[operator - 1]),
+                        Integer.parseInt(formula[operator + 1]));
             }
             formula[operator + 1] = Double.toString(result);// 연산자 1개, 피연산자 2개가 아닐경우 연산을 계속 진행
         }

@@ -11,10 +11,13 @@ public class CalculateNum {
         return a * b;
     }
 
-    public static double divNum(double a, double b) {
-        if (b == 0) {
-
+    public static double divNum(int a, int b) {
+        try {
+            return a / b;
         }
-        return (int)(a / b);
+        catch(ArithmeticException e){// 0으로 나눌 경우
+            System.out.println("0으로 나눌 수 없습니다.");
+            return 0;
+        }
     }
 }
