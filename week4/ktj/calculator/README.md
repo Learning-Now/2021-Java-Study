@@ -1,0 +1,65 @@
+# 문자열 계산기
+요구사항
+```java
+사용자가 입력한 문자열 값에 따라 사칙연산을 수행 할 수 있는 계산기를 구현해야 한다.
+문자열 계산기는 사칙연산의 계산 우선순위가 아닌 입력 값에 따라 계산 순서가 결정된다.
+즉, 수학에서는 곱셈, 나눗셈이 덧셈, 뺄셈 보다 먼저 계산해야 하지만 이를 무시한다.
+```
+
+# 입출력 예시
+```java
+1 + 2 + 3
+게산 값 : 6
+
+1 + -2 
+게산 값 : -1
+
+1 * -2 * -2
+게산 값 : 4
+
+```
+
+# 예러 예시
+```java
+1 - - 2
+Exception in thread "main" java.lang.NumberFormatException: 숫자가 아닌 문자가 입력되었습니다.
+
+a * a
+Exception in thread "main" java.lang.NumberFormatException: 숫자가 아닌 문자가 입력되었습니다.
+
+1 - - 2
+Exception in thread "main" java.lang.NumberFormatException: 숫자가 아닌 문자가 입력되었습니다.
+```
+
+# 🎱프로그래밍 요구사항
+
+- 자바 코드 컨벤션을 지키면서 프로그래밍한다.
+- 기본적으로 Google Java Style Guide을 원칙으로 한다.
+- 단, 들여쓰기는 '2 spaces'가 아닌 '4 spaces'로 한다.
+- indent(인덴트, 들여쓰기) depth를 3이 넘지 않도록 구현한다. 2까지만 허용한다.
+    - 예를 들어 while문 안에 if문이 있으면 들여쓰기는 2이다.
+- 힌트: indent(인덴트, 들여쓰기) depth를 줄이는 좋은 방법은 함수(또는 메소드)를 분리하면 된다.
+- 3항 연산자를 쓰지 않는다.
+- 함수(또는 메소드)가 한 가지 일만 하도록 최대한 작게 만들어라.
+- System.exit 메소드를 사용하지 않는다.
+- 비정상적 입력에 대해서는 IllegalArgumentException을 발생시킨다.
+- 값을 **하드코딩** 하지마라
+- else, switch ~ case 예약어를 사용하지 않는다.
+- 메서드의 길이는 15라인을 넘어가지 않는다.
+- setter를 사용하지 않는다.
+
+# 힌트
+
+public void foo(){
+
+for (Foo foo : List<Foo> foos) {
+
+      if (foo == null) {
+ 
+           throw new IllegalArgumentException();
+ 
+       }
+
+    }
+
+}    
