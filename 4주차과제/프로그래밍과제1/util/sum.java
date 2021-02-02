@@ -35,10 +35,10 @@ public class sum {
     }
 
     public int calculate(String[] sps) {
-        InputWrong(sps[0]);
+        InputCheck(sps[0]);
         sum = to_Int(sps[0]);
         for (int i = 0; i < sps.length - 2; i += 2) {
-            InputWrong(sps[i + 2]);
+            InputCheck(sps[i + 2]);
             if (sps[i + 1].equals("+")) {
                 sum = add(sum, to_Int(sps[i + 2]));
             }
@@ -56,7 +56,7 @@ public class sum {
         return sum;
     }
 
-    public void InputWrong(String in) {
+    public void InputCheck(String in) {
         try {
             to_Int(in);
         } catch (NumberFormatException e) {
