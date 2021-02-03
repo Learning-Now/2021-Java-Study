@@ -17,7 +17,7 @@ public class CalStart {
                 Operator operator = new Operator(str[i + 1].charAt(0));
                 first.setNum(new Cal().cal(first, second, operator));
             }
-            System.out.println(first.getNum());
+            new View(first.getNum());
         } catch (RuntimeException e) {
             throw new RuntimeException("잘못된 연산 입니다.");
         }

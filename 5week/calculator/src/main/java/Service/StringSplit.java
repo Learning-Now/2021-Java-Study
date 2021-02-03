@@ -3,7 +3,7 @@ package Service;
 import java.io.IOException;
 
 public class StringSplit {
-    private String [] arr;
+    private final String [] arr;
     public StringSplit(String str) throws IOException {
         try {
             this.arr = str.split(" ");
