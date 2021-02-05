@@ -3,8 +3,6 @@ class ListNode {
     private int num;
     public ListNode next;
 
-    ListNode () {}
-
     ListNode(int num) {
         this.num = num;
         this.next = null;
@@ -15,9 +13,6 @@ class ListNode {
     }
     public void setNext(ListNode next) {
         this.next = next;
-    }
-    public ListNode getNext() {
-        return this.next;
     }
 
 }
