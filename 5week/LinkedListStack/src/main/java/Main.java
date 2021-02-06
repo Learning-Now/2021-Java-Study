@@ -22,7 +22,6 @@ class Stack {
         this.head = null;
     }
     public void add(ListNode nodeToadd) {
-        ListNode pre = this.head;
         ListNode node = this.head;
         if (this.head == null) {
             this.head = nodeToadd;
@@ -42,22 +41,6 @@ class Stack {
         }
         System.out.println(node.getNode());
         pre.setNext(null);
-    }
-    public boolean Contains(ListNode nodeTocheck) {
-        ListNode node = this.head;
-        while (node.next != null) {
-            if (node.next == nodeTocheck) {
-                return true;
-            } node = node.next;
-        }
-        return false;
-    }
-    public void View() {
-        ListNode node = this.head;
-        while (node != null) {
-            System.out.println(node.getNode());
-            node = node.next;
-        }
     }
 }
 
