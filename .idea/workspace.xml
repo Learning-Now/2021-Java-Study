@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f57adcb4-341d-4610-91ba-3880bcef0abe" name="Default Changelist" comment="" />
+    <list default="true" id="f57adcb4-341d-4610-91ba-3880bcef0abe" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/5주차과제/자바기초.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -64,6 +67,9 @@
       <workItem from="1612235816015" duration="1231000" />
       <workItem from="1612237233688" duration="3622000" />
       <workItem from="1612322019741" duration="2009000" />
+      <workItem from="1612502867642" duration="1345000" />
+      <workItem from="1612666352786" duration="84000" />
+      <workItem from="1612666446580" duration="1292000" />
     </task>
     <servers />
   </component>
