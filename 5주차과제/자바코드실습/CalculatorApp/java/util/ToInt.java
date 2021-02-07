@@ -1,7 +1,7 @@
 package util;
 
-public class toInt {
-    public int to_Int(String str) {
+public class ToInt {
+    public int toInt(String str) {
         return Integer.parseInt(str);
     }
 }

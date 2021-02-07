@@ -1,6 +1,6 @@
 package util;
 
-public class operator {
+public class Operator {
 
     public int add(int i, int j) {
         return i + j;

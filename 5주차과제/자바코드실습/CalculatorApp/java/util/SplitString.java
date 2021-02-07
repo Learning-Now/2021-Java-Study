@@ -1,6 +1,6 @@
 package util;
 
-public class split {
+public class SplitString {
 
     private String[] strArray; //  자른 후 String 배열
 
