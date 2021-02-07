@@ -11,7 +11,7 @@ public class Calculator {
 
         // 문자열 입력 받기
         input in = new input();
-        inputString = in.InputString();
+        inputString = in.getNextLine();
 
         // 문자열 자르기
         split sp = new split();
