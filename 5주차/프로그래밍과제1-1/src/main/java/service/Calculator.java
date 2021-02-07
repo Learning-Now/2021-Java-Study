@@ -15,10 +15,10 @@ public class Calculator {
         Number result = new Number(exceptionCatcher.catchWrongNumber(formula[0]));
         for (int i = 1; i < formula.length; i += 2) {
             Operator operator = new Operator(exceptionCatcher.catchWrongString(formula[i]));
-            Number number = new Number(exceptionCatcher.catchWrongNumber(formula[i + 1]));
+            Number nextArgument = new Number(exceptionCatcher.catchWrongNumber(formula[i + 1]));
 
-            int tmp = operators.operateFormula(result, operator, number);
-            result.setValue(tmp);
+            int caㅣculatedResult = operators.operateFormula(result, operator, nextArgument);
+            result.setValue(caㅣculatedResult);
         }
 
         new PrinterOutputView(result.getValue());
