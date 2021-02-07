@@ -10,11 +10,14 @@ public class Operators {
     public int operateFormula(Number number1, Operator operator, Number number2) {
         if (operator.getValue().equals("+")) {
             resultNum = addNumber(number1, number2);
-        } else if (operator.getValue().equals("-")) {
+        }
+        if (operator.getValue().equals("-")) {
             resultNum = subNumber(number1, number2);
-        } else if (operator.getValue().equals("*")) {
+        }
+        if (operator.getValue().equals("*")) {
             resultNum = multiNumber(number1, number2);
-        } else if (operator.getValue().equals("/")) {
+        }
+        if (operator.getValue().equals("/")) {
             resultNum = divNumber(number1, number2);
         }
         return resultNum;
