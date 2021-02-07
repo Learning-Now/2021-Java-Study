@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f57adcb4-341d-4610-91ba-3880bcef0abe" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/5주차과제/자바기초.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/5주차과제/자바코드실습/계산기구현정리.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,7 +69,7 @@
       <workItem from="1612322019741" duration="2009000" />
       <workItem from="1612502867642" duration="1345000" />
       <workItem from="1612666352786" duration="84000" />
-      <workItem from="1612666446580" duration="1292000" />
+      <workItem from="1612666446580" duration="3959000" />
     </task>
     <servers />
   </component>
