@@ -19,7 +19,7 @@ public class Calculator {
 
         // 합계 계산 후 출력
         calculate c = new calculate();
-        System.out.println("합계 : "+c.calculate(strResultArray));
+        System.out.println("합계 : " + c.calculate(strResultArray));
 
     }
 }

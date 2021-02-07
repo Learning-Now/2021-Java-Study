@@ -26,7 +26,6 @@ public class Calculate{
             if (sps[i + 1].equals("/")) {
                 sum = op.div(sum, ti.toInt(sps[i + 2]));
             }
-
         }
         return sum;
     }

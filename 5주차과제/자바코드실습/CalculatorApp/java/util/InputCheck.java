@@ -2,6 +2,7 @@ package util;
 
 public class InputCheck {
     toInt ti = new toInt();
+
     public void InputCheck(String in) {
         try {
             ti.toInt(in);
