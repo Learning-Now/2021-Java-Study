@@ -12,3 +12,43 @@
 ## 결과
 
 ### 1주차
+<<<<<<< HEAD
+
+
+DongLee99: [https://github.com/Learning-Now/2021-Java-Study/pull/2](https://github.com/Learning-Now/2021-Java-Study/pull/2)
+
+Jeongyun: [https://github.com/Learning-Now/2021-Java-Study/pull/3](https://github.com/Learning-Now/2021-Java-Study/pull/3)
+
+BLINK-ONCE: [https://github.com/Learning-Now/2021-Java-Study/pull/4](https://github.com/Learning-Now/2021-Java-Study/pull/4)
+
+dustndus8: [https://github.com/Learning-Now/2021-Java-Study/pull/5](https://github.com/Learning-Now/2021-Java-Study/pull/5)
+
+dbswl067: [https://github.com/Learning-Now/2021-Java-Study/pull/6](https://github.com/Learning-Now/2021-Java-Study/pull/6)
+
+### 2주차
+DongLee99: [https://velog.io/@donglee99/2주차-과제-JAVA-코드-둘러보기](https://velog.io/@donglee99/2%EC%A3%BC%EC%B0%A8-%EA%B3%BC%EC%A0%9C-JAVA-%EC%BD%94%EB%93%9C-%EB%91%98%EB%9F%AC%EB%B3%B4%EA%B8%B0)
+
+Jeongyun: [https://github.com/jeongyuneo/2021-Java-Study/tree/jeongyun](https://github.com/jeongyuneo/2021-Java-Study/tree/jeongyun)
+
+BLINK-ONCE: [https://github.com/BLINK-ONCE/2021-java-study-HW/tree/main/2주차](https://github.com/BLINK-ONCE/2021-java-study-HW/tree/main/2%EC%A3%BC%EC%B0%A8)
+
+dustndus8: [https://github.com/BLINK-ONCE/2021-java-study-HW/tree/main/2주차](https://github.com/BLINK-ONCE/2021-java-study-HW/tree/main/2%EC%A3%BC%EC%B0%A8)
+
+dbswl067:: [https://github.com/dbswl067/2021-java-a/tree/main/2주차 과제](https://github.com/dbswl067/2021-java-a/tree/main/2%EC%A3%BC%EC%B0%A8%20%EA%B3%BC%EC%A0%9C)
+
+### 3주차
+DongLee99: [https://github.com/Learning-Now/2021-Java-Study/pull/21](https://github.com/Learning-Now/2021-Java-Study/pull/21)
+
+Jeongyun: [https://github.com/Learning-Now/2021-Java-Study/pull/17](https://github.com/Learning-Now/2021-Java-Study/pull/17)
+
+BLINK-ONCE: [https://github.com/Learning-Now/2021-Java-Study/pull/22](https://github.com/Learning-Now/2021-Java-Study/pull/22)
+
+dustndus8: [https://github.com/Learning-Now/2021-Java-Study/pull/20](https://github.com/Learning-Now/2021-Java-Study/pull/20)
+
+dbswl067: [https://github.com/Learning-Now/2021-Java-Study/pull/23](https://github.com/Learning-Now/2021-Java-Study/pull/23)
+
+### 4주차
+
+=======
+
+>>>>>>> ef0bcbf477b1e9e18bdc315657565b6d036240e7
