@@ -46,14 +46,14 @@ dustndus8: [https://github.com/Learning-Now/2021-Java-Study/pull/20](https://git
 dbswl067: [https://github.com/Learning-Now/2021-Java-Study/pull/23](https://github.com/Learning-Now/2021-Java-Study/pull/23)
 
 ### 4주차
-DongLee99: [https://github.com/Learning-Now/2021-Java-Study/pull/2](https://github.com/Learning-Now/2021-Java-Study/pull/25)5
+DongLee99: [https://github.com/Learning-Now/2021-Java-Study/pull/25](https://github.com/Learning-Now/2021-Java-Study/pull/25)
 
-Jeongyun: [https://github.com/Learning-Now/2021-Java-Study/pull/](https://github.com/Learning-Now/2021-Java-Study/pull/17)28
+Jeongyun: [https://github.com/Learning-Now/2021-Java-Study/pull/28](https://github.com/Learning-Now/2021-Java-Study/pull/28)
 
-BLINK-ONCE: [https://github.com/Learning-Now/2021-Java-Study/pull/2](https://github.com/Learning-Now/2021-Java-Study/pull/22)7
+BLINK-ONCE: [https://github.com/Learning-Now/2021-Java-Study/pull/27](https://github.com/Learning-Now/2021-Java-Study/pull/27)
 
-dustndus8: [https://github.com/Learning-Now/2021-Java-Study/pull/](https://github.com/Learning-Now/2021-Java-Study/pull/20)29
+dustndus8: [https://github.com/Learning-Now/2021-Java-Study/pull/29](https://github.com/Learning-Now/2021-Java-Study/issues/29)
 
-dbswl067: [https://github.com/Learning-Now/2021-Java-Study/pull/](https://github.com/Learning-Now/2021-Java-Study/pull/23)30
+dbswl067: [https://github.com/Learning-Now/2021-Java-Study/pull/30](https://github.com/Learning-Now/2021-Java-Study/pull/30)
 
 ### 5주차
