@@ -6,9 +6,9 @@ import java.io.InputStreamReader;
 
 public class ScannerInputView{
 
-    BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+    static BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
 
-    public String[] getFormular() throws IOException {
+    public static String[] getFormular() throws IOException {
         String[] formularArguement = bf.readLine().split(" ");
         return formularArguement;
     }

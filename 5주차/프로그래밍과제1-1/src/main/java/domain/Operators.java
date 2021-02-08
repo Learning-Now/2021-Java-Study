@@ -1,8 +1,5 @@
 package domain;
 
-import domain.Number;
-import domain.Operator;
-
 public class Operators {
 
     private int resultNum;

@@ -2,7 +2,7 @@ package view;
 
 public class PrinterOutputView{
 
-    public PrinterOutputView(int result) {
+    public static void printOutputView(int result) {
         System.out.println("계산 값 : " + result);
     }
 }
