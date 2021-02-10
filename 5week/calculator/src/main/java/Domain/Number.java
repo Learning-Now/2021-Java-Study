@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 public class Number {
     private BigDecimal value;
-
+    private static BigDecimal zero = new BigDecimal(0);
 
     public Number(BigDecimal value) {
         this.value = value;
@@ -12,7 +12,7 @@ public class Number {
     }
 
     private void validateNumber() {
-        if(this.value == new BigDecimal(0) ){
+        if(this.value == zero ){
             throw new IllegalArgumentException("잘못된 값이 들어왔습니다.");
         }
     }

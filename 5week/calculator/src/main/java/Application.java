@@ -1,10 +1,11 @@
-import Service.CalStart;
+import Service.CalculateStart;
 import Service.StringInput;
 
 import java.io.IOException;
 
 public class Application {
     public static void main(String[] args) throws IOException {
-        new CalStart().calculateStart(new StringInput().stringInput());
+        CalculateStart calculateStart =new CalculateStart();
+        calculateStart.stringCalculateStart(new StringInput().stringInput());
     }
 }

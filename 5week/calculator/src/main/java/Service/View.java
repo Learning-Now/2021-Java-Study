@@ -3,7 +3,7 @@ package Service;
 import java.math.BigDecimal;
 
 public class View {
-    public View(BigDecimal result) {
+    public static void View(BigDecimal result) {
         System.out.println(result);
     }
 }
