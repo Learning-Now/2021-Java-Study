@@ -16,6 +16,8 @@ public class Formula {
         for (int i = 1; i < arrayFormula.length; i += 2) {
             if (Exception.isElementInt(arrayFormula[i - 1]) == false ||
                     Exception.isElementInt(arrayFormula[i + 1]) == false) {
+                System.out.println("입력된 값 중 " + arrayFormula[i - 1] + "또는 " +
+                        arrayFormula[i + 1] + "이 숫자가 아닙니다.");
                 isComputable = false;
                 break;
             }

@@ -2,15 +2,6 @@ import java.io.IOException;
 import java.lang.IllegalArgumentException;
 
 public class Exception {
-/*
-    private String[] formula;
-    private boolean isComputable = true;
-
-    public Exception() {
-        this.formula = Formula.getFormula();
-        this.isComputable = true;
-    }
-*/
     public static boolean isElementInt(String str) {
         try {
             Integer.parseInt(str);
