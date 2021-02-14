@@ -11,7 +11,7 @@ public class Calculator {
         return a * b;
     }
 
-    public static double divNum(int a, int b) {
+    public static int divNum(int a, int b) {
         try {
             return a / b;
         }

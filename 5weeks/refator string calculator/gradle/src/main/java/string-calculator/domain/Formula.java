@@ -12,19 +12,23 @@ public class Formula {
         checkOperand();
     }
 
-    public boolean checkOperand() throws IllegalArgumentException {
+    public void checkOperand() throws IllegalArgumentException {
         for (int i = 1; i < arrayFormula.length; i += 2) {
-            if (Exception.isElementInt(arrayFormula[i - 1]) == false || Exception.isElementInt(arrayFormula[i + 1]) == false) {
+            if (Exception.isElementInt(arrayFormula[i - 1]) == false ||
+                    Exception.isElementInt(arrayFormula[i + 1]) == false) {
                 isComputable = false;
                 break;
             }
         }
-        return isComputable;
+
+        if (isComputable) {
+            //FormulaRepository formulaRepository = new FormulaRepository();
+            Performer performer = new Performer();
+            performer.performCal();
+        }
     }
 
     public static String[] getFormula() {
         return arrayFormula;
     }
-
-    Exception exception = new Exception();
 }
