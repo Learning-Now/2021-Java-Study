@@ -12,8 +12,6 @@
 ## 결과
 
 ### 1주차
-<<<<<<< HEAD
-
 
 DongLee99: [https://github.com/Learning-Now/2021-Java-Study/pull/2](https://github.com/Learning-Now/2021-Java-Study/pull/2)
 
@@ -49,6 +47,3 @@ dbswl067: [https://github.com/Learning-Now/2021-Java-Study/pull/23](https://gith
 
 ### 4주차
 
-=======
-
->>>>>>> ef0bcbf477b1e9e18bdc315657565b6d036240e7
