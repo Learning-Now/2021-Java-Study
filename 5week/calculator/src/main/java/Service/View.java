@@ -2,8 +2,8 @@ package Service;
 
 import java.math.BigDecimal;
 
-public class View {
-    public static void View(BigDecimal result) {
+public final class View {
+    public static void resultView(BigDecimal result) {
         System.out.println(result);
     }
 }

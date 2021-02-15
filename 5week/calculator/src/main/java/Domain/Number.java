@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 public class Number {
     private BigDecimal value;
-    private static BigDecimal zero = new BigDecimal(0);
+    private static final BigDecimal zero = new BigDecimal(0);
 
     public Number(BigDecimal value) {
         this.value = value;

@@ -3,7 +3,7 @@ import Domain.Number;
 
 import java.math.BigDecimal;
 
-public class CalOperation {
+public class CalculateOperation {
     BigDecimal add(Number first, Number second) {
         return first.getNum().add(second.getNum());
     }

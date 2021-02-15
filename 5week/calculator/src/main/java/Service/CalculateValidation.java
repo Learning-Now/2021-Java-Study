@@ -5,10 +5,10 @@ import Domain.Number;
 
 import java.math.BigDecimal;
 
-public class Cal {
-    public BigDecimal cal(Number first, Number second, Operator operator) {
+public class CalculateValidation {
+    public BigDecimal operatorValidate(Number first, Number second, Operator operator) {
 
-        CalOperation calOperation = new CalOperation();
+        CalculateOperation calOperation = new CalculateOperation();
 
         if (operator.getValue() == '+') {
             return calOperation.add(first,second);
