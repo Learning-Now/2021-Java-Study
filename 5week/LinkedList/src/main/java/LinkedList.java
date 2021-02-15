@@ -6,7 +6,7 @@ public class LinkedList {
         this.head = null;
     }
 
-    public void Add(ListNode nodeToadd, int position) {
+    public void add(ListNode nodeToadd, int position) {
         ListNode pre = this.head;
         ListNode node = this.head;
         if (this.head != null) {
@@ -21,7 +21,7 @@ public class LinkedList {
         }
     }
 
-    public void Remove(int positionToRemove) {
+    public void remove(int positionToRemove) {
         ListNode pre = this.head;
         ListNode node = this.head;
         for (int i = 0 ; i < positionToRemove-1; i++) {
@@ -31,7 +31,7 @@ public class LinkedList {
         pre.addNext(node.next);
     }
 
-    public boolean Contains(ListNode nodeTocheck) {
+    public boolean contains(ListNode nodeTocheck) {
         ListNode node = this.head;
         while (node.next != null) {
             if (node.next == nodeTocheck) {
@@ -41,7 +41,7 @@ public class LinkedList {
         return false;
     }
 
-    public void View() {
+    public void view() {
         ListNode node = this.head;
         while (node != null) {
             System.out.println(node.getNode());
