@@ -7,4 +7,4 @@ out
 gradlew
 *.bat
 
-!5weeks/refactor\/string\/calculator/gradle/src/
+!5weeks/refactor\ string\ calculator/gradle/src/*
