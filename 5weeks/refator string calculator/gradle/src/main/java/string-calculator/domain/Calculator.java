@@ -1,13 +1,13 @@
 public class Calculator {
-    public  static double addNum(double a, double b) {
+    public static double addNum(double a, double b) {
         return a + b;
     }
 
-    public  static double subNum(double a, double b) {
+    public static double subNum(double a, double b) {
         return a - b;
     }
 
-    public  static double mulNum(double a, double b) {
+    public static double mulNum(double a, double b) {
         return a * b;
     }
 
