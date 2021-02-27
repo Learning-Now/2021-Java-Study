@@ -29,9 +29,9 @@ public enum Operators {
     }
 
     public static int operateFormula(Number number1, Operator operator, Number number2) {
-        if (operator.value.equals("/") && number2.value == 0) {
+        if (operator.value.equals("/") && !number2.validate()) {
             throw new IllegalArgumentException("숫자 0으로 나눌 수 없습니다.");
         }
-        return operate(operator.value, number1.value, number2.value);
+        return operate(operator.value, number1.getValue(), number2.getValue());
     }
 }
