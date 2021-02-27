@@ -1,0 +1,19 @@
+plugins {
+    id 'java'
+}
+
+group 'org.livestudy'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter', version: '5.7.0'
+    testImplementation group: 'org.assertj', name: 'assertj-core', version: '3.18.1'
+}
+
+test {
+    useJUnitPlatform()
+}
