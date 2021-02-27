@@ -15,11 +15,11 @@ public class Calculator {
     public void calculateFormula(String[] formula) {
         FormulaSplitter formulaSplitter = new FormulaSplitter();
 
-        result = formulaSplitter.splitNumber(formula[FIRST_ARGUMENT]);
+        result = formulaSplitter.toInt(formula[FIRST_ARGUMENT]);
         for (int i = 1; i < formula.length; i += NEXT_OPERRATOR) {
             Number calculatedResult = new Number(result);
             Operator operator = new Operator(formula[i]);
-            Number nextArgument = new Number(formulaSplitter.splitNumber(formula[i + NEXT_ARGUMENT]));
+            Number nextArgument = new Number(formulaSplitter.toInt(formula[i + NEXT_ARGUMENT]));
             result = Operators.operateFormula(calculatedResult, operator, nextArgument);
         }
         PrinterOutputView.printOutputView(result);

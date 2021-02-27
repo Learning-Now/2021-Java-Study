@@ -2,7 +2,7 @@ package service;
 
 public class FormulaSplitter {
 
-    public int splitNumber(String formularArguement) {
+    public int toInt(String formularArguement) {
         try {
             int number = Integer.parseInt(formularArguement);
             return number;
