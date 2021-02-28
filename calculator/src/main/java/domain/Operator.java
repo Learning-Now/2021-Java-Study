@@ -1,6 +1,8 @@
 package domain;
 
-import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
 
 public enum Operator {
     PLUS("+") {
@@ -28,6 +30,14 @@ public enum Operator {
         }
     };
 
+    private static final Map<String, Operator> OPERATORS = new HashMap<>();
+
+    static {
+        for (Operator value : values()) {
+            OPERATORS.put(value.operator, value);
+        }
+    }
+
     private final String operator;
 
     Operator(String operator) {
@@ -35,15 +45,12 @@ public enum Operator {
     }
 
     public static Operator from(String operatorText) {
-        return Arrays.stream(values())
-                .filter(operator -> operator.isSameOperator(operatorText))
-                .findFirst()
-                .orElseThrow(() -> new IllegalArgumentException("잘못된 연산자입니다"));
+        Operator operator = OPERATORS.getOrDefault(operatorText, null);
+        if (Objects.isNull(operator)) {
+            throw new IllegalArgumentException("잘못된 연산자 입니다.");
+        }
+        return operator;
     }
 
     public abstract int calculate(int firstValue, int secondValue);
-
-    private boolean isSameOperator(String operatorText) {
-        return this.operator == operatorText;
-    }
 }
