@@ -1,20 +1,49 @@
 package domain;
 
-public class Operator {
+import java.util.Arrays;
 
-    public static int plus(int val, int val2) {
-        return val + val2;
+public enum Operator {
+    PLUS("+") {
+        @Override
+        public int calculate(int firstValue, int secondValue) {
+            return firstValue + secondValue;
+        }
+    },
+    MINUS("-") {
+        @Override
+        public int calculate(int firstValue, int secondValue) {
+            return firstValue - secondValue;
+        }
+    },
+    MULTIPLY("*") {
+        @Override
+        public int calculate(int firstValue, int secondValue) {
+            return firstValue * secondValue;
+        }
+    },
+    DIVIDE("/") {
+        @Override
+        public int calculate(int firstValue, int secondValue) {
+            return firstValue / secondValue;
+        }
+    };
+
+    private final String operator;
+
+    Operator(String operator) {
+        this.operator = operator;
     }
 
-    public static int minus(int val, int val2) {
-        return val - val2;
+    public static Operator from(String operatorText) {
+        return Arrays.stream(values())
+                .filter(operator -> operator.isSameOperator(operatorText))
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException("잘못된 연산자입니다"));
     }
 
-    public static int divide(int val, int val2) {
-        return val / val2;
-    }
+    public abstract int calculate(int firstValue, int secondValue);
 
-    public static int multiply(int val, int val2) {
-        return val * val2;
+    private boolean isSameOperator(String operatorText) {
+        return this.operator == operatorText;
     }
 }
