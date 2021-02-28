@@ -196,14 +196,94 @@ public class Test {
 
 생성자는 인스턴스 변수(e.g. field)를 초기화 시키는 역할을 한다.
 
+- 생성자 선언 방법
+```
+public Class(parameter) {
+    ...
+}
+```
+
+Class라는 부분은 생성자를 정의하는 클래스의 이름과 동일하게 적어줘야 한다. public과 parameter부분은 필수가 아니다.
+
+### default constuctor
+```
+public class ConstructorEx01{
+    // public ContructorEx01() { } // default constructor 자동 생성
 
 
-# 해야할 것
-- 클래스 정의하는 방법
-- 객체 만드는 방법(new 키워드 이해하기)
-- 메소드 정의하는 방법
-- 생성자 정의하는 방법
-- this 키워드 이해하기
+    public static void main(String[] args) {
+        ConstructorEx01 ce = new ConstructorEx01; // 인스턴스 생성 및 생성자 호출
+    }
+}
+```
+
+위와 같은 경우에는 자동으로 주석처리된 부분인 기본 생성자가 생성자의 역할을 한다.
+
+```
+public class Test {
+    public Test(String a){// a = 사용자 정의
+        System.out.println(a + "생성자 호출 성공");
+    }
+
+    public static void main(String[] args){
+        Test t = new Test("사용자 정의");// 매개변수를 갖는 생성자 호출
+        //Test t2 = new Test(); // 컴파일 에러
+    }
+}
+```
+
+매개변수를 갖는 생성자를 정의하였고 main 메소드에서 생성자를 호출하였다. 출력 결과는 "사용자 정의 생성자 호출 성공"이다. 그 다음 줄의 주석 처리된 부분은 기본 생성자를 호출하지만 컴파일 에러가 발생된다. 사용자가 정의한 생성자가 있어서 기본 생성자를 더 이상 자동으로 만들어주지 않기 때문이다.
+
+## this 키워드
+자바에서 제공하는 this 키워드는 인스턴스 자기 자신을 가리키는 키워드이다. this 키워드를 통해 클래스 메소드 및 생성자에서 자기 자신의 데이터를 업데이트하거나 조작할 수 있다.
+
+this 키워드는 이 클래스를 기반으로 생성된 **인스턴스를 가리키는 참조**이다. 인스턴스를 가리키는 참조와 인스턴스 자체는 다르다.
+```
+public class ThisExample {
+
+    private String name;
+    private Integer age;
+    private String address;
+
+    public ThisExample() {
+        this.name = "KBS";
+        this.age = 19;
+        this.address = "Seoul";
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public ThisExample returnThisExample() {
+        return this;
+    }
+
+}
+```
+
+
 
 # Reference
 - [constructor declaration](http://blog.naver.com/PostView.nhn?blogId=heartflow89&logNo=220955879645)
+- [자바 this](https://engkimbs.tistory.com/873)
