@@ -3,9 +3,9 @@ import input.InputUtils;
 public class Calculator {
     private int sum;
 
-    Operator op = new Operator();
-    ToInt ti = new ToInt();
-    InputCheck ic = new InputCheck();
+    private Operator op = new Operator();
+    private ToInt ti = new ToInt();
+    private InputCheck ic = new InputCheck();
 
     public void checkFirstInput(String[] sps){
         ic.InputCheck(sps[0]);  // 0번째 값이 숫자인지 확인
