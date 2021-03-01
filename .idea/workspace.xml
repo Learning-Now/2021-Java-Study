@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f57adcb4-341d-4610-91ba-3880bcef0abe" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/6주차과제/프로그래밍과제1/java/util/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/6주차과제/프로그래밍과제1/java/util/Calculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/6주차과제/프로그래밍과제1/java/util/SplitString.java" beforeDir="false" afterPath="$PROJECT_DIR$/6주차과제/프로그래밍과제1/java/util/SplitString.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +65,7 @@
       <workItem from="1614086650396" duration="5592000" />
       <workItem from="1614485435354" duration="1221000" />
       <workItem from="1614499723444" duration="512000" />
-      <workItem from="1614593889331" duration="117000" />
+      <workItem from="1614593889331" duration="412000" />
     </task>
     <servers />
   </component>
