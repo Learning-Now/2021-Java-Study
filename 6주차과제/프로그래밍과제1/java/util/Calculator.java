@@ -71,7 +71,6 @@ public class Calculator {
         SplitString sp = new SplitString();
         strResultArray = sp.splitString(inputString);
 
-        Calculator c = new Calculator();
-        System.out.println("합계 : " + c.calculate(strResultArray));
+        System.out.println("합계 : " + calculate(strResultArray));
     }
 }
