@@ -62,19 +62,15 @@ public class Calculator {
     }
 
     public void run(){
-        // 변수 선언
-        String inputString;   // 입력 값
-        String[] strResultArray;    // 문자열 자른 후의 배열
+        String inputString;
+        String[] strResultArray;
 
-        // 문자열 입력 받기
         InputUtils in = new InputUtils();
         inputString = in.getNextLine();
 
-        // 문자열 자르기
         SplitString sp = new SplitString();
         strResultArray = sp.splitString(inputString);
 
-        // 합계 계산 후 출력
         Calculator c = new Calculator();
         System.out.println("합계 : " + c.calculate(strResultArray));
     }
