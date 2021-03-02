@@ -4,6 +4,7 @@
     <list default="true" id="f57adcb4-341d-4610-91ba-3880bcef0abe" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/6주차과제/프로그래밍과제1/java/util/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/6주차과제/프로그래밍과제1/java/util/Calculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/6주차과제/프로그래밍과제1/java/util/SplitString.java" beforeDir="false" afterPath="$PROJECT_DIR$/6주차과제/프로그래밍과제1/java/util/SplitString.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +34,19 @@
       <recent name="C:\Users\dustn\IdeaProjects\자바스터디\2021-Java-Study-1\5주차과제\자바코드실습\CalculatorApp" />
       <recent name="C:\Users\dustn\IdeaProjects\자바스터디\2021-Java-Study-1\4주차과제\프로그래밍과제1" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -66,7 +80,8 @@
       <workItem from="1614086650396" duration="5592000" />
       <workItem from="1614485435354" duration="1221000" />
       <workItem from="1614499723444" duration="512000" />
-      <workItem from="1614593889331" duration="1945000" />
+      <workItem from="1614593889331" duration="2600000" />
+      <workItem from="1614655022546" duration="3183000" />
     </task>
     <servers />
   </component>
@@ -84,5 +99,17 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/6주차과제/프로그래밍과제1/java/util/Calculator.java</url>
+          <line>6</line>
+          <properties field="OPERAND" class="util.Calculator" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

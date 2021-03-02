@@ -1,6 +1,6 @@
 package util;
 
-public class ToInt {
+public class IntegerParser {
     public int toInt(String str) {
         return Integer.parseInt(str);
     }
