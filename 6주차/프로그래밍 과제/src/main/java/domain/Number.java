@@ -9,10 +9,11 @@ public class Number {
     }
 
     public boolean validate() {
-        if (value == 0) {
-            return false;
+        final int IMPOSSIBLE_DIVISOR = 0;
+        if (value == IMPOSSIBLE_DIVISOR) {
+            return true;
         }
-        return true;
+        return false;
     }
 
     public int getValue() {
