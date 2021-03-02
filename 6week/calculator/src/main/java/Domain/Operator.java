@@ -1,11 +1,7 @@
 package Domain;
 
 public class Operator {
-    final char value;
-
-    public char getValue() {
-        return value;
-    }
+    protected final char value;
 
     public Operator(char value) {
         this.value = value;
