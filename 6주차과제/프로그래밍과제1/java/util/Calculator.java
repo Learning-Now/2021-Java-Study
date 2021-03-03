@@ -66,16 +66,12 @@ public class Calculator {
     }
 
     public void run() {
-        String inputString;
-        String[] strResult;
-
         InputUtils in = new InputUtils();
-        inputString = in.getNextLine();
+        String inputString = in.getNextLine();
 
         SplitString sp = new SplitString();
-        strResult = sp.splitString(inputString);
+        String[] strResult = sp.splitString(inputString);
 
         System.out.print("합계 : " + calculate(strResult));
-
     }
 }
