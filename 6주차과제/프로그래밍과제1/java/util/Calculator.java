@@ -18,38 +18,40 @@ public class Calculator {
         sum = integerParser.toInt(sr[FIRST_NUMBER]);
     }
 
-    public void calculatePlus(String[] sr) {
-        for (int i = FIRST_NUMBER; i < sr.length - NUMBER; i += NUMBER) {
-            inputChecker.InputCheck(sr[i + NUMBER]);  // 2,4,6 등 짝수 번째 인덱스가 숫자인지 확인
-            if (sr[i + OPERAND].equals("+")) {   // 1,3,5 등 홀수 번째 인덱스가 연산자와 같을 때
-                sum = op.add(sum, integerParser.toInt(sr[i + NUMBER]));
-            }
-        }
+    public void calculatePlus(String[] sr, int i) {
+        inputChecker.InputCheck(sr[i + NUMBER]);  // 2,4,6 등 짝수 번째 인덱스가 숫자인지 확인
+        sum = op.add(sum, integerParser.toInt(sr[i + NUMBER]));
     }
 
-    public void calculateSubtraction(String[] sr) {
+    public void calculateSubtraction(String[] sr, int i) {
+
+        inputChecker.InputCheck(sr[i + NUMBER]);  // 2,4,6 등 짝수 번째 인덱스가 숫자인지 확인
+        sum = op.sub(sum, integerParser.toInt(sr[i + NUMBER]));
+    }
+
+    public void calculateMultiplication(String[] sr, int i) {
+        inputChecker.InputCheck(sr[i + NUMBER]);  // 2,4,6 등 짝수 번째 인덱스가 숫자인지 확인
+        sum = op.multi(sum, integerParser.toInt(sr[i + NUMBER]));
+    }
+
+    public void calculateDivision(String[] sr, int i) {
+        inputChecker.InputCheck(sr[i + NUMBER]);  // 2,4,6 등 짝수 번째 인덱스가 숫자인지 확인
+        sum = op.div(sum, integerParser.toInt(sr[i + NUMBER]));
+    }
+
+    public void calculateByOperator(String[] sr){
         for (int i = FIRST_NUMBER; i < sr.length - NUMBER; i += NUMBER) {
-            inputChecker.InputCheck(sr[i + NUMBER]);  // 2,4,6 등 짝수 번째 인덱스가 숫자인지 확인
+            if (sr[i + OPERAND].equals("+")) {
+                calculatePlus(sr,i);
+            }
             if (sr[i + OPERAND].equals("-")) {
-                sum = op.sub(sum, integerParser.toInt(sr[i + NUMBER]));
+                calculateSubtraction(sr,i);
             }
-        }
-    }
-
-    public void calculateMultiplication(String[] sr) {
-        for (int i = FIRST_NUMBER; i < sr.length - NUMBER; i += NUMBER) {
-            inputChecker.InputCheck(sr[i + NUMBER]);  // 2,4,6 등 짝수 번째 인덱스가 숫자인지 확인
             if (sr[i + OPERAND].equals("*")) {
-                sum = op.multi(sum, integerParser.toInt(sr[i + NUMBER]));
+                calculateMultiplication(sr,i);
             }
-        }
-    }
-
-    public void calculateDivision(String[] sr) {
-        for (int i = FIRST_NUMBER; i < sr.length - NUMBER; i += NUMBER) {
-            inputChecker.InputCheck(sr[i + NUMBER]);  // 2,4,6 등 짝수 번째 인덱스가 숫자인지 확인
             if (sr[i + OPERAND].equals("/")) {
-                sum = op.div(sum, integerParser.toInt(sr[i + NUMBER]));
+                calculateDivision(sr,i);
             }
         }
     }
@@ -59,11 +61,7 @@ public class Calculator {
         //첫번째 값 확인
         checkFirstInput(sr);
         //연산자에 따라 계산
-        calculatePlus(sr);
-        calculateSubtraction(sr);
-        calculateMultiplication(sr);
-        calculateDivision(sr);
-
+        calculateByOperator(sr);
         return sum;
     }
 
@@ -77,6 +75,7 @@ public class Calculator {
         SplitString sp = new SplitString();
         strResult = sp.splitString(inputString);
 
-        System.out.println("합계 : " + calculate(strResult));
+        System.out.print("합계 : " + calculate(strResult));
+
     }
 }
