@@ -13,70 +13,70 @@ public class Calculator {
     private IntegerParser integerParser = new IntegerParser();
     private InputChecker inputChecker = new InputChecker();
 
-    public void checkFirstInput(String[] sps) {
-        inputChecker.InputCheck(sps[FIRST_NUMBER]);  // 0번째 값이 숫자인지 확인
-        sum = integerParser.toInt(sps[FIRST_NUMBER]);
+    public void checkFirstInput(String[] sr) {
+        inputChecker.InputCheck(sr[FIRST_NUMBER]);  // 0번째 값이 숫자인지 확인
+        sum = integerParser.toInt(sr[FIRST_NUMBER]);
     }
 
-    public void calculatePlus(String[] sps) {
-        for (int i = FIRST_NUMBER; i < sps.length - NUMBER; i += NUMBER) {
-            inputChecker.InputCheck(sps[i + NUMBER]);  // 2,4,6 등 짝수 번째 인덱스가 숫자인지 확인
-            if (sps[i + OPERAND].equals("+")) {   // 1,3,5 등 홀수 번째 인덱스가 연산자와 같을 때
-                sum = op.add(sum, integerParser.toInt(sps[i + NUMBER]));
+    public void calculatePlus(String[] sr) {
+        for (int i = FIRST_NUMBER; i < sr.length - NUMBER; i += NUMBER) {
+            inputChecker.InputCheck(sr[i + NUMBER]);  // 2,4,6 등 짝수 번째 인덱스가 숫자인지 확인
+            if (sr[i + OPERAND].equals("+")) {   // 1,3,5 등 홀수 번째 인덱스가 연산자와 같을 때
+                sum = op.add(sum, integerParser.toInt(sr[i + NUMBER]));
             }
         }
     }
 
-    public void calculateSubtraction(String[] sps) {
-        for (int i = FIRST_NUMBER; i < sps.length - NUMBER; i += NUMBER) {
-            inputChecker.InputCheck(sps[i + NUMBER]);  // 2,4,6 등 짝수 번째 인덱스가 숫자인지 확인
-            if (sps[i + OPERAND].equals("-")) {
-                sum = op.sub(sum, integerParser.toInt(sps[i + NUMBER]));
+    public void calculateSubtraction(String[] sr) {
+        for (int i = FIRST_NUMBER; i < sr.length - NUMBER; i += NUMBER) {
+            inputChecker.InputCheck(sr[i + NUMBER]);  // 2,4,6 등 짝수 번째 인덱스가 숫자인지 확인
+            if (sr[i + OPERAND].equals("-")) {
+                sum = op.sub(sum, integerParser.toInt(sr[i + NUMBER]));
             }
         }
     }
 
-    public void calculateMultiplication(String[] sps) {
-        for (int i = FIRST_NUMBER; i < sps.length - NUMBER; i += NUMBER) {
-            inputChecker.InputCheck(sps[i + NUMBER]);  // 2,4,6 등 짝수 번째 인덱스가 숫자인지 확인
-            if (sps[i + OPERAND].equals("*")) {
-                sum = op.multi(sum, integerParser.toInt(sps[i + NUMBER]));
+    public void calculateMultiplication(String[] sr) {
+        for (int i = FIRST_NUMBER; i < sr.length - NUMBER; i += NUMBER) {
+            inputChecker.InputCheck(sr[i + NUMBER]);  // 2,4,6 등 짝수 번째 인덱스가 숫자인지 확인
+            if (sr[i + OPERAND].equals("*")) {
+                sum = op.multi(sum, integerParser.toInt(sr[i + NUMBER]));
             }
         }
     }
 
-    public void calculateDivision(String[] sps) {
-        for (int i = FIRST_NUMBER; i < sps.length - NUMBER; i += NUMBER) {
-            inputChecker.InputCheck(sps[i + NUMBER]);  // 2,4,6 등 짝수 번째 인덱스가 숫자인지 확인
-            if (sps[i + OPERAND].equals("/")) {
-                sum = op.div(sum, integerParser.toInt(sps[i + NUMBER]));
+    public void calculateDivision(String[] sr) {
+        for (int i = FIRST_NUMBER; i < sr.length - NUMBER; i += NUMBER) {
+            inputChecker.InputCheck(sr[i + NUMBER]);  // 2,4,6 등 짝수 번째 인덱스가 숫자인지 확인
+            if (sr[i + OPERAND].equals("/")) {
+                sum = op.div(sum, integerParser.toInt(sr[i + NUMBER]));
             }
         }
     }
 
 
-    public int calculate(String[] sps) {
+    public int calculate(String[] sr) {
         //첫번째 값 확인
-        checkFirstInput(sps);
+        checkFirstInput(sr);
         //연산자에 따라 계산
-        calculatePlus(sps);
-        calculateSubtraction(sps);
-        calculateMultiplication(sps);
-        calculateDivision(sps);
+        calculatePlus(sr);
+        calculateSubtraction(sr);
+        calculateMultiplication(sr);
+        calculateDivision(sr);
 
         return sum;
     }
 
     public void run() {
         String inputString;
-        String[] strResultArray;
+        String[] strResult;
 
         InputUtils in = new InputUtils();
         inputString = in.getNextLine();
 
         SplitString sp = new SplitString();
-        strResultArray = sp.splitString(inputString);
+        strResult = sp.splitString(inputString);
 
-        System.out.println("합계 : " + calculate(strResultArray));
+        System.out.println("합계 : " + calculate(strResult));
     }
 }
