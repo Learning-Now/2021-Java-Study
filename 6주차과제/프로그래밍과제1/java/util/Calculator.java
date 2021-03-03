@@ -39,7 +39,7 @@ public class Calculator {
         sum = op.div(sum, integerParser.toInt(sr[i + NUMBER]));
     }
 
-    public void calculateByOperator(String[] sr){
+    public void calculatedByOperator(String[] sr){
         for (int i = FIRST_NUMBER; i < sr.length - NUMBER; i += NUMBER) {
             if (sr[i + OPERAND].equals("+")) {
                 calculatePlus(sr,i);
@@ -61,7 +61,7 @@ public class Calculator {
         //첫번째 값 확인
         checkFirstInput(sr);
         //연산자에 따라 계산
-        calculateByOperator(sr);
+        calculatedByOperator(sr);
         return sum;
     }
 
