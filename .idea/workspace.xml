@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f57adcb4-341d-4610-91ba-3880bcef0abe" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/6주차과제/프로그래밍과제1/java/util/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/6주차과제/프로그래밍과제1/java/util/Calculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/6주차과제/자바기초.md" beforeDir="false" afterPath="$PROJECT_DIR$/6주차과제/자바기초.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +68,8 @@
       <workItem from="1614499723444" duration="512000" />
       <workItem from="1614593889331" duration="2600000" />
       <workItem from="1614655022546" duration="4520000" />
-      <workItem from="1614743124992" duration="2855000" />
+      <workItem from="1614743124992" duration="3535000" />
+      <workItem from="1614843416103" duration="940000" />
     </task>
     <servers />
   </component>
