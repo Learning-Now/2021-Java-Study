@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f57adcb4-341d-4610-91ba-3880bcef0abe" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/7주차과제/자바기초.md" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1n8gqwcxlJrDdLC57uLi7KcGbhd" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/6주차과제/프로그래밍과제1" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\dustn\IdeaProjects\자바스터디\2021-Java-Study-1\6주차과제\프로그래밍과제1" />
+      <recent name="C:\Users\dustn\IdeaProjects\자바스터디\2021-Java-Study-1\5주차과제\자바코드실습\CalculatorApp" />
+      <recent name="C:\Users\dustn\IdeaProjects\자바스터디\2021-Java-Study-1\4주차과제\프로그래밍과제1" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f57adcb4-341d-4610-91ba-3880bcef0abe" name="Default Changelist" comment="" />
+      <created>1610777331766</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1610777331766</updated>
+      <workItem from="1610777338074" duration="11000" />
+      <workItem from="1610934515316" duration="9735000" />
+      <workItem from="1611021575506" duration="98000" />
+      <workItem from="1611021717717" duration="6625000" />
+      <workItem from="1611117260291" duration="4567000" />
+      <workItem from="1611202141415" duration="899000" />
+      <workItem from="1611204895573" duration="1519000" />
+      <workItem from="1611279676770" duration="5357000" />
+      <workItem from="1612103857388" duration="135000" />
+      <workItem from="1612104031545" duration="1012000" />
+      <workItem from="1612105171652" duration="26000" />
+      <workItem from="1612235816015" duration="1231000" />
+      <workItem from="1612237233688" duration="3622000" />
+      <workItem from="1612322019741" duration="2009000" />
+      <workItem from="1612502867642" duration="1345000" />
+      <workItem from="1612666352786" duration="84000" />
+      <workItem from="1612666446580" duration="5439000" />
+      <workItem from="1612698373522" duration="816000" />
+      <workItem from="1612749764976" duration="145000" />
+      <workItem from="1613902522281" duration="600000" />
+      <workItem from="1614010911047" duration="248000" />
+      <workItem from="1614086650396" duration="5592000" />
+      <workItem from="1614485435354" duration="1221000" />
+      <workItem from="1614499723444" duration="512000" />
+      <workItem from="1614593889331" duration="2600000" />
+      <workItem from="1614655022546" duration="4520000" />
+      <workItem from="1614743124992" duration="3535000" />
+      <workItem from="1614843416103" duration="1114000" />
+      <workItem from="1615175367407" duration="1247000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>
