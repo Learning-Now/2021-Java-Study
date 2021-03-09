@@ -10,6 +10,7 @@ public class Number {
     public Number(String value) {
         this.value = validateNumber(value);
     }
+
     public Number(BigDecimal value) {
         this.value = value;
     }

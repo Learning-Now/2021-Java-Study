@@ -6,7 +6,8 @@ import java.util.stream.Stream;
 
 public class BufferSplit {
     private BufferSplit(){};
-    public static String[] stringTrimGap(String str) {
+
+    public static String[] stringGapSplit(String str) {
         try {
             return str.split(" ");
         } catch (ArrayIndexOutOfBoundsException e) {

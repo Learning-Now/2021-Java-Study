@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.stream.Stream;
 
-public enum Operator {
+public enum Operator implements  Operation{
     ADD("+") {
         @Override
         public BigDecimal calculate(Number firstValue, Number secondValue) {
@@ -36,11 +36,12 @@ public enum Operator {
         value = operator;
     }
 
-    public static Operator from(String operatorText) {
+    public static Operator find(String operatorText) {
         return Arrays.stream(values())
                 .filter(operator -> operator.value.equals(operatorText))
                 .findAny()
                 .orElseThrow(() -> new IllegalArgumentException("잘못된 연산자 입니다."));
     }
-    public abstract BigDecimal calculate(Number firstValue, Number secondValue);
+
+    //public abstract BigDecimal calculate(Number firstValue, Number secondValue);
 }
