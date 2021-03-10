@@ -42,6 +42,4 @@ public enum Operator implements  Operation{
                 .findAny()
                 .orElseThrow(() -> new IllegalArgumentException("잘못된 연산자 입니다."));
     }
-
-    //public abstract BigDecimal calculate(Number firstValue, Number secondValue);
 }
