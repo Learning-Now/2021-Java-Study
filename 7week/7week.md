@@ -160,6 +160,153 @@ public class Main {
 
 - Dispatch 가 연속적으로 이뤄지는것을 의미한다.
 
+    바로 예를 보도록 하자
+
+```java
+public class Test {
+	public static void main (String [] args) {
+		Lists<SmartPhone> phoneList = Arrays.asList(new Iphone(), new Gallaxy());
+	Game game = new Game();
+	phoneList.forEach(game::play);
+	}
+}
+
+interface SmartPhone {
+}
+class Iphone implements SmartPhone {
+}
+class Gallaxy implements SmartPhone {
+}
+
+class Game {
+	public void play(SmartPhone phone) {
+		System.out.println(phone.getClass().getSimpleName());
+	}
+}
+```
+
+- 스마트폰을 순회 하면서 게임을 하는데 리스트 인터페이스를 타입 파라미터로 전달해서 동적 디스패치로 인한 출력 내용이 모두 달라야 한다. 그렇다면 어떻게 구현을 해야할까
+
+```java
+class Game {
+	public void play(SmartPhone phone) {
+		if (phone instanceof Iphone)
+			System.out.println(phone.getClass.getSimpleName());
+	}
+		if (phone instancedof Gallaxy)
+			System.out.println(phone.getClass.getSimpleName());
+	}
+}
+```
+
+- 이렇게 코딩을 작성하게 된다면 SmartPhone의  class 가 늘어 나게 된다면 Game 클래스를 수정해줘야한다 객체지향적이지 않다.
+
+따라서 다음과 같은 방법으로 수정해 줘야한다
+
+```java
+public class Test {
+	public static void main (String [] args) {
+		Lists<SmartPhone> phoneList = Arrays.asList(new Iphone(), new Gallaxy());
+	Game game = new Game();
+	phoneList.forEach(game::play);
+	}
+}
+
+interface SmartPhone {
+	void game(Game game);
+}
+class Iphone implements SmartPhone {
+	@Override
+	public void game(Game game) {
+		System.out.println(this.getClass().getSimpleName());
+	}
+}
+class Gallaxy implements SmartPhone {
+	@Override
+		public void game(Game game) {
+			System.out.println(this.getClass().getSimpleName());
+		}
+	}
+}
+
+class Game {
+	public void play(SmartPhone phone) {
+		phone.game(this);	
+	}
+}
+```
+
+- 기존 Game 클래스의 로직을 자기 Phone 자신이 처리하게 수정 했다. 이때 디스패치가 두번 발생하게 된다. play() 메소드를 찾기 위한 정적 디스패치, game() 메소드를 호출하는 객체를 찾기위한 동적 디스패치 = > 이를 더블 디스패치라 한다.
+
+---
+
+## 추상 클래스
+
+- 추상 클래스란 하나 이상의 추상 메소드를 포함 하는 클래스이다. 추상 메소드의 경우 선언만 존재하고 따로 구현을 되어 있지 않다. 구현은 함수의 본체에서 하고 선언 부에 (abstract) 키워드를 넣어준다.
+
+**추상 클래스와 일반 클래스의 차이**
+
+- 추상 클래스는 추상 메서드를 포함하고 객체화가 불가능 하다는 점만 제외 하면 일반 클래스와 크게 다르지 않다. (즉 생성자, 멤버 변수, 일반 메서드 가질수 있음)
+
+ex)
+
+```java
+àbstract class Tv {
+	public String tvName;
+	public void View() {
+		System.out.println("TvOn");
+	}
+	abstract void getMaker();
+}
+
+class Samsung extends Tv {
+	public void View() {
+		System.out.println("SamsungTv on");
+	}
+	void getMaker() {
+		System.out.println("Samsung");
+	}
+}
+```
+
+- 추상 메소드의 접근 지정자로는 private 불가능
+
+ ⇒ private 지정시 다른 클래스가 상속을 받을수 없다
+
+- 추상 클래스는 다른 클래스에서 공통으로 가져야하는 메소드를 정의해준다.
+- 어떤 추상클래스를 상속 받은 자식 클래스에서 추상 메소드를 구현 하지 않았다면 자식 클래스도 추상 클래스가 되어야함.
+
+---
+
+## Final 클래스
+
+- 자바에서 final의 의미는 최종적이라는 의미를 가지고 있다. ⇒ final 키워드가 붙게 된다면 프로그램 실행중 수정이 불가능 하다.
+
+**Final 클래스란?**
+
+- 클래스를 선언시 앞에 final 키워드를 붙이면 final 클래스가 되는데 이는 수정이 불가능한 클래스를 의미한다.
+- 주로 자기가 만든 클래스를 상속이 불가능하게 하고 싶을때 사용을 한다.
+
+**Final 메소드란?**
+
+- 위와 동일하게 수정이 불가능한 메소드를 의마하는데 클래스에 final 이 붙지 않은경우 클래스는 상속이 가능하지만 메소드에 final이 붙어있으면 재정의가 불가능하다.
+
+---
+
+## Object 클래스
+
+- 자바에서 상속은 중요한 부분을 차지한다. 우리는 상속을 하지 않았다고 생각하지만 클래스를 생성하는것 부터 이미 상속을 사용하게된다.
+- 자바의 모든 클래스는 암묵적으로 Object 클래스를 상속 받고 있다. = Object 는 모든 클래스의 조상
+- Object 가 지니고 있는 메소드
+    1. clone()
+    2. equals()
+    3. finalize()
+    4. getClass()
+    5. hashCode()
+    6. notify()
+    7. toString() 
+    8. wait()
+
 ---
 
 ## REFERNCE
@@ -167,3 +314,9 @@ public class Main {
 [https://scshim.tistory.com/210](https://scshim.tistory.com/210)
 
 [https://velog.io/@dion/백기선님-온라인-스터디-6주차-상속](https://velog.io/@dion/%EB%B0%B1%EA%B8%B0%EC%84%A0%EB%8B%98-%EC%98%A8%EB%9D%BC%EC%9D%B8-%EC%8A%A4%ED%84%B0%EB%94%94-6%EC%A3%BC%EC%B0%A8-%EC%83%81%EC%86%8D)
+
+[https://multifrontgarden.tistory.com/133](https://multifrontgarden.tistory.com/133)
+
+[https://studymake.tistory.com/423](https://studymake.tistory.com/423)
+
+[https://opentutorials.org/course/1223/6241](https://opentutorials.org/course/1223/6241)
