@@ -4,8 +4,9 @@ package Domain;
 import java.math.BigDecimal;
 
 public class Number {
-    private BigDecimal value;
     private static final BigDecimal ZERO = new BigDecimal(0);
+    private BigDecimal value;
+
 
     public Number(String value) {
         this.value = validateNumber(value);
