@@ -231,7 +231,35 @@ public class Main {
 
 ---
 
+## 인터페이스
+
+- 자바에서의 인터페이스 역할
+- 개발자 사이의 코드 규약
+- 공통적인 메소드나 필드를 추상화
+- 추상 메서드의 모음 ( 구현부가 없는 메소드의 모음 )
+
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f96b09b7-83ed-4d7d-afde-abc027241913/_2021-03-13__12.37.18.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f96b09b7-83ed-4d7d-afde-abc027241913/_2021-03-13__12.37.18.png)
+
+☝️ 인터페이스 내에서 필드 멤버를 선언 하기 위해서는 public static final 로 선언 해야함!
+
+☝️구현부가 없다 → 사용시 구현을 해야한다, 인터페이스 내에 있는 모든 메소드를 구현해주어야 한다.
+
+☝️ 인터페이스를 사용하게 되면 자바에서 단일 상속 밖에 하지 못하는 단점을 해소시켜주어 다중 상속이 가능하게 해준다.
+
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d77e7ea3-998f-4187-94d8-9167031b1772/_2021-03-13__12.39.55.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d77e7ea3-998f-4187-94d8-9167031b1772/_2021-03-13__12.39.55.png)
+
+**인터페이스와 상속의 차이**
+
+- 다형성을 활용하기 위해 자바에서는 상속과 인터페이스를 사용한다. 둘중 뭘 사용할지는 개발자의 몫이고 판단을 도와주는 기준은 다음과 같다
+1. 상속 보다는 위임을 사용하다.
+2. 다형성을 위한 것이라면 클래스 상속보다 인터페이스 구현을 하라.
+- 대부분은 상속을 추천하지 X, 상속시 변화가 발생하는 순간 상속 구조가 깨질 우려가 있으며 이때 발생하는 비용도 어마어마 하다.
+
+---
+
 ## reference
+
+[https://velog.io/@codemcd/인터페이스Interface](https://velog.io/@codemcd/%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4Interface)
 
 [https://kutar37.tistory.com/entry/자바-String-클래스의-메소드](https://kutar37.tistory.com/entry/%EC%9E%90%EB%B0%94-String-%ED%81%B4%EB%9E%98%EC%8A%A4%EC%9D%98-%EB%A9%94%EC%86%8C%EB%93%9C)[https://www.latera.kr/blog/2019-02-09-java-string-intern/](https://www.latera.kr/blog/2019-02-09-java-string-intern/)
 
