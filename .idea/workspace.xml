@@ -34,19 +34,6 @@
       <recent name="C:\Users\dustn\IdeaProjects\자바스터디\2021-Java-Study-1\4주차과제\프로그래밍과제1" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -83,7 +70,8 @@
       <workItem from="1614655022546" duration="4520000" />
       <workItem from="1614743124992" duration="3535000" />
       <workItem from="1614843416103" duration="1114000" />
-      <workItem from="1615175367407" duration="5525000" />
+      <workItem from="1615175367407" duration="11167000" />
+      <workItem from="1615635797276" duration="191000" />
     </task>
     <servers />
   </component>
