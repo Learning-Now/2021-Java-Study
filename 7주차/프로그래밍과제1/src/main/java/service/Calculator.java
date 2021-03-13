@@ -15,11 +15,11 @@ public class Calculator {
 
     public static void start(String[] formula) {
         Number resultNumber = new Number(formula[FIRST_INDEX]);
-        for (int i = 1; i < formula.length; i += INDEX_INTERVAL_TWO) {
+        for (int index = 1; index < formula.length; index += INDEX_INTERVAL_TWO) {
             Number calculatedResult = resultNumber;
-            Operator operator = Operator.find(formula[i]);
-            Number nextArgument = new Number(formula[i + INDEX_INTERVAL_ONE]);
-            String stringResult = Integer.toString(operator.calculate(calculatedResult.getValue(), nextArgument.getValue()));
+            Number nextArgument = new Number(formula[index + INDEX_INTERVAL_ONE]);
+            String stringResult = Operator.find(formula[index])
+                    .calculate(calculatedResult, nextArgument);
             resultNumber = new Number(stringResult);
         }
         PrinterOutputView.printOutputView(resultNumber);
