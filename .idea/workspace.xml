@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f57adcb4-341d-4610-91ba-3880bcef0abe" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/7주차과제/Calculator/java/util/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/7주차과제/Calculator/java/util/Calculator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,21 +35,6 @@
       <recent name="C:\Users\dustn\IdeaProjects\자바스터디\2021-Java-Study-1\5주차과제\자바코드실습\CalculatorApp" />
       <recent name="C:\Users\dustn\IdeaProjects\자바스터디\2021-Java-Study-1\4주차과제\프로그래밍과제1" />
     </key>
-  </component>
-  <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -90,7 +76,8 @@
       <workItem from="1615635797276" duration="721000" />
       <workItem from="1615732786652" duration="1644000" />
       <workItem from="1615735121492" duration="326000" />
-      <workItem from="1615735469001" duration="524000" />
+      <workItem from="1615735469001" duration="683000" />
+      <workItem from="1615818095744" duration="273000" />
     </task>
     <servers />
   </component>

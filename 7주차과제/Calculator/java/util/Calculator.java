@@ -3,13 +3,13 @@ package util;
 import input.InputUtils;
 
 public class Calculator{
-    private OperatorCalculator operatorcalculator = new OperatorCalculator();
-    public int calculate(String[] sr) {
+    private OperatorCalculator operatorCalculator = new OperatorCalculator();
+    public int calculate(String[] strResult) {
         //첫번째 값 확인
-        operatorcalculator.checkFirstInput(sr);
+        operatorCalculator.checkFirstInput(strResult);
         //연산자에 따라 계산
-        operatorcalculator.calculatedByOperator(sr);
-        return operatorcalculator.getSum();
+        operatorCalculator.calculatedByOperator(strResult);
+        return operatorCalculator.getSum();
     }
 
     public void run() {
