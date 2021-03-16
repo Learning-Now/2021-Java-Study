@@ -11,12 +11,12 @@ import java.util.Arrays;
 import java.util.stream.Stream;
 
 public class StringCalculator {
-    public static final int FIND_INDEX_ZERO = 0;
-    public static final int INDEX_INTERVAL_ONE = 1;
-    public static final int INDEX_INTERVAL_TWO = 2;
+    private static final int FIND_INDEX_ZERO = 0;
+    private static final int INDEX_INTERVAL_ONE = 1;
+    private static final int INDEX_INTERVAL_TWO = 2;
 
     public void start() {
-        String[] arr = BufferInput.stringBufferInput();
+        String[] arr = BufferInput.BufferInputGapSplit();
         Number first = new Number(arr[FIND_INDEX_ZERO]);
         Number result = new Number("0");
 

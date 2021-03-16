@@ -7,11 +7,11 @@ import java.io.InputStreamReader;
 public class BufferInput {
     private BufferInput() {};
 
-    public static String[] stringBufferInput() {
+    public static String[] BufferInputGapSplit() {
         try {
             BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
             String str = bf.readLine();
-            return BufferSplit.stringGapSplit(str);
+            return str.split(" ");
         } catch (IOException e){
             throw new IllegalArgumentException("잘못된 입력입니다.");
         }
