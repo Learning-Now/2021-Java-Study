@@ -5,26 +5,30 @@ import Domain.Operator;
 import Utility.BufferInput;
 import Utility.View;
 
-import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.stream.Stream;
+import java.util.ArrayDeque;
+
 
 public class StringCalculator {
-    private static final int FIND_INDEX_ZERO = 0;
-    private static final int INDEX_INTERVAL_ONE = 1;
-    private static final int INDEX_INTERVAL_TWO = 2;
+    private StringCalculator(){};
 
-    public void start() {
-        String[] arr = BufferInput.BufferInputGapSplit();
-        Number first = new Number(arr[FIND_INDEX_ZERO]);
+    public static void start() {
+        String[] arr = BufferInput.BufferInputAndGapSplit();
+        ArrayDeque<Number> numbers = splitArr(arr);
+
         Number result = new Number("0");
-
-        for (int index = 0; index < arr.length - 2; index += 2) {
-            Number second = new Number(arr[index + INDEX_INTERVAL_TWO]);
-            result = new Number(Operator.find(arr[index + INDEX_INTERVAL_ONE]).calculate(first,second));
-            first = result;
+        
+        for (int index = 1; index < arr.length; index += 2) {
+            result = new Number(Operator.find(arr[index]).calculate(numbers));
+            numbers.addFirst(result);
         }
         View.stringCalculatorResultView(result.getValue());
+    }
+
+    public static ArrayDeque<Number> splitArr(String [] arr) {
+        ArrayDeque<Number> numbers = new ArrayDeque<>();
+        for (int index = 0; index < arr.length; index += 2) {
+            numbers.add(new Number(arr[index]));
+        }
+        return numbers;
     }
 }

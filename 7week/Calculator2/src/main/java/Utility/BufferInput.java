@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 public class BufferInput {
     private BufferInput() {};
 
-    public static String[] BufferInputGapSplit() {
+    public static String[] BufferInputAndGapSplit() {
         try {
             BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
             String str = bf.readLine();

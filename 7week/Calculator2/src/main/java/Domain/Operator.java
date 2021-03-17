@@ -1,32 +1,33 @@
 package Domain;
 
 import java.math.BigDecimal;
+import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.stream.Stream;
 
 public enum Operator implements  Operation{
     ADD("+") {
         @Override
-        public BigDecimal calculate(Number firstValue, Number secondValue) {
-            return firstValue.getValue().add(secondValue.getValue());
+        public BigDecimal calculate(ArrayDeque<Number> numbers) {
+            return numbers.pollFirst().getValue().add(numbers.pollFirst().getValue());
         }
     },
     SUB("-") {
         @Override
-        public BigDecimal calculate(Number firstValue, Number secondValue) {
-            return firstValue.getValue().subtract(secondValue.getValue());
+        public BigDecimal calculate(ArrayDeque<Number> numbers) {
+            return numbers.pollFirst().getValue().subtract(numbers.pollFirst().getValue());
         }
     },
     MUL("*") {
         @Override
-        public BigDecimal calculate(Number firstValue, Number secondValue) {
-            return firstValue.getValue().multiply(secondValue.getValue());
+        public BigDecimal calculate(ArrayDeque<Number> numbers) {
+            return numbers.pollFirst().getValue().multiply(numbers.pollFirst().getValue());
         }
     },
     DIV("/") {
         @Override
-        public BigDecimal calculate(Number firstValue, Number secondValue) {
-            return firstValue.getValue().divide(secondValue.getValue());
+        public BigDecimal calculate(ArrayDeque<Number> numbers) {
+            return numbers.pollFirst().getValue().divide(numbers.pollFirst().getValue());
         }
     };
 
