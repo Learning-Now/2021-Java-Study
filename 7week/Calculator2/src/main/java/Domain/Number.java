@@ -5,7 +5,6 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 
 public class Number {
-    private static final BigDecimal ZERO = new BigDecimal(0);
     private BigDecimal value;
 
     public Number(String value) {
