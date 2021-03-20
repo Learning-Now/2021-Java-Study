@@ -9,7 +9,7 @@ import java.io.IOException;
 public class Calculator {
     private static double result = 0;
 
-    private Calculator(){
+    private Calculator() {
     }
 
     public static void run() throws IOException {
