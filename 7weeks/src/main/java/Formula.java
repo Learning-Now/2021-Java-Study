@@ -4,7 +4,6 @@ import java.io.InputStreamReader;
 
 public class Formula {
     private static String[] arrayFormula;
-    private int checkIndex = 1;
 
     public void inputFormula() throws IOException {
         BufferedReader bufferedReader = new BufferedReader((new InputStreamReader(System.in)));
@@ -13,8 +12,9 @@ public class Formula {
 
     public void startCheckOperand() throws IllegalArgumentException {
         boolean isComputable = true;
+        int checkIndex = 1;
         for (checkIndex = 1; checkIndex < arrayFormula.length + 1; checkIndex += 2) {
-            isComputable = isOperandComputable();
+            isComputable = isOperandComputable(checkIndex);
             if (isComputable == false){
                 break;
             }
@@ -22,7 +22,7 @@ public class Formula {
         startPerformer(isComputable);
     }
 
-    public boolean isOperandComputable() {
+    public boolean isOperandComputable(int checkIndex) {
         if (Exception.isElementInt(arrayFormula[checkIndex - 1]) == false) {
             System.out.println("숫자가 아닌 값: " + arrayFormula[checkIndex - 1]);
             return false;
