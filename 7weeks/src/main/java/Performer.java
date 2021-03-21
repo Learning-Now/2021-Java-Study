@@ -16,37 +16,21 @@ public class Performer {
 
     public static void operateCal(){
         if (formula[operator].equals("+")) {
-            performAdd();
+            result = Calculator.addNum(Double.parseDouble(formula[operator - 1]),
+                    Double.parseDouble(formula[operator + 1]));// 연산에서 누락되는 것을 줄이기 위해 double
         }
         if (formula[operator].equals("-")) {
-            performSub();
+            result = Calculator.subNum(Double.parseDouble(formula[operator - 1]),
+                    Double.parseDouble(formula[operator + 1]));
         }
         if (formula[operator].equals("*")) {
-            performMul();
+            result = Calculator.mulNum(Double.parseDouble(formula[operator - 1]),
+                    Double.parseDouble(formula[operator + 1]));
         }
         if (formula[operator].equals("/")) {
-            performDiv();
+            result = Calculator.divNum(Integer.parseInt(formula[operator - 1]),
+                    Integer.parseInt(formula[operator + 1]));
         }
         formula[operator + 1] = Double.toString(result);// 연산자 1개, 피연산자 2개가 아닐경우 연산을 계속 진행
-    }
-
-    public static void performAdd(){
-        result = Calculator.addNum(Double.parseDouble(formula[operator - 1]),
-                Double.parseDouble(formula[operator + 1]));// 연산에서 누락되는 것을 줄이기 위해 double
-    }
-
-    public static void performSub(){
-        result = Calculator.subNum(Double.parseDouble(formula[operator - 1]),
-                Double.parseDouble(formula[operator + 1]));
-    }
-
-    public static void performMul(){
-        result = Calculator.mulNum(Double.parseDouble(formula[operator - 1]),
-                Double.parseDouble(formula[operator + 1]));
-    }
-
-    public static void performDiv(){
-        result = Calculator.divNum(Integer.parseInt(formula[operator - 1]),
-                Integer.parseInt(formula[operator + 1]));
     }
 }
