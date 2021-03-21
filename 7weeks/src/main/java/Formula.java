@@ -9,7 +9,6 @@ public class Formula {
     public void inputFormula() throws IOException {
         BufferedReader bufferedReader = new BufferedReader((new InputStreamReader(System.in)));
         this.arrayFormula = bufferedReader.readLine().split(" ");
-        startCheckOperand();
     }
 
     public void startCheckOperand() throws IllegalArgumentException {
