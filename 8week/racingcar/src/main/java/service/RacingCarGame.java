@@ -2,6 +2,7 @@ package service;
 
 import domain.Car;
 import utils.Input;
+import utils.Sort;
 import utils.View;
 
 import java.util.ArrayList;
@@ -32,9 +33,7 @@ public class RacingCarGame {
     }
 
     public void getResult(List<Car> cars) {
-        List<Car> sortedCars = cars.stream()
-                .sorted((a, b) -> b.getPosition() - a.getPosition())
-                .collect(Collectors.toList());
+        List<Car> sortedCars = Sort.sortList(cars);
         findMaxPosition(sortedCars);
         for (Car car : sortedCars) {
             if (maxPosition == car.getPosition()) {
@@ -43,6 +42,7 @@ public class RacingCarGame {
         }
         View.resultView(winner);
     }
+
 
     public void findMaxPosition(List<Car> sortedcars) {
         this.maxPosition = sortedcars.get(ZERO).getPosition();
