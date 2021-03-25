@@ -15,7 +15,7 @@ public class Car {
     }
 
     public void movePosition() {
-        if (RandomUtils.nextInt(START_NUMBER,FINISH_NUMBER) > CONTROL_POINT) {
+        if (RandomUtils.randomIntGenerator(START_NUMBER, FINISH_NUMBER) > CONTROL_POINT) {
             this.position = position + 1;
         }
     }

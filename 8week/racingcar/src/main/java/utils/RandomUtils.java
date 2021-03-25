@@ -6,16 +6,16 @@ public class RandomUtils {
     private static final Random RANDOM = new Random();
     private RandomUtils() {
     }
-    public static int nextInt(final int startInclusive, final int endInclusive) {
-        if (startInclusive > endInclusive) {
+    public static int randomIntGenerator(final int startNumber, final int lastNumber) {
+        if (startNumber > lastNumber) {
             throw new IllegalArgumentException();
         }
-        if (startInclusive < 0) {
+        if (startNumber < 0) {
             throw new IllegalArgumentException();
         }
-        if (startInclusive == endInclusive) {
-            return startInclusive;
+        if (startNumber == lastNumber) {
+            return startNumber;
         }
-        return startInclusive + RANDOM.nextInt(endInclusive - startInclusive + 1);
+        return startNumber + RANDOM.nextInt(lastNumber - startNumber + 1);
     }
 }
