@@ -11,21 +11,21 @@ import java.util.List;
 
 public class RacingCarGameController {
     private final static int ZERO = 0;
-    private final List<Car> cars = new ArrayList<>();
+    protected final List<Car> cars = new ArrayList<>();
     private final List<Car> winner = new ArrayList<>();
+    protected int count;
     private int maxPosition = 0;
 
-    public List<Car> carSetting() {
+    public void carSetting() {
         View.introView();
         String [] carNames = Input.stringInput();
         Arrays.stream(carNames)
                 .forEach(carName -> cars.add(new Car(carName)));
-        return cars;
     }
 
-    public int countSetting() {
+    public void countSetting() {
         View.countView();
-        return Input.intInput();
+        count = Input.intInput();
     }
 
     public void findMaxPosition(List<Car> sortedcars) {
@@ -44,14 +44,18 @@ public class RacingCarGameController {
     }
 
     public void run(int count, List<Car> cars) {
-        System.out.println("실행결과");
+        View.runView();
         for (int times = ZERO; times < count; times++){
-            for (Car car : cars) {
-                car.movePosition();
-                View.carNameView(car.getName());
-                View.distanceView(car.getPosition());
-            }
+            carStatus(cars);
             System.out.println();
         }
     }
+
+    private void carStatus(List<Car> cars) {
+        for (Car car : cars) {
+            car.movePosition();
+            View.carStatusView(car);
+        }
+    }
+
 }

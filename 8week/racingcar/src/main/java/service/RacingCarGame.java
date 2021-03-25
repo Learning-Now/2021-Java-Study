@@ -1,23 +1,13 @@
 package service;
 
-import domain.Car;
-import utils.Input;
-import utils.Sort;
-import utils.View;
+public class RacingCarGame extends RacingCarGameController {
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
-
-public class RacingCarGame {
     public void start() {
         RacingCarGameController controller = new RacingCarGameController();
-        List<Car> cars = controller.carSetting();
-        int count = controller.countSetting();
-        System.out.println(count);
-        controller.run(count, cars);
-        controller.findWinner(cars);
+        controller.carSetting();
+        controller.countSetting();
+        controller.run(controller.count, controller.cars);
+        controller.findWinner(controller.cars);
     }
 
 }
