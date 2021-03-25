@@ -35,7 +35,7 @@ public class RacingCarGame {
         List<Car> sortedCars = cars.stream()
                 .sorted((a, b) -> b.getPosition() - a.getPosition())
                 .collect(Collectors.toList());
-        setMaxPosition(sortedCars);
+        findMaxPosition(sortedCars);
         for (Car car : sortedCars) {
             if (maxPosition == car.getPosition()) {
                 winner.add(car);
@@ -44,7 +44,7 @@ public class RacingCarGame {
         View.resultView(winner);
     }
 
-    public void setMaxPosition(List<Car> sortedcars) {
+    public void findMaxPosition(List<Car> sortedcars) {
         this.maxPosition = sortedcars.get(ZERO).getPosition();
     }
 
