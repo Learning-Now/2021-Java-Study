@@ -2,22 +2,23 @@ package service;
 
 import domain.Car;
 import domain.Cars;
-import view.InputView;
-import view.OutputView;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static view.InputView.*;
+import static view.OutputView.*;
+
 public class Game {
     private int maxPosition;
 
     public void play() {
-        final Cars cars = new Cars(splitCars(InputView.inputCarNames()));
-        final int gameCount = InputView.inputGameCount();
+        final Cars cars = new Cars(splitCars(inputCarNames()));
+        final int gameCount = inputGameCount();
         run(cars, gameCount);
         final Cars winner = findWinner(cars);
-        OutputView.printGameResult(winner);
+        printGameResult(winner.getCars());
     }
 
     private List<Car> splitCars(final String[] carList) {
@@ -29,7 +30,8 @@ public class Game {
     private void run(final Cars cars, final int gameCount) {
         for (int index = 0; index < gameCount; index++) {
             cars.getCars().forEach(Car::go);
-            cars.getCars().forEach(OutputView::printGameStatus);
+            cars.getCars().forEach(
+                    car -> printGameStatus(car.getName(), car.getPosition()));
             System.out.println();
         }
     }
