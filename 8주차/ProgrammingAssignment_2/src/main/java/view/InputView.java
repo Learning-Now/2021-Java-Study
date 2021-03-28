@@ -11,7 +11,7 @@ public class InputView {
 
     }
 
-    private static BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+    private static final BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
     public static int inputGameCount() {
         System.out.println("시도할 횟수는 몇회인가요? ");
