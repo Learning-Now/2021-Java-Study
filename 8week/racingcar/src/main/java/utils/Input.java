@@ -11,6 +11,7 @@ public class Input {
 
     public static String[] stringInput() {
         try {
+            System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");
             BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
             String buffer = bf.readLine();
             if (buffer.contains(" ")){
@@ -24,6 +25,7 @@ public class Input {
 
     public static int intInput() {
         try {
+            System.out.println("시도할 회수는 몇회인가요?");
             Scanner scanner = new Scanner(System.in);
             int count = scanner.nextInt();
             return count;

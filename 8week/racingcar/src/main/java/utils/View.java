@@ -3,6 +3,7 @@ package utils;
 import domain.Car;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class View {
 
@@ -21,25 +22,10 @@ public class View {
 
     public static void resultView(final List<Car> cars){
         System.out.print("최종 우승자 : ");
-        for (int index = 0; index< cars.size(); index++) {
-            if (index+1 == cars.size()) {
-                System.out.print(cars.get(index).getName());
-                break;
-            }
-            System.out.print(cars.get(index).getName() + ", ");
-        }
-    }
-
-    public static void introView() {
-        System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");
-    }
-
-    public static void countView() {
-        System.out.println("시도할 회수는 몇회인가요?");
-    }
-
-    public static void runView() {
-        System.out.println("실행결과");
+        String winner = cars.stream()
+                            .map(Car::getName)
+                            .collect(Collectors.joining(", "));
+        System.out.println(winner);
     }
 
     public static void carStatusView(Car car) {

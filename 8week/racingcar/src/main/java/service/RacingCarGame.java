@@ -1,12 +1,13 @@
 package service;
 
+import domain.Cars;
+
 public class RacingCarGame {
 
     public void start() {
         RacingCarGameController controller = new RacingCarGameController();
-        controller.gameSetting();
-        controller.run(controller.count, controller.cars);
-        controller.findWinner(controller.cars);
+        Cars cars = controller.createCar();
+        controller.run(cars);
     }
 
 }
