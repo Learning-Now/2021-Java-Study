@@ -11,14 +11,12 @@ import static view.InputView.*;
 import static view.OutputView.*;
 
 public class Game {
-    private int maxPosition;
-
     public void play() {
         final Cars cars = new Cars(splitCars(inputCarNames()));
         final int gameCount = inputGameCount();
         run(cars, gameCount);
-        final Cars winner = findWinner(cars);
-        printGameResult(winner.getCars());
+        final Cars winners = cars.findWinner();
+        printGameResult(winners.getCars());
     }
 
     private List<Car> splitCars(final String[] carList) {
@@ -28,27 +26,11 @@ public class Game {
     }
 
     private void run(final Cars cars, final int gameCount) {
+        System.out.println("\n실행결과");
         for (int index = 0; index < gameCount; index++) {
-            cars.getCars().forEach(Car::go);
-            cars.getCars().forEach(
-                    car -> printGameStatus(car.getName(), car.getPosition()));
+            cars.moveCars();
+            cars.printCars();
             System.out.println();
         }
-    }
-
-    private Cars findWinner(final Cars cars) {
-        maxPosition = cars.getCars()
-                .stream()
-                .mapToInt(Car::getPosition)
-                .max()
-                .getAsInt();
-        return new Cars(cars.getCars()
-                .stream()
-                .filter(car -> isMaxPosition(car.getPosition()))
-                .collect(Collectors.toList()));
-    }
-
-    private boolean isMaxPosition(final int position) {
-        return position == maxPosition;
     }
 }
