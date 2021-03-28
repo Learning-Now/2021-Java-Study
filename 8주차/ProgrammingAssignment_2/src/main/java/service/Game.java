@@ -4,9 +4,9 @@ import domain.Car;
 import view.InputView;
 import view.OutputView;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 public class Game {
     private int maxPosition;
@@ -20,20 +20,15 @@ public class Game {
     }
 
     private List<Car> splitCars(final String[] carList) {
-        return IntStream.range(0, carList.length)
-                .mapToObj(index -> new Car(carList[index]))
+        return Arrays.stream(carList)
+                .map(Car::new)
                 .collect(Collectors.toList());
     }
 
     private void run(final List<Car> cars, final int gameCount) {
         for (int index = 0; index < gameCount; index++) {
-            cars.stream()
-                    .map(car -> {
-                        car.go();
-                        OutputView.printGameStatus(car);
-                        return car;
-                    })
-                    .forEachOrdered(car -> System.out.print(""));
+            cars.forEach(Car::go);
+            cars.forEach(OutputView::printGameStatus);
             System.out.println();
         }
     }
