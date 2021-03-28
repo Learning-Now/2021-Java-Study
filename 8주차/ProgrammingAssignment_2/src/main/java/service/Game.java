@@ -1,6 +1,7 @@
 package service;
 
 import domain.Car;
+import domain.Cars;
 import view.InputView;
 import view.OutputView;
 
@@ -12,10 +13,10 @@ public class Game {
     private int maxPosition;
 
     public void play() {
-        final List<Car> cars = splitCars(InputView.inputCarNames());
+        final Cars cars = new Cars(splitCars(InputView.inputCarNames()));
         final int gameCount = InputView.inputGameCount();
         run(cars, gameCount);
-        final List<Car> winner = findWinner(cars);
+        final Cars winner = findWinner(cars);
         OutputView.printGameResult(winner);
     }
 
@@ -25,22 +26,24 @@ public class Game {
                 .collect(Collectors.toList());
     }
 
-    private void run(final List<Car> cars, final int gameCount) {
+    private void run(final Cars cars, final int gameCount) {
         for (int index = 0; index < gameCount; index++) {
-            cars.forEach(Car::go);
-            cars.forEach(OutputView::printGameStatus);
+            cars.getCars().forEach(Car::go);
+            cars.getCars().forEach(OutputView::printGameStatus);
             System.out.println();
         }
     }
 
-    private List<Car> findWinner(final List<Car> cars) {
-        maxPosition = cars.stream()
+    private Cars findWinner(final Cars cars) {
+        maxPosition = cars.getCars()
+                .stream()
                 .mapToInt(Car::getPosition)
                 .max()
                 .getAsInt();
-        return cars.stream()
+        return new Cars(cars.getCars()
+                .stream()
                 .filter(car -> isMaxPosition(car.getPosition()))
-                .collect(Collectors.toList());
+                .collect(Collectors.toList()));
     }
 
     private boolean isMaxPosition(final int position) {

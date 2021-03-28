@@ -1,8 +1,8 @@
 package view;
 
 import domain.Car;
+import domain.Cars;
 
-import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -27,9 +27,10 @@ public class OutputView {
         printCarPosition(car);
     }
 
-    public static void printGameResult(List<Car> winners) {
+    public static void printGameResult(Cars winners) {
         System.out.print("최종 우승자: ");
-        String winner = winners.stream()
+        String winner = winners.getCars()
+                .stream()
                 .map(Car::getName)
                 .collect(Collectors.joining(", "));
         System.out.println(winner);
