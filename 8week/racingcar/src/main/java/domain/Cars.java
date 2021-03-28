@@ -13,15 +13,10 @@ public class Cars {
         this.cars = cars;
     }
 
-    public List<Car> getCars() {
-        return this.cars;
-    }
-
     public void moveCars() {
-        for (Car car : cars) {
-            car.movePosition();
-            View.carStatusView(car);
-        }
+        cars.stream()
+                .peek(Car::movePosition)
+                .forEachOrdered(car-> View.carStatusView(car));
     }
 
     public int findMaxPosition() {
