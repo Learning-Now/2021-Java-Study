@@ -16,30 +16,25 @@ public class RacingCarGameController {
     protected int count;
     private int maxPosition = 0;
 
-    public void carSetting() {
+    public void gameSetting() {
         View.introView();
         String [] carNames = Input.stringInput();
         Arrays.stream(carNames)
                 .forEach(carName -> cars.add(new Car(carName)));
-    }
-
-    public void countSetting() {
         View.countView();
         count = Input.intInput();
     }
 
-    public void findMaxPosition(List<Car> sortedcars) {
+    public void setMaxPosition(List<Car> sortedcars) {
         this.maxPosition = sortedcars.get(ZERO).getPosition();
     }
 
     public void findWinner(List<Car> cars) {
         List<Car> sortedCars = Sort.sortList(cars);
-        findMaxPosition(sortedCars);
-        for (Car car : sortedCars) {
-            if (maxPosition == car.getPosition()) {
-                winner.add(car);
-            }
-        }
+        setMaxPosition(sortedCars);
+        sortedCars.stream()
+                .filter(car -> maxPosition == car.getPosition())
+                .forEach(winner::add);
         View.resultView(winner);
     }
 
