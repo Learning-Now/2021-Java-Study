@@ -32,4 +32,8 @@ public class View {
         View.carNameView(car.getName());
         View.distanceView(car.getPosition());
     }
+
+    public static void spacingWord() {
+        System.out.println();
+    }
 }

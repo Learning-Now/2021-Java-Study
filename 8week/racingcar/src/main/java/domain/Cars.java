@@ -12,7 +12,17 @@ public class Cars {
     private final List<Car> cars;
 
     public Cars (List<Car> cars) {
+        validateCars(cars);
         this.cars = new ArrayList<>(cars);
+    }
+
+    private void validateCars(List<Car> cars) {
+        boolean value = cars.stream()
+                            .distinct()
+                            .count() != cars.size();
+        if (value != true) {
+            throw new IllegalArgumentException("[EEROR] 이름 중복");
+        }
     }
 
     public List<Car> getCars() {

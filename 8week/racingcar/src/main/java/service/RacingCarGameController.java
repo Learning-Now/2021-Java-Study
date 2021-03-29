@@ -2,6 +2,7 @@ package service;
 
 import domain.Car;
 import domain.Cars;
+import domain.Number;
 
 import utils.Input;
 import utils.View;
@@ -11,8 +12,6 @@ import java.util.Arrays;
 import java.util.stream.Collectors;
 
 public class RacingCarGameController {
-    private final static int ZERO = 0;
-    private int times;
 
     public Cars createCar() {
         String [] carNames = Input.stringInput();
@@ -21,15 +20,17 @@ public class RacingCarGameController {
                 .collect(Collectors.toCollection(ArrayList::new)));
     }
 
-    public void setTimes() {
-        times = Input.intInput();
+    public Number createCount() {
+        return Input.numberInput();
     }
 
     public void run(Cars cars) {
-        setTimes();
-        for (int time = ZERO; time < times; time++){
+        int count = createCount().getCount();
+        while(count-- > 0) {
             cars.moveCars();
-            System.out.println();
+            cars.getCars().stream()
+                    .forEach(Car->View.carStatusView(Car));
+            View.spacingWord();
         }
         View.resultView(cars.getWinner());
     }

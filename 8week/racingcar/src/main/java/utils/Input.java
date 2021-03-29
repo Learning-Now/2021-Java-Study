@@ -1,5 +1,7 @@
 package utils;
 
+import domain.Number;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -20,13 +22,14 @@ public class Input {
         }
     }
 
-    public static int intInput() {
+    public static Number numberInput() {
         try {
             System.out.println("시도할 회수는 몇회인가요?");
-            Scanner scanner = new Scanner(System.in);
-            int count = scanner.nextInt();
-            return count;
-        } catch (IllegalArgumentException e) {
+            BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+            String buffer = bf.readLine();
+            Number number = new Number(buffer);
+            return number;
+        } catch (IOException e) {
             throw new IllegalArgumentException("[ERROR] 잘못된 입력입니다.");
         }
     }

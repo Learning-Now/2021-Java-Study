@@ -38,7 +38,7 @@ public class Car {
 
     public static void validateInput(String buffer) {
         if (buffer.contains(" ")) {
-            throw new IllegalArgumentException("잘못된 입력입니다.");
+            throw new IllegalArgumentException("[ERROR] 잘못된 입력입니다.");
         }
     }
 }
