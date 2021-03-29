@@ -3,7 +3,6 @@ package domain;
 import utils.View;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -17,11 +16,12 @@ public class Cars {
     }
 
     private void validateCars(List<Car> cars) {
-        boolean value = cars.stream()
-                            .distinct()
-                            .count() != cars.size();
-        if (value != true) {
-            throw new IllegalArgumentException("[EEROR] 이름 중복");
+        Boolean value = (int) cars.stream()
+                .map(car -> car.getName())
+                .distinct()
+                .count() != cars.size();
+        if (value == true) {
+            throw new IllegalArgumentException("[ERROR] 이름 중복");
         }
     }
 
