@@ -10,6 +10,8 @@ public class Car {
     private static final int CONTROL_POINT = 4;
 
     public Car(final String name) {
+        validateLength(name);
+        validateInput(name);
         this.name = name;
         this.position = 0;
     }
@@ -20,11 +22,23 @@ public class Car {
         }
     }
 
+    private void validateLength(String name) {
+        if (name.length() > 5) {
+            throw new IllegalArgumentException("[ERROR] 이름의 길이는 5를 넘을수 없습니다.");
+        }
+    }
+
     public int getPosition(){
         return position;
     }
 
     public String getName() {
         return name;
+    }
+
+    public static void validateInput(String buffer) {
+        if (buffer.contains(" ")) {
+            throw new IllegalArgumentException("잘못된 입력입니다.");
+        }
     }
 }

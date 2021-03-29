@@ -3,6 +3,8 @@ package domain;
 import utils.View;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -10,13 +12,16 @@ public class Cars {
     private final List<Car> cars;
 
     public Cars (List<Car> cars) {
-        this.cars = cars;
+        this.cars = new ArrayList<>(cars);
+    }
+
+    public List<Car> getCars() {
+        return Collections.unmodifiableList(this.cars);
     }
 
     public void moveCars() {
         cars.stream()
-                .peek(Car::movePosition)
-                .forEachOrdered(car-> View.carStatusView(car));
+                .forEachOrdered(Car::movePosition);
     }
 
     public int findMaxPosition() {

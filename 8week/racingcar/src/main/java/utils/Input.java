@@ -14,12 +14,9 @@ public class Input {
             System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");
             BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
             String buffer = bf.readLine();
-            if (buffer.contains(" ")){
-                throw new IllegalArgumentException("잘못된 입력입니다.");
-            }
             return buffer.split(",");
         } catch (IOException e) {
-            throw new IllegalArgumentException("잘못된 입력입니다.");
+            throw new IllegalArgumentException("[ERROR] 잘못된 입력입니다.");
         }
     }
 
@@ -30,7 +27,7 @@ public class Input {
             int count = scanner.nextInt();
             return count;
         } catch (IllegalArgumentException e) {
-            throw new IllegalArgumentException("잘못된 입력입니다.");
+            throw new IllegalArgumentException("[ERROR] 잘못된 입력입니다.");
         }
     }
 
