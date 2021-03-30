@@ -24,9 +24,9 @@ public class RacingCarGameController {
         return Input.numberInput();
     }
 
-    public void run(Cars cars) {
-        int count = createCount().getCount();
-        while(count-- > 0) {
+    public void run(Cars cars, Number count) {
+        int times = count.getCount();
+        while(times-- > 0) {
             cars.moveCars();
             cars.getCars().stream()
                     .forEach(Car->View.carStatusView(Car));
