@@ -14,13 +14,13 @@ public class GameController {
             .stream()
             .map(Car::new)
             .collect(Collectors.toList());
-
         OutputView.printResultTitle();
 
         for (int i = 0; i < cycle; i++) {
             OutputView.printResultPosition(moveCar());
             System.out.println();
         }
+        OutputView.printWinner(winner());
     }
 
     public List<Car> moveCar() {
@@ -28,5 +28,12 @@ public class GameController {
             car.move();
         }
         return cars;
+    }
+
+    public Winner winner() {
+        return new Winner(cars ,cars.stream()
+                .mapToInt(Car::getPosition)
+                .max()
+                .getAsInt());
     }
 }
