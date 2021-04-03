@@ -9,9 +9,8 @@ public class Application {
 
     public static void main(String[] args) {
         final Scanner scanner = new Scanner(System.in);
-        // TODO 구현 진행
         String[] carNames;
-        int cycle;
+        int cycle = 0;
         int[] nameCheck = {0, 0};
         int[] nameCheckCmp = {0, 0};
 
@@ -19,12 +18,11 @@ public class Application {
         carNames = scanner.nextLine().split(",");
         System.out.println("시도할 회수는 몇회인가요?");
         cycle = scanner.nextInt();
-        //String[] carNames = carName.split(",");
 
         nameCheck = Validator.validateName(carNames);
         ErrorCatcher.catchNameError(nameCheck);
 
-        if (nameCheck.equals(nameCheckCmp)) {
+        if (nameCheck[0] == nameCheckCmp[0] && nameCheck[1] == nameCheckCmp[1]) {
             GameController gameController = new GameController();
             gameController.startGame(carNames, cycle);
         }

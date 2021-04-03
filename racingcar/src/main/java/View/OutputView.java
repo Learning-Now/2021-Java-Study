@@ -17,9 +17,10 @@ public class OutputView {
     }
 
     public static void printCarPosition(Car car) {
-        System.out.println(car.getName() + " : ");
+        System.out.print(car.getName() + " : ");
+
         for (int i = 0; i < car.getPosition(); i++) {
-            System.out.println(bar);
+            System.out.print(bar);
         }
         System.out.println();
     }

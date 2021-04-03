@@ -13,17 +13,17 @@ public class Car {
         this.name = name;
     }
 
-    public void go() {
-        if (RandomUtils.nextInt(START_INCLUSIVE, END_INCLUSIVE) > MOVE_THRESHOLD) {
+    public void move() {
+        if (RandomUtils.nextInt(START_INCLUSIVE, END_INCLUSIVE) >= MOVE_THRESHOLD) {
             position++;
         }
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public int getPosition() {
-        return position;
+        return this.position;
     }
 }
