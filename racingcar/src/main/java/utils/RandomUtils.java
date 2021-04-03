@@ -10,7 +10,7 @@ public class RandomUtils {
 
     public static int nextInt(final int startInclusive, final int endInclusive) {
         if (startInclusive > endInclusive) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("[ERROR] 랜덤값이 잘못되었습니다.");
         }
 
         if (startInclusive < 0) {
@@ -19,8 +19,8 @@ public class RandomUtils {
 
         if (startInclusive == endInclusive) {
             return startInclusive;
-
-            return startInclusive + RANDOM.nextInt(endInclusive - startInclusive + 1);
         }
+
+        return startInclusive + RANDOM.nextInt(endInclusive - startInclusive + 1);
     }
 }

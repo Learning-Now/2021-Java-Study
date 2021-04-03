@@ -4,6 +4,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Validator {
+    private Validator() {
+
+    }
+
     public static int[] validateName(String[] carNames) {
         int[] validationResult = {0, 0};
 

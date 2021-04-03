@@ -1,7 +1,11 @@
 package utils;
 
 public class ErrorCatcher {
-    public static void CatchNameError(int[] nameErrors) {
+    private ErrorCatcher() {
+
+    }
+
+    public static void catchNameError(int[] nameErrors) {
         if (nameErrors[0] == 1) {
             System.out.println("[ERROR] 중복된 이름이 있습니다.");
         }
