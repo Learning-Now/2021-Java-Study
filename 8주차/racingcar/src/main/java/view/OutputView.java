@@ -1,9 +1,7 @@
 package view;
 
-import domain.Car;
+import domain.Winners;
 
-import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class OutputView {
@@ -27,11 +25,16 @@ public class OutputView {
         printCarPosition(carPosition);
     }
 
-    public static void printGameResult(final List<Car> winners) {
+    public static void printGameResult(final Winners winners) {
         System.out.print("최종 우승자: ");
-        String winner = winners.stream()
-                .map(Car::getName)
-                .collect(Collectors.joining(", "));
-        System.out.println(winner);
+        System.out.println(winners.winnersToString());
+    }
+
+    public static void printGamePreview() {
+        System.out.println("\n실행결과");
+    }
+
+    public static void nextLine() {
+        System.out.println();
     }
 }
