@@ -5,6 +5,8 @@ import domain.Winners;
 import java.util.stream.IntStream;
 
 public class OutputView {
+    private static final String POSITION_DISPLAY = "-";
+
     private OutputView() {
 
     }
@@ -15,7 +17,7 @@ public class OutputView {
 
     private static void printCarPosition(final int carPosition) {
         IntStream.range(0, carPosition)
-                .mapToObj(s -> "-")
+                .mapToObj(s -> POSITION_DISPLAY)
                 .forEach(System.out::print);
         System.out.println();
     }
