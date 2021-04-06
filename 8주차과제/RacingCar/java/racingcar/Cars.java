@@ -14,6 +14,8 @@ public class Cars {
     private static final int START_NUMBER = 0;
     private static final int END_NUMBER = 9;
 
+    private static final int BOUNDARY_NUMBER = 4;
+
     private static Vector<String> winner;
 
     public Cars(List<Car> carList) {
@@ -21,7 +23,7 @@ public class Cars {
     }
 
     public static boolean isMove(int randomNumber) {
-        if (randomNumber >= 4) {
+        if (randomNumber >= BOUNDARY_NUMBER) {
             return true;
         }
         return false;
