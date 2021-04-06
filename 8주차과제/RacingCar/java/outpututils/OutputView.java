@@ -5,6 +5,8 @@ import racingcar.Car;
 import java.util.Vector;
 
 public class OutputView {
+    private OutputView(){
+    }
     public static void printCarName(String name){
             System.out.print(name+" : ");
     }
