@@ -10,7 +10,7 @@ public class Number {
 
     private void validateNumber(String buffer) {
         try {
-            int value = Integer.parseInt(buffer);
+            Integer.parseInt(buffer);
         } catch (NumberFormatException e) {
             throw new IllegalArgumentException("[ERROR] 시도 횟수는 숫자여야 한다.");
         }
