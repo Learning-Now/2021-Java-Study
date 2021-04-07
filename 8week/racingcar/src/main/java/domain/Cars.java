@@ -8,16 +8,17 @@ import java.util.stream.Collectors;
 public class Cars {
     private final List<Car> cars;
 
-    public Cars (List<Car> cars) {
-        validateCars(cars);
-        this.cars = new ArrayList<>(cars);
+    public Cars (List<String> carNames) {
+        validateCars(carNames);
+        this.cars = carNames.stream()
+                .map(carName->new Car(carName))
+                .collect(Collectors.toList());
     }
 
-    private void validateCars(List<Car> cars) {
-        Boolean value = (int) cars.stream()
-                .map(car -> car.getName())
+    private void validateCars(List<String> carNames) {
+        Boolean value = (int) carNames.stream()
                 .distinct()
-                .count() != cars.size();
+                .count() != carNames.size();
         if (value) {
             throw new IllegalArgumentException("[ERROR] 이름 중복");
         }

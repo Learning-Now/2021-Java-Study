@@ -9,15 +9,14 @@ import utils.View;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.stream.Collectors;
 
 public class RacingCarGameController {
 
     public Cars createCar() {
-        String[] carNames = Input.stringInput();
-        return new Cars(Arrays.stream(carNames)
-                .map(carName -> new Car(carName))
-                .collect(Collectors.toList()));
+        List<String> carNames = Input.stringInput();
+        return new Cars(carNames);
     }
 
     public Number createCount() {
