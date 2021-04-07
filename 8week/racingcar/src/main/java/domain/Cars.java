@@ -3,6 +3,7 @@ package domain;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class Cars {
@@ -33,16 +34,15 @@ public class Cars {
                 .forEach(Car::movePosition);
     }
 
-    public int findMaxPosition() {
+    private Car findMaxPosition() {
         return cars.stream()
-            .mapToInt(Car::getPosition)
-            .max()
-            .getAsInt();
+                .max(Car::compareTo)
+                .orElseThrow(() -> new IllegalArgumentException("[ERROR] 차량 리스트가 비었습니다."));
     }
 
     public List<Car> getWinner() {
         return cars.stream()
-                .filter(car -> car.getPosition() == findMaxPosition())
+                .filter(car -> car.isSamePosition(findMaxPosition()))
                 .collect(Collectors.toCollection(ArrayList::new));
     }
 }

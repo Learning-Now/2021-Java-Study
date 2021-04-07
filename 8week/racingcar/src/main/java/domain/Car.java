@@ -2,7 +2,9 @@ package domain;
 
 import utils.RandomUtils;
 
-public class Car {
+import java.util.Comparator;
+
+public class Car implements Comparable<Car> {
     private final String name;
     private int position;
     private static final int START_NUMBER = 0;
@@ -41,5 +43,14 @@ public class Car {
         if (buffer.contains(" ")) {
             throw new IllegalArgumentException("[ERROR] 잘못된 입력입니다.");
         }
+    }
+
+    public boolean isSamePosition(Car other) {
+        return other.position == this.position;
+    }
+
+    @Override
+    public int compareTo(Car other) {
+        return this.position - other.position;
     }
 }
