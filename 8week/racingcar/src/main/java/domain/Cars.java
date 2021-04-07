@@ -29,7 +29,7 @@ public class Cars {
 
     public void moveCars() {
         cars.stream()
-                .forEachOrdered(Car::movePosition);
+                .forEach(Car::movePosition);
     }
 
     public int findMaxPosition() {
