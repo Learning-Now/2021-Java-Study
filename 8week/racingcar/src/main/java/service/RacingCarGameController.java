@@ -17,7 +17,7 @@ public class RacingCarGameController {
         String [] carNames = Input.stringInput();
         return new Cars(Arrays.stream(carNames)
                 .map(carName -> new Car(carName))
-                .collect(Collectors.toCollection(ArrayList::new)));
+                .collect(Collectors.toList()));
     }
 
     public Number createCount() {

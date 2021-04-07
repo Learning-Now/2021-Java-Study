@@ -5,9 +5,9 @@ import domain.Number;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Scanner;
 
 public class Input {
+    private static final String SPLIT_RULE = ",";
 
     private Input() {};
 
@@ -16,7 +16,7 @@ public class Input {
             System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");
             BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
             String buffer = bf.readLine();
-            return buffer.split(",");
+            return buffer.split(SPLIT_RULE);
         } catch (IOException e) {
             throw new IllegalArgumentException("[ERROR] 잘못된 입력입니다.");
         }
