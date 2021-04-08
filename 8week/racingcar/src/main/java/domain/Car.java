@@ -2,8 +2,6 @@ package domain;
 
 import utils.RandomUtils;
 
-import java.util.Comparator;
-
 public class Car implements Comparable<Car> {
     private final String name;
     private int position;
@@ -20,9 +18,13 @@ public class Car implements Comparable<Car> {
     }
 
     public void movePosition() {
-        if (RandomUtils.randomIntGenerator(START_NUMBER, FINISH_NUMBER) > CONTROL_POINT) {
+        if (isMoveAble(RandomUtils.randomIntGenerator(START_NUMBER, FINISH_NUMBER))) {
             this.position = position + 1;
         }
+    }
+
+    private boolean isMoveAble(int randomValue) {
+        return randomValue > CONTROL_POINT;
     }
 
     private void validateLength(String name) {
@@ -53,4 +55,5 @@ public class Car implements Comparable<Car> {
     public int compareTo(Car other) {
         return this.position - other.position;
     }
+
 }
