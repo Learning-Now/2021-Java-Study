@@ -1,12 +1,9 @@
 package racingcar;
 
 import outpututils.OutputView;
-import utils.GameUtils;
 import utils.RandomUtils;
-
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Vector;
-import java.util.stream.IntStream;
 
 public class Cars {
     private static List<Car> carList;
@@ -42,37 +39,18 @@ public class Cars {
             }
             System.out.println();
         }
-/*
-        carList.stream()
-                .map(Car::getName)
-                .forEach(car -> OutputView.printCarName(car));
-        for (int i = 0; i < carList.size(); i++) {
-            IntStream.range(0, carList.get(i).getPosition())
-                    .forEach(OutputView.printMove();
-        }
-*/
     }
 
     public static int getMax() {
-        int max = carList.get(0).getPosition();
-        for (int i = 1; i < carList.size(); i++) {
-            if (max < carList.get(i).getPosition()) {
-                max = carList.get(i).getPosition();
-            }
-        }
+        int max = carList.stream()
+                .mapToInt(Car::getPosition)
+                .max()
+                .getAsInt();
         return max;
     }
-    public static int makeWinnerCount(int max) {
-        int count = 0;
-        for (int i = 0; i < carList.size(); i++) {
-            if (max == carList.get(i).getPosition()) {
-                count++;
-            }
-        }
-        return count;
-    }
-    public static void setWinnerList(int max, int count) {
-        winner = new ArrayList<String>(count);
+
+    public static void setWinnerList(int max) {
+        winner = new ArrayList<String>();
         for (int i = 0; i < carList.size(); i++) {
             if (max == carList.get(i).getPosition()) {
                 winner.add(carList.get(i).getName());

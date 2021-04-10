@@ -6,9 +6,7 @@ import racingcar.Car;
 import racingcar.Cars;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
-import java.util.Vector;
 import java.util.stream.Collectors;
 
 public class GameUtils {
@@ -32,8 +30,8 @@ public class GameUtils {
             System.out.println();
         }
 
-        Cars.setWinnerList(Cars.getMax(), Cars.makeWinnerCount(Cars.getMax()));
-        OutputView.printWinner(Cars.getWinnerList(), Cars.makeWinnerCount(Cars.getMax()));
+        Cars.setWinnerList(Cars.getMax());
+        OutputView.printWinner(Cars.getWinnerList());
 
     }
 }
