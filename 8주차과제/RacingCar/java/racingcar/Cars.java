@@ -28,7 +28,6 @@ public class Cars {
 
     public static void playGame() {
         for (int j = 0; j < carList.size(); j++) {
-
             OutputView.printCarName(carList.get(j).getName());
 
             if (isMove(RandomUtils.nextInt(START_NUMBER, END_NUMBER))) {
