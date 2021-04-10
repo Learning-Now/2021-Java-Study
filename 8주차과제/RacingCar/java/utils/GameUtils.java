@@ -18,7 +18,6 @@ public class GameUtils {
     }
 
     public static void run() {
-
         String inputName = InputView.getCarName();
         int inputCount = InputView.getTryNumber();
         String[] splitResult = SplitString.splitString(inputName);
@@ -32,6 +31,5 @@ public class GameUtils {
 
         Cars.setWinnerList(Cars.getMax());
         OutputView.printWinner(Cars.getWinnerList());
-
     }
 }
