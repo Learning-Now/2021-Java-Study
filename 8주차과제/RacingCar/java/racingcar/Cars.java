@@ -16,7 +16,7 @@ public class Cars {
 
     private static final int BOUNDARY_NUMBER = 4;
 
-    private static Vector<String> winner;
+    private static ArrayList<String> winner;
 
     public Cars(List<Car> carList) {
         this.carList = carList;
@@ -71,15 +71,15 @@ public class Cars {
         }
         return count;
     }
-    public static void setWinnerVector(int max, int count) {
-        winner = new Vector<String>(count);
+    public static void setWinnerList(int max, int count) {
+        winner = new ArrayList<String>(count);
         for (int i = 0; i < carList.size(); i++) {
             if (max == carList.get(i).getPosition()) {
                 winner.add(carList.get(i).getName());
             }
         }
     }
-    public static Vector<String> getWinnerVector() {
+    public static ArrayList<String> getWinnerList() {
         return winner;
     }
 

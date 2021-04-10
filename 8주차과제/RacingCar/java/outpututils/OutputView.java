@@ -15,7 +15,7 @@ public class OutputView {
         System.out.print("-");
     }
 
-    public static void printWinner(Vector<String> winner,int count){
+    public static void printWinner(ArrayList<String> winner,int count){
 
         for (int i = 0; i < winner.size(); i++) {
             System.out.print(winner.get(i));

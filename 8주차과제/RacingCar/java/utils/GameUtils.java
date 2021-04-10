@@ -32,8 +32,8 @@ public class GameUtils {
             System.out.println();
         }
 
-        Cars.setWinnerVector(Cars.getMax(), Cars.makeWinnerCount(Cars.getMax()));
-        OutputView.printWinner(Cars.getWinnerVector(), Cars.makeWinnerCount(Cars.getMax()));
+        Cars.setWinnerList(Cars.getMax(), Cars.makeWinnerCount(Cars.getMax()));
+        OutputView.printWinner(Cars.getWinnerList(), Cars.makeWinnerCount(Cars.getMax()));
 
     }
 }
