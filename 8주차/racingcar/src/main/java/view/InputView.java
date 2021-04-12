@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class InputView {
-    private static final BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+    private static final BufferedReader BUFFERED_READER = new BufferedReader(new InputStreamReader(System.in));
     private static final String DELIMITER = ",";
 
     private InputView() {
