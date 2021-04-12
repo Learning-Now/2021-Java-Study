@@ -17,9 +17,9 @@ public class InputView {
     }
 
     public static GameCounter inputGameCount() {
-        System.out.println("시도할 횟수는 몇회인가요? ");
+        OutputView.printGameCounterInput();
         try {
-            String inputNumber = bufferedReader.readLine();
+            String inputNumber = BUFFERED_READER.readLine();
             validateGameCount(inputNumber);
             return new GameCounter(inputNumber);
         } catch (IOException e) {
@@ -34,9 +34,9 @@ public class InputView {
     }
 
     public static List<String> inputCarNames() {
-        System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");
+        OutputView.printCarInput();
         try {
-            String input = bufferedReader.readLine();
+            String input = BUFFERED_READER.readLine();
             validateCarNames(input);
             return Arrays.asList(input.split(DELIMITER));
         } catch (IOException e) {
