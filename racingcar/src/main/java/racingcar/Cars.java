@@ -19,7 +19,7 @@ public class Cars {
         return cars;
     }
 
-    public Winner winner() {
+    public Winner findWinner() {
         return new Winner(cars ,cars.stream()
             .mapToInt(Car::getPosition)
             .max()

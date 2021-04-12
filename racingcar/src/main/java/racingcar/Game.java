@@ -16,6 +16,6 @@ public class Game {
             System.out.println();
         }
 
-        ResultView.printWinners(cars.winner());
+        ResultView.printWinners(cars.findWinner());
     }
 }
