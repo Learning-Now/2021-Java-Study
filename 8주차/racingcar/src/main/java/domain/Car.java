@@ -1,7 +1,9 @@
 package domain;
 
 public class Car {
-    public static final String BLANK = " ";
+    private static final String BLANK = " ";
+    private static final int MAXIMAL_LENGTH = 5;
+
     private final String name;
     private int position = 0;
 
@@ -11,7 +13,7 @@ public class Car {
     }
 
     private void validate(String name) {
-        if (name.length() > 5) {
+        if (name.length() > MAXIMAL_LENGTH) {
             throw new IllegalArgumentException("[ERROR] 자동차 이름은 5자 이하여야 한다.");
         }
         if (name.contains(BLANK)) {
