@@ -13,7 +13,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class RacingCarGameController {
-
     public Cars createCar() {
         List<String> carNames = Input.stringInput();
         return new Cars(carNames);
@@ -33,6 +32,5 @@ public class RacingCarGameController {
         }
         View.resultView(cars.getWinner());
     }
-
 }
 

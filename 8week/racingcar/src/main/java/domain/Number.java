@@ -19,5 +19,4 @@ public class Number {
     public int getCount() {
         return value;
     }
-
 }

@@ -34,5 +34,4 @@ public class Input {
             throw new IllegalArgumentException("[ERROR] 잘못된 입력입니다.");
         }
     }
-
 }

@@ -5,8 +5,6 @@ import utils.RandomUtils;
 public class Car implements Comparable<Car> {
     private final String name;
     private int position;
-    private static final int START_NUMBER = 0;
-    private static final int FINISH_NUMBER = 10;
     private static final int CONTROL_POINT = 4;
     private static final int MAX_INPUT_LENGTH = 5;
 
@@ -17,8 +15,8 @@ public class Car implements Comparable<Car> {
         this.position = 0;
     }
 
-    public void movePosition() {
-        if (isMoveAble(RandomUtils.randomIntGenerator(START_NUMBER, FINISH_NUMBER))) {
+    public void movePosition(int randomValue) {
+        if (isMoveAble(randomValue)) {
             this.position = position + 1;
         }
     }
@@ -41,7 +39,7 @@ public class Car implements Comparable<Car> {
         return name;
     }
 
-    public static void validateInput(String buffer) {
+    private void validateInput(String buffer) {
         if (buffer.contains(" ")) {
             throw new IllegalArgumentException("[ERROR] 잘못된 입력입니다.");
         }
@@ -55,5 +53,4 @@ public class Car implements Comparable<Car> {
     public int compareTo(Car other) {
         return this.position - other.position;
     }
-
 }

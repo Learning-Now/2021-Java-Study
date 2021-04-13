@@ -1,5 +1,7 @@
 package domain;
 
+import utils.RandomUtils;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -8,6 +10,8 @@ import java.util.stream.Collectors;
 
 public class Cars {
     private final List<Car> cars;
+    private static final int START_NUMBER = 0;
+    private static final int FINISH_NUMBER = 10;
 
     public Cars (List<String> carNames) {
         validateCars(carNames);
@@ -31,7 +35,7 @@ public class Cars {
 
     public void moveCars() {
         cars.stream()
-                .forEach(Car::movePosition);
+                .forEach(Car-> Car.movePosition(RandomUtils.randomIntGenerator(START_NUMBER, FINISH_NUMBER)));
     }
 
     private Car findMaxPosition() {
