@@ -1,7 +1,5 @@
 package domain;
 
-import utils.RandomUtils;
-
 public class Car implements Comparable<Car> {
     private final String name;
     private int position;
