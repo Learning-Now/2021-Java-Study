@@ -18,13 +18,9 @@ public class InputView {
 
     public static GameCounter inputGameCount() {
         OutputView.printGameCounterInput();
-        try {
-            String inputNumber = BUFFERED_READER.readLine();
-            validateGameCount(inputNumber);
-            return new GameCounter(inputNumber);
-        } catch (IOException e) {
-            throw new IllegalArgumentException("[ERROR] 잘못된 입력입니다.");
-        }
+        String inputNumber = nextLine();
+        validateGameCount(inputNumber);
+        return new GameCounter(inputNumber);
     }
 
     private static void validateGameCount(String input) {
@@ -35,18 +31,22 @@ public class InputView {
 
     public static List<String> inputCarNames() {
         OutputView.printCarInput();
-        try {
-            String input = BUFFERED_READER.readLine();
-            validateCarNames(input);
-            return Arrays.asList(input.split(DELIMITER));
-        } catch (IOException e) {
-            throw new IllegalArgumentException("[ERROR] 잘못된 입력입니다.");
-        }
+        String input = nextLine();
+        validateCarNames(input);
+        return Arrays.asList(input.split(DELIMITER));
     }
 
     private static void validateCarNames(String input) {
         if (input == null || input.isEmpty()) {
             throw new IllegalArgumentException("[ERROR] 이름을 입력해 주세요.");
+        }
+    }
+
+    private static String nextLine() {
+        try {
+            return BUFFERED_READER.readLine();
+        } catch (IOException e) {
+            throw new IllegalArgumentException("[ERROR] 잘못된 입력입니다.");
         }
     }
 }
