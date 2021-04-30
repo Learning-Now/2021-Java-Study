@@ -1,6 +1,5 @@
 package domain;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -9,14 +8,16 @@ import static view.OutputView.printGameStatus;
 public class Cars {
     private final List<Car> cars;
 
-    public Cars(List<Car> cars) {
+    public Cars(List<String> cars) {
         validate(cars);
-        this.cars = new ArrayList<>(cars);
+        this.cars = cars
+                .stream()
+                .map(Car::new)
+                .collect(Collectors.toList());
     }
 
-    private void validate(List<Car> cars) {
+    private void validate(List<String> cars) {
         boolean checkName = cars.stream()
-                .map(Car::getName)
                 .distinct()
                 .count() != cars.size();
         if (checkName) {
@@ -36,17 +37,16 @@ public class Cars {
     }
 
     public Winners findWinner() {
+        Car maxPositionCar = findMaxPositionCar();
         return new Winners(cars.stream()
-                .filter(car -> isMaxPosition(car.getPosition()))
+                .filter(maxPositionCar::isSamePosition)
                 .map(Winner::new)
                 .collect(Collectors.toList()));
     }
 
-    private boolean isMaxPosition(final int position) {
-        return cars
-                .stream()
-                .mapToInt(Car::getPosition)
-                .max()
-                .getAsInt() == position;
+    private Car findMaxPositionCar() {
+        return cars.stream()
+                .max(Car::compareTo)
+                .orElseThrow(() -> new IllegalArgumentException("[ERROR] 입력된 차량이 없습니다."));
     }
 }
