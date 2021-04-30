@@ -13,8 +13,8 @@ public class View {
 
     private View() {};
 
-    public static void distanceView(final int position) {
-        for (int count = 0; count < position; count ++) {
+    public static void distanceView(int position) {
+        while (position-- > 0){
             System.out.print(POSITION_VIEW);
         }
         System.out.println();
