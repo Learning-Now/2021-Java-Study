@@ -1,8 +1,8 @@
-import utils.GameUtils;
+import racingcar.Game;
 
 public class Application {
     public static void main(String[] args) {
-        GameUtils game = new GameUtils();
-        game.run();
+        Game game = new Game();
+        game.start();
     }
 }
