@@ -1,6 +1,7 @@
 package racingcar;
 
 import utils.RandomUtils;
+import utils.CarNameValidator;
 
 public class Car {
     private static final int FIRST_DIGIT = 0;
@@ -11,6 +12,7 @@ public class Car {
     private int position = 0;
 
     public Car(String name) {
+        CarNameValidator.validateName(name);
         this.name = name;
     }
 
