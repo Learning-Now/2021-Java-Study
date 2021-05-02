@@ -50,11 +50,10 @@ public class Cars {
 
     public static void setWinnerList(int max) {
         winner = new ArrayList<String>();
-        for (int i = 0; i < carList.size(); i++) {
-            if (max == carList.get(i).getPosition()) {
-                winner.add(carList.get(i).getName());
-            }
-        }
+        carList.stream()
+                .filter(s-> s.getPosition()==max)
+                .filter(s-> winner.add(s.getName()))
+                .collect(Collectors.toList());
     }
     public static ArrayList<String> getWinnerList() {
         return winner;
