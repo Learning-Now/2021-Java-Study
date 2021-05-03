@@ -1,5 +1,6 @@
 package utils;
 
+import domain.Cars;
 import domain.Number;
 
 import java.io.BufferedReader;
@@ -14,11 +15,11 @@ public class Input {
 
     private Input() {};
 
-    public static List<String> carNamesInput() {
+    public static Cars carNamesInput() {
         try {
             System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");
             String buffer = BUFFERED_READER.readLine();
-            return Arrays.asList(buffer.split(SPLIT_RULE));
+            return new Cars(Arrays.asList(buffer.split(SPLIT_RULE)));
         } catch (IOException e) {
             throw new IllegalArgumentException("[ERROR] 잘못된 입력입니다.");
         }
