@@ -16,7 +16,7 @@ public class Cars {
     public Cars (List<String> carNames) {
         validateCars(carNames);
         this.cars = carNames.stream()
-                .map(carName->new Car(carName))
+                .map(Car::new)
                 .collect(Collectors.toList());
     }
 

@@ -17,7 +17,7 @@ public class RacingGame {
             cars.moveCars();
             cars.getCars()
                     .stream()
-                    .forEach(Car -> View.carStatusView(Car));
+                    .forEach(View::carStatusView);
             View.spacingWord();
         }
         View.resultView(cars.getWinner());
