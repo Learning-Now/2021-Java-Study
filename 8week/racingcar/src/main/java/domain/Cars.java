@@ -20,13 +20,10 @@ public class Cars {
                 .collect(Collectors.toList());
     }
 
-    private void validateCars(List<String> carNames) {
-        Boolean value = (int) carNames.stream()
-                .distinct()
-                .count() != carNames.size();
-        if (value) {
-            throw new IllegalArgumentException("[ERROR] 이름 중복");
-        }
+    public List<Car> getWinner() {
+        return cars.stream()
+                .filter(car -> car.isSamePosition(findMaxPosition()))
+                .collect(Collectors.toCollection(ArrayList::new));
     }
 
     public List<Car> getCars() {
@@ -37,15 +34,18 @@ public class Cars {
         cars.forEach(Car-> Car.movePosition(RandomUtils.randomIntGenerator(START_NUMBER, FINISH_NUMBER)));
     }
 
+    private void validateCars(List<String> carNames) {
+        Boolean value = (int) carNames.stream()
+                .distinct()
+                .count() != carNames.size();
+        if (value) {
+            throw new IllegalArgumentException("[ERROR] 이름 중복");
+        }
+    }
+
     private Car findMaxPosition() {
         return cars.stream()
                 .max(Car::compareTo)
                 .orElseThrow(() -> new IllegalArgumentException("[ERROR] 차량 리스트가 비었습니다."));
-    }
-
-    public List<Car> getWinner() {
-        return cars.stream()
-                .filter(car -> car.isSamePosition(findMaxPosition()))
-                .collect(Collectors.toCollection(ArrayList::new));
     }
 }

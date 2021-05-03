@@ -9,9 +9,8 @@ public class RacingGame {
     private RacingGame() {};
 
     public static void start() {
-        RacingGameController controller = new RacingGameController();
-        Cars cars = controller.createCar();
-        Number count = controller.createCount();
+        Cars cars = RacingGameController.createCar();
+        Number count = RacingGameController.createCount();
         int times = count.getCount();
         while (times-- > 0) {
             cars.moveCars();

@@ -7,11 +7,13 @@ import utils.Input;
 
 public class RacingGameController {
 
-    public Cars createCar() {
+    private RacingGameController() {};
+
+    public static Cars createCar() {
         return Input.carNamesInput();
     }
 
-    public Number createCount() {
+    public static Number createCount() {
         return Input.numberInput();
     }
 }
