@@ -15,7 +15,8 @@ public class RacingGame {
         int times = count.getCount();
         while (times-- > 0) {
             cars.moveCars();
-            cars.getCars().stream()
+            cars.getCars()
+                    .stream()
                     .forEach(Car -> View.carStatusView(Car));
             View.spacingWord();
         }
