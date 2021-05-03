@@ -28,8 +28,7 @@ public class Input {
         try {
             System.out.println("시도할 회수는 몇회인가요?");
             String buffer = BUFFERED_READER.readLine();
-            Number number = new Number(buffer);
-            return number;
+            return new Number(buffer);
         } catch (IOException e) {
             throw new IllegalArgumentException("[ERROR] 잘못된 입력입니다.");
         }
