@@ -1,10 +1,10 @@
 package domain;
 
 public class Car implements Comparable<Car> {
-    private final String name;
-    private int position;
     private static final int CONTROL_POINT = 4;
     private static final int MAX_INPUT_LENGTH = 5;
+    private final String name;
+    private int position;
 
     public Car(final String name) {
         validateLength(name);
