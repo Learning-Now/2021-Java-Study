@@ -11,7 +11,7 @@ import java.util.List;
 public class RacingGameController {
 
     public Cars createCar() {
-        List<String> carNames = Input.stringInput();
+        List<String> carNames = Input.carNamesInput();
         return new Cars(carNames);
     }
 
