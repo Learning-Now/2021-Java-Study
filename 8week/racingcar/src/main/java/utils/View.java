@@ -1,6 +1,7 @@
 package utils;
 
 import domain.Car;
+import domain.Cars;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -32,9 +33,13 @@ public class View {
         System.out.println(winner);
     }
 
-    public static void carStatusView(Car car) {
-        View.carNameView(car.getName());
-        View.distanceView(car.getPosition());
+    public static void carStatusView(Cars cars) {
+        cars.getCars()
+                .stream()
+                .forEach(car -> {
+                        View.carNameView(car.getName());
+                        View.distanceView(car.getPosition());
+                });
     }
 
     public static void spacingWord() {

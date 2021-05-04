@@ -14,9 +14,7 @@ public class RacingGame {
         int times = count.getCount();
         while (times-- > 0) {
             cars.moveCars();
-            cars.getCars()
-                    .stream()
-                    .forEach(View::carStatusView);
+            View.carStatusView(cars);
             View.spacingWord();
         }
         View.resultView(cars.getWinner());
