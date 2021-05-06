@@ -2,7 +2,7 @@ package service;
 
 import domain.Cars;
 import domain.Number;
-import utils.View;
+import utils.RacingGameStatusView;
 
 public class RacingGame {
 
@@ -14,9 +14,9 @@ public class RacingGame {
         int times = count.getCount();
         while (times-- > 0) {
             cars.moveCars();
-            View.carStatusView(cars);
-            View.spacingWord();
+            RacingGameStatusView.carStatusView(cars);
+            RacingGameStatusView.spacingWord();
         }
-        View.resultView(cars.getWinner());
+        RacingGameStatusView.resultView(cars.getWinner());
     }
 }
