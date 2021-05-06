@@ -38,7 +38,7 @@ public class Car implements Comparable<Car> {
     }
 
     private void validateInput(String buffer) {
-        if (buffer.contains(" ")) {
+        if (" ".equals(buffer)) {
             throw new IllegalArgumentException("[ERROR] 잘못된 입력입니다.");
         }
     }
