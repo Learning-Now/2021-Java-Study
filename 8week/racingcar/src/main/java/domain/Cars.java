@@ -35,10 +35,10 @@ public class Cars {
     }
 
     private void validateCars(List<String> carNames) {
-        Boolean value = (int) carNames.stream()
+        Boolean distinctCheck = (int) carNames.stream()
                 .distinct()
                 .count() != carNames.size();
-        if (value) {
+        if (distinctCheck) {
             throw new IllegalArgumentException("[ERROR] 이름 중복");
         }
     }
