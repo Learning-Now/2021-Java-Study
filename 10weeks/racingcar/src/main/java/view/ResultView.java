@@ -6,7 +6,7 @@ import racingcar.Winner;
 import java.util.List;
 
 public class ResultView {
-    public static final String POSITION = "-";
+    private static final String POSITION = "-";
 
     private ResultView() { }
 
