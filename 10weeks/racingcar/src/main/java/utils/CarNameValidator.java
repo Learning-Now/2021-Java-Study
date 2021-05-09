@@ -1,6 +1,8 @@
 package utils;
 
 public class CarNameValidator {
+    private static final int MAX_NAME_LENGTH = 5;
+
     private CarNameValidator() {   }
 
     public static void validateName(String carName) {
@@ -15,7 +17,7 @@ public class CarNameValidator {
     }
 
     public static void lengthCheck(String carName) {
-        if (carName.length() > 5) {
+        if (carName.length() > MAX_NAME_LENGTH) {
             throw new IllegalArgumentException("[ERROR] 자동차 이름은 5자 이하로만 가능합니다.");
         }
     }
