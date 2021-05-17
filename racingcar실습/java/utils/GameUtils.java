@@ -24,11 +24,7 @@ public class GameUtils {
 
         Cars cars = new Cars(makeCarList(splitResult));
 
-        for (int i = 0; i < inputCount; i++) {
-            cars.playGame();
-            System.out.println();
-        }
-
+        Cars.playGames(inputCount);
         Cars.setWinnerList(Cars.getMax());
         OutputView.printWinner(Cars.getWinnerList());
 

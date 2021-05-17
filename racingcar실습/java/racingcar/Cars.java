@@ -58,5 +58,10 @@ public class Cars {
     public static ArrayList<String> getWinnerList() {
         return winner;
     }
-
+    public static void playGames(int inputCount){
+        for (int i = 0; i < inputCount; i++) {
+            playGame();
+            System.out.println();
+        }
+    }
 }
