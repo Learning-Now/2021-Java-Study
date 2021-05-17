@@ -25,7 +25,7 @@ public class GameUtils {
         Cars cars = new Cars(makeCarList(splitResult));
 
         for (int i = 0; i < inputCount; i++) {
-            Cars.playGame();
+            cars.playGame();
             System.out.println();
         }
 
