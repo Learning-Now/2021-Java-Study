@@ -2,18 +2,16 @@ package racingcar;
 
 import outpututils.OutputView;
 import utils.RandomUtils;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class Cars {
-    private static List<Car> carList;
-
     private static final int START_NUMBER = 0;
     private static final int END_NUMBER = 9;
-
     private static final int BOUNDARY_NUMBER = 4;
-
+    private static List<Car> carList;
     private static ArrayList<String> winner;
 
     public Cars(List<Car> carList) {
@@ -52,10 +50,11 @@ public class Cars {
     public static void setWinnerList(int max) {
         winner = new ArrayList<String>();
         carList.stream()
-                .filter(s-> s.getPosition()==max)
-                .filter(s-> winner.add(s.getName()))
+                .filter(s -> s.getPosition() == max)
+                .filter(s -> winner.add(s.getName()))
                 .collect(Collectors.toList());
     }
+
     public static ArrayList<String> getWinnerList() {
         return winner;
     }

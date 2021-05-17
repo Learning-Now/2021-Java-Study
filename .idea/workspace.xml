@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f57adcb4-341d-4610-91ba-3880bcef0abe" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/racingcar실습/java/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/racingcar실습/java/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/racingcar실습/java/racingcar/Cars.java" beforeDir="false" afterPath="$PROJECT_DIR$/racingcar실습/java/racingcar/Cars.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +91,7 @@
       <workItem from="1619624805444" duration="2787000" />
       <workItem from="1619948128235" duration="140000" />
       <workItem from="1619959877373" duration="718000" />
-      <workItem from="1621240765983" duration="25000" />
+      <workItem from="1621240765983" duration="239000" />
     </task>
     <servers />
   </component>
